@@ -8,7 +8,6 @@ You can preview a sample ASL video used for testing in the app:
 
 [![Sample ASL Video](assets/sample_video.gif)](assets/sample_video.mp4)
 
-> The video is located in the `assets/` folder as `sample_video.mp4`. You can use it to test the pipeline or as an example upload in the Streamlit app.
 
 
 ## Features
