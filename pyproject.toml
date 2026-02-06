@@ -1,0 +1,15 @@
+[project]
+name = "wlasl"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mediapipe>=0.10.32",
+    "numpy>=1.26.0",
+    "opencv-python>=4.10.0.0",
+    "torch>=2.2.0",
+    "streamlit>=1.31.0",
+]
+
+

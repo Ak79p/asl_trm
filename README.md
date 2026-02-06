@@ -1,160 +1,75 @@
-# 🧠 ASL-TRM: Transformer Reasoning Model for ASL Gesture Recognition
+# ASL Sign Language Recognition
 
-ASL-TRM is a **lightweight, Transformer-based gesture recognition framework** built for American Sign Language (ASL) classification using pose and motion features. It achieves strong accuracy with an efficient model (TRM-Micro) designed for scalability and real-time use.
+This project provides a complete pipeline for American Sign Language (ASL) sign recognition from video, including keypoint extraction, Pose-TGCN and TRN-ASL inference, and an interactive Streamlit web app for visualization and analysis.
 
-This project uses the **ASL-Citizen dataset** from Microsoft, a large collection of sign language video samples and corresponding gloss annotations.
+## Demo Video
 
-🔗 **Dataset:** https://www.microsoft.com/en-us/research/project/asl-citizen/  
-🔗 **Dataset Description:** https://www.microsoft.com/en-us/research/project/asl-citizen/dataset-description/
+You can preview a sample ASL video used for testing in the app:
 
----
+[![Sample ASL Video](assets/sample_video.mp4)](assets/sample_video.mp4)
 
-## 📦 Architecture Overview
-
-### High-Level Pipeline
-
-Video (.mp4)
-↓
-MediaPipe Holistic Keypoint Extraction
-↓
-Temporal Normalization + Motion Encoding
-↓
-Feature Tensor (Frames × Joints × Features)
-↓
-Input Projection
-↓
-Pre-Encoder Transformer
-↓
-Latent Z-Token Reasoning Block
-↓
-Post-Encoder Transformer
-↓
-Global Pooling
-↓
-Classifier → Gloss Prediction
+> The video is located in the `assets/` folder as `sample_video.mp4`. You can use it to test the pipeline or as an example upload in the Streamlit app.
 
 
-### TRM-Micro (Efficient Transformer Model)
+## Features
+- **Video Upload & Processing**: Upload ASL videos and process them in-browser.
+- **Keypoint Extraction**: Uses MediaPipe to extract pose and hand keypoints.
+- **TRM-ASL / Pose-TGCN Inference**: Recognizes 100 ASL signs using a Pose-TGCN / TRM-ASL model.
+- **Sliding Window**: Configurable window size and overlap for robust recognition.
+- **Frame Skipping**: Option to process every Nth frame for speed.
+- **Frame Cropping**: Crop left/right edges by X% before processing.
+- **Keypoint Visualization**: See extracted keypoints overlaid on sample frames.
+- **Confidence Scores**: View model confidence for each prediction.
+- **Export Results**: Download recognition results as JSON.
 
-- **Input Representation:** Pose + motion features per frame
-- **Pre-Encoder:** Light temporal processing
-- **Latent Z-Tokens:** Small set of learnable abstract tokens for reasoning
-- **Post-Encoder:** Joint reasoning + perception
-- **Classifier:** Dataset-specific output (ASL-100 / ASL-300)
+## Quick Start
 
-This architecture enables strong temporal modeling with **≈486K parameters** while still delivering high accuracy.
-
----
-
-## 📊 Model Size
-
-| Model       | Total Parameters | Trainable Parameters |
-|-------------|------------------|----------------------|
-| TRM-Micro   | 486,700          | 486,700              |
-
-
----
-
-## Installation
-
-```bash
-# Create and activate virtual environment
-python -m venv venv
-source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
+### 1. Install dependencies
+```powershell
+uv pip install .
 ```
 
----
-
-## 🏋️ Training
-
-### Train on ASL-300
-```bash
-python -m train.train --dataset asl300
+### 2. Run the Streamlit app
+```powershell
+uv run streamlit run app.py
 ```
 
-### Train on ASL-100
-```bash
-python -m train.train --dataset asl100
-```
+### 3. Using the App
+- Upload a video file (mp4, avi, mov, mkv)
+- Adjust window size, overlap, frame skip, and crop in the sidebar
+- Click **Start Processing**
+- View sample frames with keypoints, recognition results, and download options
 
----
+## Project Structure
+- `app.py` — Streamlit web app
+- `main.py` — CLI entry point
+- `wlasl/` — Core modules:
+  - `mp_keypoints_processor.py` — MediaPipe keypoint extraction
+  - `pose_tgcn_model.py` — Pose-TGCN inference
+  - `configs/label_map_100.json` — ASL label mapping
+  - `checkpoints/` — Model and MediaPipe checkpoints
 
-## 🧪 Evaluation
+## Model
+- **Architecture**: Pose-TGCN (Graph Convolutional Network with attention)
+- **Classes**: 100 ASL signs
+- **Input**: Pose (25 keypoints) + hands (21 each)
+- **Output**: Predicted sign + confidence
 
-### Evaluate on ASL-300
-```bash
-python -m eval.eval_trm --dataset asl300
-```
+## Configuration Options
+- **Window Size**: Number of frames per prediction window
+- **Overlap**: Percentage overlap between windows (0–90%)
+- **Frame Skip**: Process every Nth frame (0 = all)
+- **Crop**: Crop X% from left/right before keypoint extraction
 
-### Evaluate on ASL-100
-```bash
-python -m eval.eval_trm --dataset asl100
-```
+## Requirements
+- Python 3.8+
+- See `pyproject.toml` for dependencies (mediapipe, torch, streamlit, opencv-python, numpy, etc.)
 
-### Evaluate with custom checkpoint
-```bash
-python eval/eval_trm_micro.py \
-  --dataset asl300 \
-  --checkpoint checkpoints/asl300/best_model.pt
-```
+## License
+MIT
 
----
 
-## 🎥 Inference (Single Video)
-
-### Run inference on a new unseen video and get top-k predictions with confidence:
-```bash
-python -m inference.infer_video \
-  --video inference/test2.mp4 \
-  --dataset asl300
-```
-
-Output includes:
-- Top-1 predicted gloss + confidence
-- Top-5 predictions
-- Top-10 predictions
 
 ---
-
-## 📈 Results
-
-### ASL-300 Evaluation
-
-| Metric    | Score      |
-| --------- | ---------- |
-| Test Loss | **1.4970** |
-| Top-1     | **66.68%** |
-| Top-5     | **86.00%** |
-| Top-10    | **90.45%** |
-
-### ASL-100 Evaluation
-| Metric    | Score      |
-| --------- | ---------- |
-| Test Loss | **1.2285** |
-| Top-1     | **73.05%** |
-| Top-5     | **89.13%** |
-| Top-10    | **93.12%** |
-
----
-
-## 📍 Dataset Details
-
-This project uses the ASL-Citizen dataset created by Microsoft. It includes:
-
-Thousands of sign language videos
-
-Gloss annotations for each video
-
-Multiple signers and variations
-
-Rich vocabulary suitable for real-world ASL tasks
-
-Dataset details and downloads available here:
-
-🔗 https://www.microsoft.com/en-us/research/project/asl-citizen/
-
-🔗 https://www.microsoft.com/en-us/research/project/asl-citizen/dataset-description/
+For questions or issues, please contact the project maintainer.
 
