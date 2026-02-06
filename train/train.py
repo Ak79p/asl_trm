@@ -15,14 +15,9 @@ from data.datasets import DatasetConfig
 # Dataset
 # -------------------------
 class ASLDataset(torch.utils.data.Dataset):
-    def __init__(self, csv_path):
+    def __init__(self, csv_path, dataset_root):
         self.df = pd.read_csv(csv_path)
-
-        required = {"feature_path", "class_id"}
-        if not required.issubset(self.df.columns):
-            raise ValueError(
-                f"CSV must contain columns {required}, got {self.df.columns}"
-            )
+        self.dataset_root = Path(dataset_root)
 
     def __len__(self):
         return len(self.df)
@@ -30,14 +25,18 @@ class ASLDataset(torch.utils.data.Dataset):
     def __getitem__(self, idx):
         row = self.df.iloc[idx]
 
-        x = torch.load(row["feature_path"])   # (T, J, D) or (T, D)
+        feature_path = Path(row["feature_path"])
+        if not feature_path.is_absolute():
+            feature_path = self.dataset_root / feature_path
+
+        if not feature_path.exists():
+            raise FileNotFoundError(f"Missing feature file: {feature_path}")
+
+        x = torch.load(feature_path)   # (T, D)
         y = int(row["class_id"])
 
-        if x.ndim == 3:
-            # flatten joints → feature dim
-            x = x.view(x.shape[0], -1)
-
         return x.float(), y
+
 
 
 # -------------------------
@@ -142,8 +141,9 @@ def main():
     # -------------------------
     # Data
     # -------------------------
-    train_ds = ASLDataset(cfg.train_csv)
-    val_ds = ASLDataset(cfg.val_csv)
+    train_ds = ASLDataset(cfg.train_csv, cfg.root)
+    val_ds   = ASLDataset(cfg.val_csv, cfg.root)
+    # test_ds  = ASLDataset(cfg.test_csv, cfg.root)
 
     train_loader = DataLoader(
         train_ds,

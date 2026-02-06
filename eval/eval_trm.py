@@ -109,7 +109,6 @@ def main():
     # -------------------------
     # Model
     # -------------------------
-    # model = TRMMicro(num_classes=cfg.num_classes).to(device)
     model = TRMMicro(num_classes=cfg.num_classes).to(device)
 
     ckpt_path = (
@@ -119,17 +118,7 @@ def main():
     )
 
     print(f"📦 Loading checkpoint: {ckpt_path}")
-
-    # state = torch.load(ckpt_path, map_location=device)
-
-    # # Hard safety check (prevents silent corruption)
-    # ckpt_classes = state["classifier.weight"].shape[0]
-    # assert ckpt_classes == cfg.num_classes, (
-    #     f"Checkpoint classes ({ckpt_classes}) ≠ "
-    #     f"label_map classes ({cfg.num_classes})"
-    # )
-
-    # model.load_state_dict(state)
+    
     state = torch.load(ckpt_path, map_location=device)
 
     ckpt_classes = state["classifier.weight"].shape[0]
