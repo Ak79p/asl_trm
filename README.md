@@ -12,7 +12,7 @@ This project uses the **ASL-Citizen dataset** from Microsoft, a large collection
 ## 📦 Architecture Overview
 
 ### High-Level Pipeline
-
+```bash
 Video (.mp4)
 ↓
 MediaPipe Holistic Keypoint Extraction
@@ -32,6 +32,7 @@ Post-Encoder Transformer
 Global Pooling
 ↓
 Classifier → Gloss Prediction
+```
 
 
 ### TRM-Micro (Efficient Transformer Model)
@@ -144,17 +145,31 @@ Output includes:
 
 This project uses the ASL-Citizen dataset created by Microsoft. It includes:
 
-Thousands of sign language videos
-
-Gloss annotations for each video
-
-Multiple signers and variations
-
-Rich vocabulary suitable for real-world ASL tasks
+- Thousands of sign language videos
+- Gloss annotations for each video
+- Multiple signers and variations
+- Rich vocabulary suitable for real-world ASL tasks
 
 Dataset details and downloads available here:
 
 🔗 https://www.microsoft.com/en-us/research/project/asl-citizen/
 
 🔗 https://www.microsoft.com/en-us/research/project/asl-citizen/dataset-description/
+
+---
+
+## 🛣️ Pending work
+
+- Support for ASL-1000 and ASL-2000
+- Sentence formation layer
+- Development of asl webapp
+
+---
+
+### 🫶 Acknowledgements
+
+This work builds upon:
+
+- Microsoft’s ASL-Citizen dataset
+- MediaPipe Holistic keypoint extraction
 
