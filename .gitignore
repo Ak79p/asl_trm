@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+*.egg-info/
+
+# OS
+.DS_Store
+
+# Checkpoints & large files
+# checkpoints/
+data/**/features_cache/
+
+# Logs
+*.log
+
+# Media
+*.mp4
+
+# Notebooks
+.ipynb_checkpoints/
