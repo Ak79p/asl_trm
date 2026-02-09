@@ -104,7 +104,6 @@ python eval/eval_trm_micro.py \
 
 ---
 
-<<<<<<< HEAD
 ## 🎥 Inference (Single Video)
 
 ### Run inference on a new unseen video and get top-k predictions with confidence:
