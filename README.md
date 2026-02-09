@@ -117,15 +117,6 @@ python -m inference.infer_video \
 Total parameters     : 486,700
 Trainable parameters : 486,700
 
-asl300:
-===== TEST RESULTS =====
-Test Loss : 1.4723
-Top-1     : 68.57%
-Top-5     : 87.13%
-Top-10    : 90.90%
-========================
->>>>>>> 457afe00 (added global reasoning and updated frame extraction to 48)
-
 Output includes:
 - Top-1 predicted gloss + confidence
 - Top-5 predictions
@@ -140,17 +131,17 @@ Output includes:
 | Metric    | Score      |
 | --------- | ---------- |
 | Test Loss | **1.4970** |
-| Top-1     | **66.68%** |
-| Top-5     | **86.00%** |
-| Top-10    | **90.45%** |
+| Top-1     | **68.57%** |
+| Top-5     | **87.13%** |
+| Top-10    | **90.90%** |
 
 ### ASL-100 Evaluation
 | Metric    | Score      |
 | --------- | ---------- |
 | Test Loss | **1.2285** |
-| Top-1     | **73.05%** |
-| Top-5     | **89.13%** |
-| Top-10    | **93.12%** |
+| Top-1     | **72.87%** |
+| Top-5     | **89.24%** |
+| Top-10    | **92.89%** |
 
 ---
 
@@ -185,14 +176,3 @@ This work builds upon:
 
 - Microsoft’s ASL-Citizen dataset
 - MediaPipe Holistic keypoint extraction
-
-<<<<<<< HEAD
-=======
-asl100:
-===== TEST RESULTS =====
-Test Loss : 1.1878
-Top-1     : 72.87%
-Top-5     : 89.24%
-Top-10    : 92.89%
-========================
->>>>>>> 457afe00 (added global reasoning and updated frame extraction to 48)
