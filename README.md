@@ -115,8 +115,8 @@ python -m inference.infer_video \
 ---
 
 ## TRM-Micro (6K params):
-Total parameters     : 486,700
-Trainable parameters : 486,700
+Total parameters     : 619,700
+Trainable parameters : 619,700
 
 Output includes:
 - Top-1 predicted gloss + confidence
