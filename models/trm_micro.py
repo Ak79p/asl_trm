@@ -3,21 +3,31 @@ import torch.nn as nn
 
 
 class TRMMicro(nn.Module):
+    """
+    TRM-Micro with GATED Local + Global Reasoning
+
+    Local  : Z ⟲ Z
+    Global : Z ⟲ (Z + Frames)  [gated residual]
+
+    Starts as local-only, learns to activate global reasoning.
+    """
 
     def __init__(
         self,
         num_classes,
-        input_dim=384,     # feature dimension per frame
-        dim=128,          # model dimension (was already reduced)
+        input_dim=384,      # J * D (48 joints × 8 dims)
+        dim=128,
         num_heads=4,
         num_z_tokens=8,
-        reason_steps=4
+        local_steps=4,
+        global_steps=1      # keep small
     ):
         super().__init__()
 
         self.dim = dim
         self.num_z_tokens = num_z_tokens
-        self.reason_steps = reason_steps
+        self.local_steps = local_steps
+        self.global_steps = global_steps
 
         # -------------------------
         # Input projection
@@ -25,7 +35,7 @@ class TRMMicro(nn.Module):
         self.input_proj = nn.Linear(input_dim, dim)
 
         # -------------------------
-        # Pre-encoder (Phase-3.1 change)
+        # Temporal encoder (frames)
         # -------------------------
         self.pre_encoder = nn.TransformerEncoder(
             nn.TransformerEncoderLayer(
@@ -35,7 +45,7 @@ class TRMMicro(nn.Module):
                 batch_first=True,
                 dropout=0.1
             ),
-            num_layers=1   
+            num_layers=1
         )
 
         # -------------------------
@@ -46,9 +56,9 @@ class TRMMicro(nn.Module):
         )
 
         # -------------------------
-        # Reasoning block (shared)
+        # Local reasoning (Z ⟲ Z)
         # -------------------------
-        self.reason_layer = nn.TransformerEncoderLayer(
+        self.local_reason_layer = nn.TransformerEncoderLayer(
             d_model=dim,
             nhead=num_heads,
             dim_feedforward=dim * 2,
@@ -57,7 +67,21 @@ class TRMMicro(nn.Module):
         )
 
         # -------------------------
-        # Post-encoder (unchanged)
+        # Global reasoning (Z ⟲ Z+X)
+        # -------------------------
+        self.global_reason_layer = nn.TransformerEncoderLayer(
+            d_model=dim,
+            nhead=num_heads,
+            dim_feedforward=dim * 2,
+            batch_first=True,
+            dropout=0.1
+        )
+
+        # 🔑 GATE (learned, starts closed)
+        self.global_gate = nn.Parameter(torch.tensor(0.0))
+
+        # -------------------------
+        # Post fusion
         # -------------------------
         self.post_encoder = nn.TransformerEncoder(
             nn.TransformerEncoderLayer(
@@ -71,7 +95,7 @@ class TRMMicro(nn.Module):
         )
 
         # -------------------------
-        # Normalization + classifier
+        # Output
         # -------------------------
         self.norm = nn.LayerNorm(dim)
         self.classifier = nn.Linear(dim, num_classes)
@@ -80,7 +104,13 @@ class TRMMicro(nn.Module):
     # Forward
     # -------------------------
     def forward(self, x):
-        # Accept (B,T,D) or (B,T,J,D)
+        """
+        x:
+          (B, T, J, D)  → keypoints
+          (B, T, D)     → flattened
+        """
+
+        # -------- Input handling --------
         if x.dim() == 4:
             B, T, J, D = x.shape
             x = x.view(B, T, J * D)
@@ -89,14 +119,31 @@ class TRMMicro(nn.Module):
         else:
             raise ValueError(f"Unexpected input shape: {x.shape}")
 
-        x = self.input_proj(x)
-        x = self.pre_encoder(x)
+        # -------- Frame encoding --------
+        x = self.input_proj(x)          # (B, T, dim)
+        x = self.pre_encoder(x)         # (B, T, dim)
 
-        z = self.z_tokens.expand(B, -1, -1)
+        # -------- Latent tokens --------
+        z = self.z_tokens.expand(B, -1, -1)  # (B, Z, dim)
+        z0 = z                               # keep original Z
 
-        for _ in range(self.reason_steps):
-            z = self.reason_layer(z)
+        # -------- Local reasoning --------
+        for _ in range(self.local_steps):
+            z = self.local_reason_layer(z)
 
+        # -------- Global reasoning (GATED) --------
+        gate = torch.tanh(self.global_gate)  # ∈ (-1, 1)
+
+        if gate.abs() > 1e-4:
+            for _ in range(self.global_steps):
+                zx = torch.cat([z, x], dim=1)       # (B, Z+T, dim)
+                zx = self.global_reason_layer(zx)
+                z_new = zx[:, :self.num_z_tokens]   # keep Z only
+
+                # 🔒 gated residual update
+                z = z + gate * z_new
+
+        # -------- Final fusion --------
         x = torch.cat([z, x], dim=1)
         x = self.post_encoder(x)
 

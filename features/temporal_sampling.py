@@ -1,6 +1,6 @@
 import numpy as np
 
-def uniform_sample(sequence, T=32):
+def uniform_sample(sequence, T=48):
     N = len(sequence)
     if N == 0:
         raise ValueError("Empty sequence")

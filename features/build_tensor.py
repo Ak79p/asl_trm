@@ -7,7 +7,7 @@ import numpy as np
 from features.temporal_sampling import uniform_sample
 from features.compute_motion import compute_velocity, compute_acceleration
 
-EXPECTED_T = 32
+EXPECTED_T = 48
 EXPECTED_J = 48
 
 def _sanity_check(X):

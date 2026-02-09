@@ -8,7 +8,7 @@ from features.video_to_keypoints import extract_video_keypoints
 from features.build_tensor import build_feature_tensor
 
 
-CACHE_DIR = Path("a/features_cache")
+CACHE_DIR = Path("data/asl100/features_cache")
 CACHE_DIR.mkdir(exist_ok=True)
 
 def extract_features(csv_path, out_csv_path):
@@ -18,7 +18,7 @@ def extract_features(csv_path, out_csv_path):
     print(f"\n🔨 Extracting features for {len(df)} videos\n")
 
     for _, row in tqdm(df.iterrows(), total=len(df)):
-        video_path = row["video_path"]
+        video_path = Path(row["video_path"])
         video_id = Path(video_path).stem  # filename without .mp4
         out_path = CACHE_DIR / f"{video_id}.pt"
 
@@ -27,7 +27,14 @@ def extract_features(csv_path, out_csv_path):
             feature_paths.append(str(out_path))
             continue
 
-        kps = extract_video_keypoints(video_path)
+        # kps = extract_video_keypoints(video_path)
+        try:
+            kps = extract_video_keypoints(video_path)
+            X = build_feature_tensor(kps)
+        except Exception as e:
+            print(f"⚠️ Skipping {video_path.name}: {e}")
+            continue
+
         X = build_feature_tensor(kps)
 
         torch.save(torch.from_numpy(X), out_path)
@@ -40,14 +47,14 @@ def extract_features(csv_path, out_csv_path):
 
 if __name__ == "__main__":
     extract_features(
-        "a/ASL_Citizen/train_labeled.csv",
-        "a/ASL_Citizen/train_features.csv"
+        "ASL_Citizen/train_labeled.csv",
+        "ASL_Citizen/train_features.csv"
     )
     extract_features(
-        "a/ASL_Citizen/val_labeled.csv",
-        "a/ASL_Citizen/val_features.csv"
+        "ASL_Citizen/val_labeled.csv",
+        "ASL_Citizen/val_features.csv"
     )
     extract_features(
-        "a/ASL_Citizen/test_labeled.csv",
-        "a/ASL_Citizen/test_features.csv"
+        "ASL_Citizen/test_labeled.csv",
+        "ASL_Citizen/test_features.csv"
     )

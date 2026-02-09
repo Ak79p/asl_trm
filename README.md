@@ -104,6 +104,7 @@ python eval/eval_trm_micro.py \
 
 ---
 
+<<<<<<< HEAD
 ## 🎥 Inference (Single Video)
 
 ### Run inference on a new unseen video and get top-k predictions with confidence:
@@ -112,6 +113,19 @@ python -m inference.infer_video \
   --video inference/test2.mp4 \
   --dataset asl300
 ```
+=======
+## TRM-Micro (6K params):
+Total parameters     : 486,700
+Trainable parameters : 486,700
+
+asl300:
+===== TEST RESULTS =====
+Test Loss : 1.4723
+Top-1     : 68.57%
+Top-5     : 87.13%
+Top-10    : 90.90%
+========================
+>>>>>>> 457afe00 (added global reasoning and updated frame extraction to 48)
 
 Output includes:
 - Top-1 predicted gloss + confidence
@@ -173,3 +187,13 @@ This work builds upon:
 - Microsoft’s ASL-Citizen dataset
 - MediaPipe Holistic keypoint extraction
 
+<<<<<<< HEAD
+=======
+asl100:
+===== TEST RESULTS =====
+Test Loss : 1.1878
+Top-1     : 72.87%
+Top-5     : 89.24%
+Top-10    : 92.89%
+========================
+>>>>>>> 457afe00 (added global reasoning and updated frame extraction to 48)
