@@ -112,7 +112,8 @@ python -m inference.infer_video \
   --video inference/test2.mp4 \
   --dataset asl300
 ```
-=======
+---
+
 ## TRM-Micro (6K params):
 Total parameters     : 486,700
 Trainable parameters : 486,700
