@@ -9,7 +9,7 @@ import numpy as np
 import tempfile
 from pathlib import Path
 import json
-from wlasl import PoseTGCNInference, ASLKeypointProcessor
+from wlasl import PoseTGCNInference, ASLKeypointProcessor, TRMInference, ASLTRMKeypointProcessor
 
 # Page configuration
 st.set_page_config(
@@ -62,18 +62,29 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-def load_models():
-    """Load the ASL keypoint processor and inference engine."""
-    with st.spinner("Loading models..."):
+def load_models(model_type="tgcn"):
+    """Load the ASL keypoint processor and inference engine.
+    
+    Args:
+        model_type: Either 'tgcn' or 'trm'
+    """
+    with st.spinner(f"Loading {model_type.upper()} models..."):
         try:
             POSE_CHECKPOINTS_PATH = "wlasl/checkpoints/pose_landmarker.task"
             HAND_CHECKPOINTS_PATH = "wlasl/checkpoints/hand_landmarker.task"
-            RECOGNIZER_MODEL_PATH = "wlasl/checkpoints/pose_tgcn_asl100.pth"
             LABELS_PATH = "wlasl/configs/label_map_100.json"
             NUM_SAMPLES = 50
             
-            processor = ASLKeypointProcessor(POSE_CHECKPOINTS_PATH, HAND_CHECKPOINTS_PATH)
-            engine = PoseTGCNInference(RECOGNIZER_MODEL_PATH, LABELS_PATH, NUM_SAMPLES)
+            if model_type.lower() == "tgcn":
+                processor = ASLKeypointProcessor(POSE_CHECKPOINTS_PATH, HAND_CHECKPOINTS_PATH)
+                RECOGNIZER_MODEL_PATH = "wlasl/checkpoints/pose_tgcn_asl100.pth"
+                engine = PoseTGCNInference(RECOGNIZER_MODEL_PATH, LABELS_PATH, NUM_SAMPLES)
+            elif model_type.lower() == "trm":
+                processor = ASLTRMKeypointProcessor(POSE_CHECKPOINTS_PATH, HAND_CHECKPOINTS_PATH)
+                RECOGNIZER_MODEL_PATH = "wlasl/checkpoints/trm_micro_asl100_model.pt"
+                engine = TRMInference(RECOGNIZER_MODEL_PATH, LABELS_PATH, NUM_SAMPLES)
+            else:
+                raise ValueError(f"Unknown model type: {model_type}")
             
             # Load labels for display
             with open(LABELS_PATH, 'r') as f:
@@ -85,7 +96,7 @@ def load_models():
             return None, None, None
 
 
-def process_video(video_path, processor, engine, window_size=50, overlap_percent=0.20, num_samples=50, frame_skip=1, crop_lr_percent=0):
+def process_video(video_path, processor, engine, model_type="tgcn", window_size=50, overlap_percent=0.20, num_samples=50, frame_skip=1, crop_lr_percent=0):
     """Process video and extract predictions with visualization data.
     
     Zero-pads the buffer if total frames are less than num_samples required.
@@ -140,8 +151,11 @@ def process_video(video_path, processor, engine, window_size=50, overlap_percent
             if w - (2 * crop_px) > 0:
                 frame = frame[:, crop_px:w - crop_px]
 
-        # Process frame
-        annotated_frame, keypoints = processor.process_frame(frame, frame_size=(256, 256))
+        # Process frame based on model type
+        if model_type.lower() == "trm":
+            annotated_frame, keypoints = processor.process_frame(frame)
+        else:  # tgcn
+            annotated_frame, keypoints = processor.process_frame(frame, frame_size=(256, 256))
         buffer.append(keypoints)
 
         # Save sample frames for visualization (with keypoints overlay)
@@ -217,6 +231,15 @@ def main():
     with st.sidebar:
         st.header("⚙️ Configuration")
         
+        # Model selection
+        model_type = st.radio(
+            "🤖 Select Model",
+            ["TGCN", "TRM"],
+            help="Choose between Temporal Graph Convolutional Network (TGCN) or Transformer (TRM) model"
+        ).lower()
+        
+        st.markdown("---")
+        
         window_size = st.slider("Window Size (frames)", 20, 100, 50, 5,
                                 help="Number of frames to analyze for each prediction")
         
@@ -230,28 +253,42 @@ def main():
         
         st.markdown("---")
         st.markdown("### 📊 Model Info")
-        st.info("""
-        **Model:** Pose-TGCN  
-        **Classes:** 100 ASL signs  
-        **Input:** Body pose + hand keypoints  
-        **Window:** Sliding window approach
-        """)
+        
+        if model_type == "tgcn":
+            st.info("""
+            **Model:** Pose-TGCN (Temporal Graph Convolutional Network)  
+            **Architecture:** Graph-based temporal convolution  
+            **Classes:** 100 ASL signs  
+            **Input:** Body pose + hand keypoints  
+            **Window:** Sliding window approach
+            """)
+        else:
+            st.info("""
+            **Model:** TRM (Transformer)  
+            **Architecture:** Transformer-based architecture  
+            **Classes:** 100 ASL signs  
+            **Input:** Body pose + hand keypoints  
+            **Window:** Fixed sequence processing
+            """)
     
-    # Load models (cached)
-    if 'processor' not in st.session_state or 'engine' not in st.session_state:
-        processor, engine, labels = load_models()
+    # Load models (cached with model type)
+    model_key = f"{model_type}_processor"
+    engine_key = f"{model_type}_engine"
+    
+    if model_key not in st.session_state or engine_key not in st.session_state:
+        processor, engine, labels = load_models(model_type)
         if processor and engine:
-            st.session_state.processor = processor
-            st.session_state.engine = engine
+            st.session_state[model_key] = processor
+            st.session_state[engine_key] = engine
             st.session_state.labels = labels
-            st.success("✅ Models loaded successfully!")
+            st.success(f"✅ {model_type.upper()} models loaded successfully!")
         else:
             st.error("❌ Failed to load models. Please check configuration.")
             return
     else:
-        processor = st.session_state.processor
-        engine = st.session_state.engine
-        labels = st.session_state.labels
+        processor = st.session_state[model_key]
+        engine = st.session_state[engine_key]
+        labels = st.session_state.get("labels", {})
     
     # Video upload
     st.markdown('<h2 class="step-header">📹 Step 1: Upload Video</h2>', unsafe_allow_html=True)
@@ -300,6 +337,7 @@ def main():
                 video_path,
                 processor,
                 engine,
+                model_type,
                 window_size,
                 overlap_percent,
                 num_samples=50,
@@ -343,21 +381,27 @@ def main():
                     from collections import Counter
                     pred_counts = Counter(p['prediction'] for p in predictions)
                     most_common = pred_counts.most_common(1)[0]
-                    # Find average confidence for most common sign
-                    avg_conf = np.mean([p['confidence'] for p in predictions if p['prediction'] == most_common[0]])
+                    # Find average confidence for most common sign (handle None values for TRM)
+                    confidences = [p['confidence'] for p in predictions if p['prediction'] == most_common[0] and p['confidence'] is not None]
+                    if confidences:
+                        avg_conf = np.mean(confidences)
+                        conf_text = f"Avg conf: {avg_conf:.2f}"
+                    else:
+                        conf_text = "No confidence available"
                     st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-                    st.metric("Most Frequent Sign", f"{most_common[0]} ({most_common[1]}x)", f"Avg conf: {avg_conf:.2f}")
+                    st.metric("Most Frequent Sign", f"{most_common[0]} ({most_common[1]}x)", conf_text)
                     st.markdown('</div>', unsafe_allow_html=True)
                 
                 st.markdown("---")
                 
                 # Main prediction display
                 st.markdown("### 🏆 Primary Detected Sign")
+                conf_display = f"Average confidence: {avg_conf:.2f}" if confidences else "No confidence scores available"
                 st.markdown(f"""
                 <div class="prediction-box">
                     <div class="prediction-word">{most_common[0].upper()}</div>
                     <div class="confidence">Detected {most_common[1]} times across {len(predictions)} windows</div>
-                    <div class="confidence">Average confidence: {avg_conf:.2f}</div>
+                    <div class="confidence">{conf_display}</div>
                 </div>
                 """, unsafe_allow_html=True)
                 

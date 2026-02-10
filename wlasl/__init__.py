@@ -1,2 +1,4 @@
 from wlasl.mp_keypoints_processor import ASLKeypointProcessor
 from wlasl.pose_tgcn_model import PoseTGCNInference
+from wlasl.trm_micro_model import TRMInference
+from wlasl.trm_keypoints_processor import ASLTRMKeypointProcessor
