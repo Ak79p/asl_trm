@@ -8,7 +8,7 @@ from features.video_to_keypoints import extract_video_keypoints
 from features.build_tensor import build_feature_tensor
 
 
-CACHE_DIR = Path("data/asl100/features_cache")
+CACHE_DIR = Path("data/asl1000/features_cache")
 CACHE_DIR.mkdir(exist_ok=True)
 
 def extract_features(csv_path, out_csv_path):
@@ -47,14 +47,14 @@ def extract_features(csv_path, out_csv_path):
 
 if __name__ == "__main__":
     extract_features(
-        "ASL_Citizen/train_labeled.csv",
-        "ASL_Citizen/train_features.csv"
+        "data/asl1000/train_labeled.csv",
+        "data/asl1000/train_features.csv"
     )
     extract_features(
-        "ASL_Citizen/val_labeled.csv",
-        "ASL_Citizen/val_features.csv"
+        "data/asl1000/val_labeled.csv",
+        "data/asl1000/val_features.csv"
     )
     extract_features(
-        "ASL_Citizen/test_labeled.csv",
-        "ASL_Citizen/test_features.csv"
+        "data/asl1000/test_labeled.csv",
+        "data/asl1000/test_features.csv"
     )
