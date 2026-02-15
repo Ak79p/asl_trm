@@ -12,7 +12,7 @@ venv/
 .DS_Store
 
 # Checkpoints & large files
-checkpoints/
+# checkpoints/
 # data/**/features_cache/
 
 # Logs
