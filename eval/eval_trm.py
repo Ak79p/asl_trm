@@ -15,8 +15,33 @@ from data.datasets import DatasetConfig
 # -------------------------
 class ASLDataset(Dataset):
     def __init__(self, csv_path, dataset_root):
-        self.df = pd.read_csv(csv_path)
         self.dataset_root = Path(dataset_root)
+
+        df = pd.read_csv(csv_path)
+
+        original_len = len(df)
+
+        # 🔥 1. Remove rows with NaN feature paths
+        df = df[df["feature_path"].notna()]
+
+        # 🔥 2. Ensure feature path is string
+        df = df[df["feature_path"].apply(lambda x: isinstance(x, str))]
+
+        # 🔥 3. Remove rows where feature file does not exist
+        valid_rows = []
+        for _, row in df.iterrows():
+            feature_path = Path(row["feature_path"])
+            if not feature_path.is_absolute():
+                feature_path = self.dataset_root / feature_path
+
+            if feature_path.exists():
+                valid_rows.append(row)
+
+        self.df = pd.DataFrame(valid_rows).reset_index(drop=True)
+
+        removed = original_len - len(self.df)
+        if removed > 0:
+            print(f"⚠️ Removed {removed} invalid samples from dataset")
 
     def __len__(self):
         return len(self.df)
@@ -28,10 +53,7 @@ class ASLDataset(Dataset):
         if not feature_path.is_absolute():
             feature_path = self.dataset_root / feature_path
 
-        if not feature_path.exists():
-            raise FileNotFoundError(f"Missing feature file: {feature_path}")
-
-        x = torch.load(feature_path)   # (T, J, D)
+        x = torch.load(feature_path)
         y = int(row["class_id"])
 
         # Flatten joints if needed → (T, J*D)
@@ -100,10 +122,13 @@ def main():
     # Data
     # -------------------------
     test_ds = ASLDataset(cfg.test_csv, cfg.root)
+    print(f"📊 Valid test samples: {len(test_ds)}")
+
     test_loader = DataLoader(
         test_ds,
         batch_size=args.batch_size,
-        shuffle=False
+        shuffle=False,
+        num_workers=0  # safer for debugging large datasets
     )
 
     # -------------------------
@@ -118,7 +143,6 @@ def main():
     )
 
     print(f"📦 Loading checkpoint: {ckpt_path}")
-    
     state = torch.load(ckpt_path, map_location=device)
 
     ckpt_classes = state["classifier.weight"].shape[0]
@@ -135,8 +159,6 @@ def main():
         state["classifier.bias"]   = state["classifier.bias"][:dataset_classes]
 
     model.load_state_dict(state, strict=False)
-
-    
     model.eval()
 
     criterion = nn.CrossEntropyLoss()
