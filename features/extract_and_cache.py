@@ -8,53 +8,71 @@ from features.video_to_keypoints import extract_video_keypoints
 from features.build_tensor import build_feature_tensor
 
 
-CACHE_DIR = Path("data/asl1000/features_cache")
-CACHE_DIR.mkdir(exist_ok=True)
+CACHE_DIR = Path("data/asl2000/features_cache")
+CACHE_DIR.mkdir(parents=True, exist_ok=True)
+
+FEATURE_PREFIX = "features_cache"  
+
 
 def extract_features(csv_path, out_csv_path):
     df = pd.read_csv(csv_path)
-    feature_paths = []
 
-    print(f"\n🔨 Extracting features for {len(df)} videos\n")
+    print(f"\n🔨 Processing {len(df)} videos from {csv_path}\n")
+
+    feature_paths = []
+    extracted_count = 0
+    reused_count = 0
+    skipped_count = 0
 
     for _, row in tqdm(df.iterrows(), total=len(df)):
         video_path = Path(row["video_path"])
-        video_id = Path(video_path).stem  # filename without .mp4
+        video_id = video_path.stem
         out_path = CACHE_DIR / f"{video_id}.pt"
 
-        # reuse if already exists
+        csv_feature_path = f"{FEATURE_PREFIX}/{video_id}.pt"
+
+        # If already exists → reuse
         if out_path.exists():
-            feature_paths.append(str(out_path))
+            reused_count += 1
+            feature_paths.append(csv_feature_path)
             continue
 
-        # kps = extract_video_keypoints(video_path)
         try:
             kps = extract_video_keypoints(video_path)
             X = build_feature_tensor(kps)
+
+            torch.save(torch.from_numpy(X), out_path)
+
+            extracted_count += 1
+            feature_paths.append(csv_feature_path)
+
         except Exception as e:
             print(f"⚠️ Skipping {video_path.name}: {e}")
-            continue
-
-        X = build_feature_tensor(kps)
-
-        torch.save(torch.from_numpy(X), out_path)
-        feature_paths.append(str(out_path))
+            skipped_count += 1
+            feature_paths.append("")  # keep row alignment
 
     df["feature_path"] = feature_paths
     df.to_csv(out_csv_path, index=False)
 
-    print(f"\n✅ Saved updated CSV → {out_csv_path}")
+    print("\n===== Summary =====")
+    print(f"Reused existing: {reused_count}")
+    print(f"Newly extracted: {extracted_count}")
+    print(f"Skipped: {skipped_count}")
+    print(f"✅ Saved updated CSV → {out_csv_path}\n")
+
 
 if __name__ == "__main__":
     extract_features(
-        "data/asl1000/train_labeled.csv",
-        "data/asl1000/train_features.csv"
+        "data/asl2000/train_labeled.csv",
+        "data/asl2000/train_features.csv"
     )
+
     extract_features(
-        "data/asl1000/val_labeled.csv",
-        "data/asl1000/val_features.csv"
+        "data/asl2000/val_labeled.csv",
+        "data/asl2000/val_features.csv"
     )
+
     extract_features(
-        "data/asl1000/test_labeled.csv",
-        "data/asl1000/test_features.csv"
+        "data/asl2000/test_labeled.csv",
+        "data/asl2000/test_features.csv"
     )
