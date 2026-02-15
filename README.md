@@ -163,7 +163,7 @@ python -m inference.infer_video \
 
 This project uses the ASL-Citizen dataset created by Microsoft. It includes:
 
-- Thousands of sign language videos
+- 83,339 sign language videos
 - Gloss annotations for each video
 - Multiple signers and variations
 - Rich vocabulary suitable for real-world ASL tasks
