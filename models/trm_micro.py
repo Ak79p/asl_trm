@@ -4,23 +4,23 @@ import torch.nn as nn
 
 class TRMMicro(nn.Module):
     """
-    TRM-Micro with GATED Local + Global Reasoning
+    TRM-Micro with SHARED GATED Local + Global Reasoning
 
-    Local  : Z ⟲ Z
-    Global : Z ⟲ (Z + Frames)  [gated residual]
+    Local  : Z ⟲ Z        (runs 4 times)
+    Global : Z ⟲ (Z+Frames)  (runs 2 times, always active)
 
-    Starts as local-only, learns to activate global reasoning.
+    Uses ONE shared transformer layer for iterative reasoning.
     """
 
     def __init__(
         self,
         num_classes,
-        input_dim=384,      # J * D (48 joints × 8 dims)
+        input_dim=384,      # 48 joints × 8 dims
         dim=128,
         num_heads=4,
         num_z_tokens=8,
         local_steps=4,
-        global_steps=1      # keep small
+        global_steps=2
     ):
         super().__init__()
 
@@ -56,9 +56,9 @@ class TRMMicro(nn.Module):
         )
 
         # -------------------------
-        # Local reasoning (Z ⟲ Z)
+        # Shared Reasoning Layer
         # -------------------------
-        self.local_reason_layer = nn.TransformerEncoderLayer(
+        self.reason_layer = nn.TransformerEncoderLayer(
             d_model=dim,
             nhead=num_heads,
             dim_feedforward=dim * 2,
@@ -66,19 +66,8 @@ class TRMMicro(nn.Module):
             dropout=0.1
         )
 
-        # -------------------------
-        # Global reasoning (Z ⟲ Z+X)
-        # -------------------------
-        self.global_reason_layer = nn.TransformerEncoderLayer(
-            d_model=dim,
-            nhead=num_heads,
-            dim_feedforward=dim * 2,
-            batch_first=True,
-            dropout=0.1
-        )
-
-        # 🔑 GATE (learned, starts closed)
-        self.global_gate = nn.Parameter(torch.tensor(0.0))
+        # Learned gate (initialized slightly open)
+        self.global_gate = nn.Parameter(torch.tensor(0.1))
 
         # -------------------------
         # Post fusion
@@ -104,11 +93,6 @@ class TRMMicro(nn.Module):
     # Forward
     # -------------------------
     def forward(self, x):
-        """
-        x:
-          (B, T, J, D)  → keypoints
-          (B, T, D)     → flattened
-        """
 
         # -------- Input handling --------
         if x.dim() == 4:
@@ -125,23 +109,19 @@ class TRMMicro(nn.Module):
 
         # -------- Latent tokens --------
         z = self.z_tokens.expand(B, -1, -1)  # (B, Z, dim)
-        z0 = z                               # keep original Z
 
-        # -------- Local reasoning --------
+        # -------- Local reasoning (4x) --------
         for _ in range(self.local_steps):
-            z = self.local_reason_layer(z)
+            z = self.reason_layer(z)
 
-        # -------- Global reasoning (GATED) --------
-        gate = torch.tanh(self.global_gate)  # ∈ (-1, 1)
+        # -------- Global reasoning (2x always) --------
+        gate = torch.tanh(self.global_gate)
 
-        if gate.abs() > 1e-4:
-            for _ in range(self.global_steps):
-                zx = torch.cat([z, x], dim=1)       # (B, Z+T, dim)
-                zx = self.global_reason_layer(zx)
-                z_new = zx[:, :self.num_z_tokens]   # keep Z only
-
-                # 🔒 gated residual update
-                z = z + gate * z_new
+        for _ in range(self.global_steps):
+            zx = torch.cat([z, x], dim=1)       # (B, Z+T, dim)
+            zx = self.reason_layer(zx)
+            z_new = zx[:, :self.num_z_tokens]
+            z = z + gate * z_new
 
         # -------- Final fusion --------
         x = torch.cat([z, x], dim=1)
