@@ -124,35 +124,38 @@ python -m inference.infer_video \
 ```
 ---
 
-## TRM-Micro (6K params):
-Total parameters     : 619,700
-Trainable parameters : 619,700
-
-Output includes:
-- Top-1 predicted gloss + confidence
-- Top-5 predictions
-- Top-10 predictions
-
----
-
 ## 📈 Results
+
+### ASL-100 Evaluation
+| Metric    | Score      |
+| --------- | ---------- |
+| Top-1     | **71.55%** |
+| Top-5     | **89.09%** |
+| Top-10    | **92.67%** |
 
 ### ASL-300 Evaluation
 
 | Metric    | Score      |
 | --------- | ---------- |
-| Test Loss | **1.4970** |
-| Top-1     | **68.57%** |
-| Top-5     | **87.13%** |
-| Top-10    | **90.90%** |
+| Top-1     | **70.23%** |
+| Top-5     | **88.54%** |
+| Top-10    | **92.06%** |
 
-### ASL-100 Evaluation
+### ASL-1000 Evaluation
+
 | Metric    | Score      |
 | --------- | ---------- |
-| Test Loss | **1.2285** |
-| Top-1     | **72.87%** |
-| Top-5     | **89.24%** |
-| Top-10    | **92.89%** |
+| Top-1     | **62.94%** |
+| Top-5     | **83.06%** |
+| Top-10    | **87.29%** |
+
+### ASL-2000 Evaluation
+
+| Metric    | Score      |
+| --------- | ---------- |
+| Top-1     | **57.56%** |
+| Top-5     | **80.14%** |
+| Top-10    | **85.11%** |
 
 ---
 
@@ -175,9 +178,12 @@ Dataset details and downloads available here:
 
 ## 🛣️ Pending work
 
-- Support for ASL-1000 and ASL-2000
-- Sentence formation layer
-- Development of asl webapp
+- Further experimentation with TRM-ASL model for improvements.
+- Implement a sentence formation layer to convert recognized word sequences into coherent textual output.
+- Deploy the user interface (currently internal) as a publicly accessible application.
+- Extend the dataset to include sentence-level ASL videos and improve stop-sign detection for accurate gesture segmentation.
+- Optimize system latency and robustness to support reliable real-time performance.
+
 
 ---
 
