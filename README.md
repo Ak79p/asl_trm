@@ -69,6 +69,12 @@ pip install -r requirements.txt
 
 ---
 
+## Features
+
+Download features and place the subsets in data/ folder
+
+---
+
 ## 🏋️ Training
 
 ### Train on ASL-300
