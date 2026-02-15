@@ -4,8 +4,9 @@ ASL-TRM is a **lightweight, Transformer-based gesture recognition framework** bu
 
 This project uses the **ASL-Citizen dataset** from Microsoft, a large collection of sign language video samples and corresponding gloss annotations.
 
-🔗 **Dataset:** https://www.microsoft.com/en-us/research/project/asl-citizen/  
-🔗 **Dataset Description:** https://www.microsoft.com/en-us/research/project/asl-citizen/dataset-description/
+🔗 [**Dataset**](https://www.microsoft.com/en-us/research/project/asl-citizen/) 
+
+🔗 [**Dataset Description**](https://www.microsoft.com/en-us/research/project/asl-citizen/dataset-description/)
 
 ---
 
@@ -47,11 +48,14 @@ This architecture enables strong temporal modeling with **≈486K parameters** w
 
 ---
 
-## 📊 Model Size
+## 📊 TRM-Micro Model Size
 
-| Model       | Total Parameters | Trainable Parameters |
-|-------------|------------------|----------------------|
-| TRM-Micro   | 486,700          | 486,700              |
+| Vocab size | Total Parameters |
+|------------------|----------------------|
+| ASL 100       | 460,901             |
+| ASL 300       | 486,701            |
+| ASL 1000      | 577,001           |
+| ASL 2000       | 706,001            |
 
 
 ---
