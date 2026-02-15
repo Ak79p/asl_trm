@@ -19,7 +19,7 @@ data/**/features_cache/
 *.log
 
 # Media
-*.mp4
+# *.mp4
 
 # Notebooks
 .ipynb_checkpoints/
