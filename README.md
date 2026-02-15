@@ -71,7 +71,7 @@ pip install -r requirements.txt
 
 ## Features
 
-Download features and place the subsets in data/ folder
+Download [features](https://drive.google.com/drive/folders/16r4aMdcO1GafDxgjPulrwnC-8vO8ECch?usp=drive_link) and place the subsets in data/ folder
 
 ---
 
