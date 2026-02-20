@@ -66,6 +66,7 @@ python -m train.train --dataset asl300
 
 - To evaluate on custom checkpoints
 ```bash
-python -m eval.eval_trm_micro --dataset asl300 --checkpoint checkpoints/asl300/best_model.pt
+python -m eval.eval_trm --dataset asl300 --checkpoint checkpoints/asl300/best_model.pt
 ```
+
 
