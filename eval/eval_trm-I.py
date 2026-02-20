@@ -1,12 +1,10 @@
 import argparse
 from pathlib import Path
-import os
 
 import torch
 import torch.nn as nn
 import pandas as pd
 from torch.utils.data import DataLoader, Dataset
-from torch.utils.tensorboard import SummaryWriter
 
 from models.trm_micro import TRMMicro
 from data.datasets import DatasetConfig
@@ -20,11 +18,16 @@ class ASLDataset(Dataset):
         self.dataset_root = Path(dataset_root)
 
         df = pd.read_csv(csv_path)
+
         original_len = len(df)
 
+        # 🔥 1. Remove rows with NaN feature paths
         df = df[df["feature_path"].notna()]
+
+        # 🔥 2. Ensure feature path is string
         df = df[df["feature_path"].apply(lambda x: isinstance(x, str))]
 
+        # 🔥 3. Remove rows where feature file does not exist
         valid_rows = []
         for _, row in df.iterrows():
             feature_path = Path(row["feature_path"])
@@ -53,6 +56,7 @@ class ASLDataset(Dataset):
         x = torch.load(feature_path)
         y = int(row["class_id"])
 
+        # Flatten joints if needed → (T, J*D)
         if x.ndim == 3:
             x = x.view(x.shape[0], -1)
 
@@ -79,21 +83,6 @@ def accuracy(logits, targets, topk=(1, 5, 10)):
 
 
 # -------------------------
-# Utility: Find Latest Checkpoint
-# -------------------------
-def get_latest_checkpoint(dataset):
-    ckpt_dir = Path("checkpoints") / f"trm_micro_{dataset}"
-    if not ckpt_dir.exists():
-        raise FileNotFoundError(f"No checkpoint directory found for {dataset}")
-
-    ckpts = sorted(ckpt_dir.glob("best_model_*.pt"))
-    if not ckpts:
-        raise FileNotFoundError("No checkpoints found")
-
-    return ckpts[-1]
-
-
-# -------------------------
 # Main
 # -------------------------
 def main():
@@ -103,15 +92,25 @@ def main():
         required=True,
         choices=["asl100", "asl300", "asl1000", "asl2000"]
     )
-    parser.add_argument("--checkpoint", default=None)
+    parser.add_argument(
+        "--checkpoint",
+        default=None,
+        help="Override checkpoint path"
+    )
     parser.add_argument("--batch_size", type=int, default=32)
     args = parser.parse_args()
 
+    # -------------------------
+    # Dataset config
+    # -------------------------
     cfg = DatasetConfig(args.dataset)
 
     print(f"\n🧪 Evaluating dataset: {cfg}")
     print(f"Classes: {cfg.num_classes}\n")
 
+    # -------------------------
+    # Device
+    # -------------------------
     device = (
         "cuda" if torch.cuda.is_available()
         else "mps" if torch.backends.mps.is_available()
@@ -119,6 +118,9 @@ def main():
     )
     print(f"🖥 Device: {device}")
 
+    # -------------------------
+    # Data
+    # -------------------------
     test_ds = ASLDataset(cfg.test_csv, cfg.root)
     print(f"📊 Valid test samples: {len(test_ds)}")
 
@@ -126,34 +128,38 @@ def main():
         test_ds,
         batch_size=args.batch_size,
         shuffle=False,
-        num_workers=0
+        num_workers=0  # safer for debugging large datasets
     )
 
+    # -------------------------
+    # Model
+    # -------------------------
     model = TRMMicro(num_classes=cfg.num_classes).to(device)
 
-    # -------------------------
-    # Load checkpoint
-    # -------------------------
-    if args.checkpoint:
-        ckpt_path = Path(args.checkpoint)
-    else:
-        ckpt_path = get_latest_checkpoint(args.dataset)
+    ckpt_path = (
+        args.checkpoint
+        if args.checkpoint
+        else Path("checkpoints") / args.dataset / "best_model.pt"
+    )
 
     print(f"📦 Loading checkpoint: {ckpt_path}")
+    state = torch.load(ckpt_path, map_location=device)
 
-    checkpoint = torch.load(ckpt_path, map_location=device)
+    ckpt_classes = state["classifier.weight"].shape[0]
+    dataset_classes = cfg.num_classes
 
-    model.load_state_dict(checkpoint["model_state"], strict=False)
+    if ckpt_classes != dataset_classes:
+        print(
+            f"⚠️ Class mismatch detected: "
+            f"checkpoint={ckpt_classes}, dataset={dataset_classes}"
+        )
+        print("✂️ Trimming classifier weights to active classes")
+
+        state["classifier.weight"] = state["classifier.weight"][:dataset_classes]
+        state["classifier.bias"]   = state["classifier.bias"][:dataset_classes]
+
+    model.load_state_dict(state, strict=False)
     model.eval()
-
-    log_dir = checkpoint.get("log_dir", None)
-
-    if log_dir:
-        writer = SummaryWriter(log_dir=log_dir)
-        print(f"📊 Logging test metrics to: {log_dir}")
-    else:
-        writer = None
-        print("⚠️ No log_dir found in checkpoint — skipping TensorBoard logging")
 
     criterion = nn.CrossEntropyLoss()
 
@@ -178,27 +184,16 @@ def main():
     targets = torch.cat(all_targets)
 
     acc = accuracy(logits, targets)
-    test_loss = total_loss / len(test_loader)
 
     # -------------------------
     # Report
     # -------------------------
     print("\n===== TEST RESULTS =====")
-    print(f"Test Loss : {test_loss:.4f}")
+    print(f"Test Loss : {total_loss / len(test_loader):.4f}")
     print(f"Top-1     : {acc[1]*100:.2f}%")
     print(f"Top-5     : {acc[5]*100:.2f}%")
     print(f"Top-10    : {acc[10]*100:.2f}%")
     print("========================\n")
-
-    # -------------------------
-    # TensorBoard Logging
-    # -------------------------
-    if writer:
-        writer.add_scalar("Loss/Test", test_loss, 0)
-        writer.add_scalar("Accuracy/Test_Top1", acc[1], 0)
-        writer.add_scalar("Accuracy/Test_Top5", acc[5], 0)
-        writer.add_scalar("Accuracy/Test_Top10", acc[10], 0)
-        writer.close()
 
 
 if __name__ == "__main__":

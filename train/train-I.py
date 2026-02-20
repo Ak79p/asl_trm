@@ -1,12 +1,9 @@
 import argparse
-import os
-import datetime
 from pathlib import Path
 
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
-from torch.utils.tensorboard import SummaryWriter
 import pandas as pd
 from tqdm import tqdm
 
@@ -39,6 +36,7 @@ class ASLDataset(torch.utils.data.Dataset):
         y = int(row["class_id"])
 
         return x.float(), y
+
 
 
 # -------------------------
@@ -115,6 +113,7 @@ def main():
         "--dataset",
         required=True,
         choices=["asl100", "asl300", "asl1000", "asl2000"],
+        help="Dataset to train on"
     )
     parser.add_argument("--epochs", type=int, default=60)
     parser.add_argument("--batch_size", type=int, default=32)
@@ -144,6 +143,7 @@ def main():
     # -------------------------
     train_ds = ASLDataset(cfg.train_csv, cfg.root)
     val_ds   = ASLDataset(cfg.val_csv, cfg.root)
+    # test_ds  = ASLDataset(cfg.test_csv, cfg.root)
 
     train_loader = DataLoader(
         train_ds,
@@ -180,25 +180,12 @@ def main():
     )
 
     # -------------------------
-    # TensorBoard + Checkpoint Setup
-    # -------------------------
-    best_top1 = 0.0
-    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-
-    # TensorBoard logs
-    log_dir = Path("runs") / f"trm_micro_{args.dataset}" / timestamp
-    log_dir.mkdir(parents=True, exist_ok=True)
-    writer = SummaryWriter(log_dir=str(log_dir))
-    print(f"📊 TensorBoard logging at: {log_dir}")
-
-    # Checkpoints
-    ckpt_dir = Path(args.out_dir) / f"trm_micro_{args.dataset}"
-    ckpt_dir.mkdir(parents=True, exist_ok=True)
-    checkpoint_path = ckpt_dir / f"best_model_{timestamp}.pt"
-
-    # -------------------------
     # Training loop
     # -------------------------
+    best_top1 = 0.0
+    out_dir = Path(args.out_dir) / args.dataset
+    out_dir.mkdir(parents=True, exist_ok=True)
+
     for epoch in range(1, args.epochs + 1):
         print(f"\n===== Epoch {epoch}/{args.epochs} =====")
 
@@ -218,31 +205,13 @@ def main():
             f"Top-10: {acc[10]*100:.2f}%"
         )
 
-        # ---- TensorBoard Logging ----
-        writer.add_scalar("Loss/Train", train_loss, epoch)
-        writer.add_scalar("Loss/Val", val_loss, epoch)
-        writer.add_scalar("Accuracy/Val_Top1", acc[1], epoch)
-        writer.add_scalar("Accuracy/Val_Top5", acc[5], epoch)
-        writer.add_scalar("Accuracy/Val_Top10", acc[10], epoch)
-        writer.add_scalar("LearningRate", optimizer.param_groups[0]["lr"], epoch)
-
-        # ---- Save Best Model ----
         if acc[1] > best_top1:
             best_top1 = acc[1]
-
             torch.save(
-                {
-                    "model_state": model.state_dict(),
-                    "dataset": args.dataset,
-                    "val_top1": best_top1,
-                    "log_dir": str(log_dir)
-                },
-                checkpoint_path
+                model.state_dict(),
+                out_dir / "best_model.pt"
             )
-
             print("✅ Saved new best model")
-
-    writer.close()
 
     print(f"\n🏁 Training complete. Best Top-1: {best_top1*100:.2f}%\n")
 
