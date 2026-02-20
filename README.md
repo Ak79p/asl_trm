@@ -4,12 +4,8 @@
 ---
 
 ## Feature files:
-[wlasl100](https://drive.google.com/drive/folders/17-7Y7ofXFbIksLnoWpfz5lM-jAtQWI4o?usp=drive_link)
-[wlasl300](https://drive.google.com/drive/folders/1HkS0fyUyg5OeiwAXJQI6RqRp0otLoxvX?usp=sharing)
-[wlasl1000](https://drive.google.com/drive/folders/10Oxx3riZpxXl22d63UXjIHi8kFr2Dbhj?usp=sharing)
-[wlasl2000](https://drive.google.com/drive/folders/1X4wniK7-1nVPxDguT5jl9EanehtIKbsC?usp=sharing)
 
-Place these feature files in respective dataclass folders.
+Place these [feature](https://drive.google.com/drive/folders/1ux0Rw--u7az2avld-O9U0cGItzGKrGw3?usp=sharing) files in respective dataclass folders.
 
 After placing the feature files you should have:
 - data/asl100/features_cache/
@@ -72,3 +68,4 @@ python -m train.train --dataset asl300
 ```bash
 python -m eval.eval_trm_micro --dataset asl300 --checkpoint checkpoints/asl300/best_model.pt
 ```
+
