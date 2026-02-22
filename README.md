@@ -75,11 +75,19 @@ pip install -r requirements.txt
 
 ## Features
 
-Download [features](https://drive.google.com/drive/folders/16r4aMdcO1GafDxgjPulrwnC-8vO8ECch?usp=drive_link) and place the subsets in data/ folder
+Download [features](https://drive.google.com/file/d/1dED4DEU5G0KBTgFJkw0gy20561y5q98Z/view?usp=drive_link) and place the subsets in data/ folder
+
+After unzipping features_cache in data/ 
+```bash
+cd data
+python build_dataset_feature_cache.py --dataset asl100
+```
+The above command will generate feature files for model training and evaluation
 
 ---
 
 ## 🏋️ Training
+Run from root
 
 ### Train on ASL-300
 ```bash
