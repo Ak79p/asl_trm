@@ -80,7 +80,7 @@ Download [features](https://drive.google.com/file/d/1dED4DEU5G0KBTgFJkw0gy20561y
 After unzipping features_cache in data/ 
 ```bash
 cd data
-python build_dataset_feature_cache.py --dataset asl100
+python build_features.py --dataset asl100
 ```
 The above command will generate feature files for model training and evaluation
 
