@@ -1,7 +1,5 @@
 import argparse
-import json
 from pathlib import Path
-
 import torch
 import torch.nn.functional as F
 
@@ -12,26 +10,28 @@ from features.build_tensor import build_feature_tensor
 
 
 # -------------------------
-# Utils
+# Robust checkpoint loader
 # -------------------------
-def load_label_maps(label_map):
-    id_to_gloss = {v: k for k, v in label_map.items()}
-    return id_to_gloss
+def load_checkpoint_safely(path, device):
+    raw_state = torch.load(path, map_location=device)
 
+    print("\n🔎 RAW CHECKPOINT KEYS:", list(raw_state.keys()))
 
-def trim_classifier_if_needed(model, state, num_classes):
-    ckpt_classes = state["classifier.weight"].shape[0]
+    # Correct key detection
+    if "model_state" in raw_state:
+        state = raw_state["model_state"]
+    elif "model_state_dict" in raw_state:
+        state = raw_state["model_state_dict"]
+    elif "state_dict" in raw_state:
+        state = raw_state["state_dict"]
+    elif "model" in raw_state:
+        state = raw_state["model"]
+    else:
+        state = raw_state
 
-    if ckpt_classes != num_classes:
-        print(
-            f"⚠️ Class mismatch: checkpoint={ckpt_classes}, dataset={num_classes}"
-        )
-        print("✂️ Trimming classifier weights")
+    print("\n🔎 STATE DICT SAMPLE KEYS:", list(state.keys())[:10])
 
-        state["classifier.weight"] = state["classifier.weight"][:num_classes]
-        state["classifier.bias"]   = state["classifier.bias"][:num_classes]
-
-    model.load_state_dict(state, strict=False)
+    return state
 
 
 # -------------------------
@@ -39,34 +39,24 @@ def trim_classifier_if_needed(model, state, num_classes):
 # -------------------------
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--video", required=True, help="Path to video file")
+    parser.add_argument("--video", required=True)
     parser.add_argument(
         "--dataset",
         required=True,
         choices=["asl100", "asl300", "asl1000", "asl2000"]
     )
-    parser.add_argument(
-        "--checkpoint",
-        default=None,
-        help="Override checkpoint path"
-    )
+    parser.add_argument("--checkpoint", default=None)
     parser.add_argument("--topk", type=int, default=10)
     args = parser.parse_args()
 
     video_path = Path(args.video)
     assert video_path.exists(), f"Video not found: {video_path}"
 
-    # -------------------------
-    # Dataset config
-    # -------------------------
     cfg = DatasetConfig(args.dataset)
 
-    print(f"\n🎥 Inference on video: {video_path.name}")
+    print(f"\n🎥 Video: {video_path.name}")
     print(f"📚 Dataset: {cfg.name} ({cfg.num_classes} classes)\n")
 
-    # -------------------------
-    # Device
-    # -------------------------
     device = (
         "cuda" if torch.cuda.is_available()
         else "mps" if torch.backends.mps.is_available()
@@ -75,42 +65,60 @@ def main():
     print(f"🖥 Device: {device}")
 
     # -------------------------
-    # Load model
+    # Model
     # -------------------------
     model = TRMMicro(num_classes=cfg.num_classes).to(device)
 
     ckpt_path = (
-        args.checkpoint
+        Path(args.checkpoint)
         if args.checkpoint
         else Path("checkpoints") / cfg.name / "best_model.pt"
     )
 
     print(f"📦 Loading checkpoint: {ckpt_path}")
 
-    state = torch.load(ckpt_path, map_location=device)
-    trim_classifier_if_needed(model, state, cfg.num_classes)
+    state = load_checkpoint_safely(ckpt_path, device)
+
+    # Check classifier sizes
+    if "classifier.weight" in state:
+        print("\n🔎 Checkpoint classifier shape:",
+              state["classifier.weight"].shape)
+    else:
+        print("\n⚠️ classifier.weight not found in checkpoint!")
+
+    print("🔎 Model classifier shape:",
+          model.classifier.weight.shape)
+
+    try:
+        model.load_state_dict(state, strict=False)
+        print("✅ Model loaded successfully.\n")
+    except Exception as e:
+        print("❌ Error loading state dict:", e)
+        return
 
     model.eval()
-
-    # -------------------------
-    # Label maps
-    # -------------------------
-    id_to_gloss = load_label_maps(cfg.label_map)
 
     # -------------------------
     # Feature extraction
     # -------------------------
     print("🔍 Extracting keypoints...")
     kps = extract_video_keypoints(video_path)
+    print("🔎 Raw keypoints shape:", kps.shape)
 
     print("🧱 Building feature tensor...")
-    X = build_feature_tensor(kps)          # (T, J, D)
+    X = build_feature_tensor(kps)
+    print("🔎 Feature tensor shape (before torch):", X.shape)
+
     X = torch.from_numpy(X).float()
 
     if X.ndim == 3:
-        X = X.view(X.shape[0], -1)          # (T, J*D)
+        print("🔎 Flattening (T, J, D) → (T, J*D)")
+        X = X.view(X.shape[0], -1)
 
-    X = X.unsqueeze(0).to(device)           # (1, T, D)
+    print("🔎 Final input shape before batch:", X.shape)
+
+    X = X.unsqueeze(0).to(device)
+    print("🔎 Input shape fed to model:", X.shape)
 
     # -------------------------
     # Forward
@@ -119,17 +127,20 @@ def main():
         logits = model(X).squeeze(0)
         probs = F.softmax(logits, dim=0)
 
+    print("\n🔎 Logits shape:", logits.shape)
+
     # -------------------------
-    # Top-K results
+    # Top-K
     # -------------------------
     topk = min(args.topk, cfg.num_classes)
     values, indices = probs.topk(topk)
 
+    id_to_gloss = {v: k for k, v in cfg.label_map.items()}
+
     print("\n===== PREDICTIONS =====")
     for rank, (idx, score) in enumerate(zip(indices, values), 1):
-        gloss = id_to_gloss[idx.item()]
+        gloss = id_to_gloss.get(idx.item(), "UNKNOWN")
         print(f"Top-{rank:<2} {gloss:<20} {score.item()*100:6.2f}%")
-
     print("=======================\n")
 
 
