@@ -115,7 +115,7 @@ python -m eval.eval_trm --dataset asl100
 
 ### Evaluate with custom checkpoint
 ```bash
-python -m eval.eval_trm_micro \
+python -m eval.eval_trm \
   --dataset asl300 \
   --checkpoint checkpoints/asl300/best_model.pt
 ```
