@@ -3,7 +3,7 @@ from pathlib import Path
 import torch
 import torch.nn.functional as F
 
-from asl_trm.models.trm_micro_v1 import TRMMicro
+from models.trm_micro import TRMMicro
 from data.datasets import DatasetConfig
 from features.video_to_keypoints import extract_video_keypoints
 from features.build_tensor import build_feature_tensor
