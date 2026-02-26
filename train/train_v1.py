@@ -10,7 +10,7 @@ from torch.utils.tensorboard import SummaryWriter
 import pandas as pd
 from tqdm import tqdm
 
-from models.trm_micro_v1 import TRMMicro
+from models.trm_micro import TRMMicro
 from data.datasets import DatasetConfig
 
 
