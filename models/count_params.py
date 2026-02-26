@@ -1,5 +1,5 @@
 import torch
-from models.trm_micro import TRMMicro
+from asl_trm.models.trm_micro_v1 import TRMMicro
 
 def count_parameters(model):
     total = 0
@@ -19,7 +19,7 @@ def count_parameters(model):
 
 
 def main():
-    num_classes = 300
+    # num_classes = 300
     # model = BaselineTransformer(num_classes=num_classes)
     # model = TRMLite(num_classes=num_classes)
     model = TRMMicro(num_classes=2000)

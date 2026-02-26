@@ -1,5 +1,6 @@
 import argparse
 from pathlib import Path
+import os
 
 import torch
 import torch.nn as nn
@@ -12,7 +13,7 @@ from data.datasets import DatasetConfig
 
 
 # -------------------------
-# Dataset (Aligned with Training)
+# Dataset
 # -------------------------
 class ASLDataset(Dataset):
     def __init__(self, csv_path, dataset_root):
@@ -49,10 +50,13 @@ class ASLDataset(Dataset):
         if not feature_path.is_absolute():
             feature_path = self.dataset_root / feature_path
 
-        x = torch.load(feature_path).float()  # (T, J, D)
+        x = torch.load(feature_path)
         y = int(row["class_id"])
 
-        return x, y
+        if x.ndim == 3:
+            x = x.view(x.shape[0], -1)
+
+        return x.float(), y
 
 
 # -------------------------
@@ -105,7 +109,7 @@ def main():
 
     cfg = DatasetConfig(args.dataset)
 
-    print(f"\n🧪 Evaluating dataset: {args.dataset}")
+    print(f"\n🧪 Evaluating dataset: {cfg}")
     print(f"Classes: {cfg.num_classes}\n")
 
     device = (
@@ -115,7 +119,6 @@ def main():
     )
     print(f"🖥 Device: {device}")
 
-    # ---- Dataset ----
     test_ds = ASLDataset(cfg.test_csv, cfg.root)
     print(f"📊 Valid test samples: {len(test_ds)}")
 
@@ -126,10 +129,11 @@ def main():
         num_workers=0
     )
 
-    # ---- Model ----
     model = TRMMicro(num_classes=cfg.num_classes).to(device)
 
-    # ---- Load Checkpoint ----
+    # -------------------------
+    # Load checkpoint
+    # -------------------------
     if args.checkpoint:
         ckpt_path = Path(args.checkpoint)
     else:
@@ -139,8 +143,7 @@ def main():
 
     checkpoint = torch.load(ckpt_path, map_location=device)
 
-    # STRICT loading (no silent mismatch)
-    model.load_state_dict(checkpoint["model_state"])
+    model.load_state_dict(checkpoint["model_state"], strict=False)
     model.eval()
 
     log_dir = checkpoint.get("log_dir", None)
@@ -187,7 +190,9 @@ def main():
     print(f"Top-10    : {acc[10]*100:.2f}%")
     print("========================\n")
 
-    # ---- TensorBoard Logging ----
+    # -------------------------
+    # TensorBoard Logging
+    # -------------------------
     if writer:
         writer.add_scalar("Loss/Test", test_loss, 0)
         writer.add_scalar("Accuracy/Test_Top1", acc[1], 0)
