@@ -8,31 +8,11 @@ At its core, ASL-TRM leverages an efficient architecture, TRM-Micro, designed fo
 
 ## 📦 Architecture Overview
 
-### High-Level Pipeline
-```bash
-Video (.mp4)
-↓
-MediaPipe Holistic Keypoint Extraction
-↓
-Temporal Normalization + Motion Encoding
-↓
-Feature Tensor (Frames × Joints × Features)
-↓
-Input Projection
-↓
-Pre-Encoder Transformer
-↓
-Latent Z-Token Reasoning Block
-↓
-Post-Encoder Transformer
-↓
-Global Pooling
-↓
-Classifier → Gloss Prediction
-```
-
+![Arch diagram](./assets/arch.jpeg)
 
 ### TRM-Micro (Efficient Transformer Model)
+
+![Arch diagram](./assets/trm-micro.jpeg)
 
 - **Input Representation:** Pose + motion features per frame
 - **Pre-Encoder:** Light temporal processing
