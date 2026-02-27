@@ -34,6 +34,38 @@ This project uses the **ASL-Citizen dataset** from Microsoft, a large collection
 
 ---
 
+## Model Evaluation
+
+We evaluate TRM-Micro on multiple ASL classification benchmarks of increasing vocabulary size:
+- ASL 100
+- ASL 300
+- ASL 1000
+- ASL 2000
+
+### Evaluation Metrics
+
+We report Top-1, Top-5, and Top-10 accuracy:
+
+- Top-1 → Correct label is the highest-confidence prediction
+- Top-5 → Correct label appears within top 5 predictions
+- Top-10 → Correct label appears within top 10 predictions
+
+### TRM-Micro v2
+| Metric     | ASL 100 | ASL 300 | ASL 1000 | ASL 2000 |
+| ---------- | ------- | ------- | -------- | -------- |
+| **Top-1**  | 73.89%  | 70.67%  | 67.86%   | 64.15%   |
+| **Top-5**  | 89.98%  | 88.09%  | 86.38%   | 84.12%   |
+| **Top-10** | 93.01%  | 91.47%  | 90.22%   | 88.03%   |
+
+
+### TRM-Micro v1
+| Metric     | ASL 100 | ASL 300 | ASL 1000 | ASL 2000 |
+| ---------- | ------- | ------- | -------- | -------- |
+| **Top-1**  | 73.40%  | 67.31%  | 64.95%   | 59.28%   |
+| **Top-5**  | 88.63%  | 85.13%  | 83.72%   | 80.50%   |
+| **Top-10** | 92.41%  | 89.36%  | 88.23%   | 85.42%   |
+
+---
 ## 📊 TRM-Micro Model Size
 
 | Vocab size | Total Parameters |
@@ -49,14 +81,20 @@ This project uses the **ASL-Citizen dataset** from Microsoft, a large collection
 ## Installation
 
 ```bash
+# Clone the repo
+git clone https://github.com/Ak79p/asl_trm.git
+cd asl-trm
+
 # Create and activate virtual environment
 python -m venv venv
 source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
-```
 
+# Launch the Streamlit interface
+streamlit run app.py
+```
 ---
 
 ## Features
