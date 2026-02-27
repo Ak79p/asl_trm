@@ -17,4 +17,6 @@ matplotlib>=3.7
 
 # Optional
 einops>=0.7
- 
+
+
+streamlit>=1.20

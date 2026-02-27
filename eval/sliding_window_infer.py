@@ -58,7 +58,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--video", required=True)
     parser.add_argument("--dataset", required=True,
-                        choices=["asl100", "asl300", "asl1000", "asl2000"])
+                        choices=["asl100", "asl300", "asl1000", "asl2000", "app"])
     parser.add_argument("--checkpoint", required=True)
     parser.add_argument("--window", type=int, default=48)
     parser.add_argument("--stride", type=int, default=4)
