@@ -1,12 +1,8 @@
-# 🧠 ASL-TRM: Transformer Reasoning Model for ASL Gesture Recognition
+# ASL-TRM: Transformer Reasoning Model for ASL Gesture Recognition
 
-ASL-TRM is a **lightweight, Transformer-based gesture recognition framework** built for American Sign Language (ASL) classification using pose and motion features. It achieves strong accuracy with an efficient model (TRM-Micro) designed for scalability and real-time use.
+ASL-TRM is a lightweight, Transformer-based gesture recognition framework built for American Sign Language (ASL) classification using pose and motion features. The system processes ASL video input, extracts structured spatial–temporal representations, and applies transformer-based reasoning to translate signed gestures into text.
 
-This project uses the **ASL-Citizen dataset** from Microsoft, a large collection of sign language video samples and corresponding gloss annotations.
-
-🔗 [**Dataset**](https://www.microsoft.com/en-us/research/project/asl-citizen/) 
-
-🔗 [**Dataset Description**](https://www.microsoft.com/en-us/research/project/asl-citizen/dataset-description/)
+At its core, ASL-TRM leverages an efficient architecture, TRM-Micro, designed for scalability while maintaining strong recognition accuracy. By modeling temporal dependencies across frames, the framework enables reliable video-to-text translation from ASL gestures.
 
 ---
 
