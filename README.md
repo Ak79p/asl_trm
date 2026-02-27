@@ -10,18 +10,6 @@ At its core, ASL-TRM leverages an efficient architecture, TRM-Micro, designed fo
 
 ![Arch diagram](./assets/arch.jpeg)
 
-### TRM-Micro (Efficient Transformer Model)
-
-![Arch diagram](./assets/trm-micro.jpeg)
-
-- **Input Representation:** Pose + motion features per frame
-- **Pre-Encoder:** Light temporal processing
-- **Latent Z-Tokens:** Small set of learnable abstract tokens for reasoning
-- **Post-Encoder:** Joint reasoning + perception
-- **Classifier:** Dataset-specific output (ASL-100 / ASL-300)
-
-This architecture enables strong temporal modeling with **≈486K parameters** while still delivering high accuracy.
-
 ---
 
 ## 📊 TRM-Micro Model Size
