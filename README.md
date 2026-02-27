@@ -96,114 +96,49 @@ streamlit run app.py
 ```
 ---
 
-## Features
+## How to Evaluate
 
-Download [features](https://drive.google.com/file/d/1dED4DEU5G0KBTgFJkw0gy20561y5q98Z/view?usp=drive_link) and place the subsets in data/ folder
+Follow the steps below to reproduce evaluation results.
 
-After unzipping features_cache in data/ 
+1. Download the [feature](https://drive.google.com/file/d/1226Akrt3-plnf3-8z-ot9YEye-S51LbZ/view?usp=drive_link) archive and extract it.
+
+Place the extracted features_cache/ folder inside:
+```bash
+data/
+```
+
+Directory structure should look like:
+```bash
+asl-trm/
+│
+├── data/
+│   ├── features_cache/
+│   └── build_features.py
+```
+
+2. Build Dataset Features
+
 ```bash
 cd data
 python build_features.py --dataset asl100
 ```
-The above command will generate feature files for model training and evaluation
 
----
-
-## 🏋️ Training
-Run from root
-
-### Train on ASL-300
+3. Run Evaluation
 ```bash
-python -m train.train --dataset asl300
-```
-
-### Train on ASL-100
-```bash
-python -m train.train --dataset asl100
-```
-
----
-
-## 🧪 Evaluation
-
-### Evaluate on ASL-300
-```bash
-python -m eval.eval_trm --dataset asl300
-```
-
-### Evaluate on ASL-100
-```bash
+cd ..
 python -m eval.eval_trm --dataset asl100
 ```
 
-### Evaluate with custom checkpoint
+### Evaluating Other Datasets
 ```bash
-python -m eval.eval_trm \
-  --dataset asl300 \
-  --checkpoint checkpoints/asl300/best_model.pt
+cd data
+python build_features.py --dataset asl300
+cd ..
+python -m eval.eval_trm --dataset asl300
 ```
 
----
-
-## 🎥 Inference (Single Video)
-
-### Run inference on a new unseen video and get top-k predictions with confidence:
-```bash
-python -m inference.infer_video \
-  --video inference/test2.mp4 \
-  --dataset asl300
-```
----
-
-## 📈 Results
-
-### ASL-100 Evaluation
-| Metric    | Score      |
-| --------- | ---------- |
-| Top-1     | **73.4%** |
-| Top-5     | **88.63%** |
-| Top-10    | **92.41%** |
-
-### ASL-300 Evaluation
-
-| Metric    | Score      |
-| --------- | ---------- |
-| Top-1     | **67.31%** |
-| Top-5     | **85.13%** |
-| Top-10    | **89.36%** |
-
-### ASL-1000 Evaluation
-
-| Metric    | Score      |
-| --------- | ---------- |
-| Top-1     | **64.95%** |
-| Top-5     | **83.72%** |
-| Top-10    | **88.23%** |
-
-### ASL-2000 Evaluation
-
-| Metric    | Score      |
-| --------- | ---------- |
-| Top-1     | **59.28%** |
-| Top-5     | **80.50%** |
-| Top-10    | **85.42%** |
-
----
-
-## 📍 Dataset Details
-
-This project uses the ASL-Citizen dataset created by Microsoft. It includes:
-
-- 83,339 sign language videos
-- Gloss annotations for each video
-- Multiple signers and variations
-- Rich vocabulary suitable for real-world ASL tasks
-
-Dataset details and downloads available here:
-
-🔗 https://www.microsoft.com/en-us/research/project/asl-citizen/
-
-🔗 https://www.microsoft.com/en-us/research/project/asl-citizen/dataset-description/
+### Baseline Evaluation
+To reproduce baseline (TGCN) results, refer to the: [wlas-exp](https://github.com/Ak79p/asl_trm/tree/wlasl-exp)
 
 ---
 
@@ -214,7 +149,6 @@ Dataset details and downloads available here:
 - Deploy the user interface (currently internal) as a publicly accessible application.
 - Extend the dataset to include sentence-level ASL videos and improve stop-sign detection for accurate gesture segmentation.
 - Optimize system latency and robustness to support reliable real-time performance.
-
 
 ---
 
