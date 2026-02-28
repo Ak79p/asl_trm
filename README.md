@@ -5,6 +5,15 @@ We evaluated TRM-Micro v1 against the TGCN baseline using the same datasets orig
 (**Note:** Some videos from the original dataset were missing. We evaluated on the available subset used in TGCN training and evaluation. We have contacted the authors for the missing videos but have not received a response yet.)
 
 ### Evaluation on Available Original Videos
+
+### Model Size Comparison
+| Dataset  | TGCN    | TRM-Micro v1 |
+| -------- | ------- | ------------ |
+| **100**  | 592,029 | 460,901      |
+| **300**  | 605,029 | 486,701      |
+| **1000** | 806,156 | 577,001      |
+
+
 **WLASL100**
 | Model            | Top-1 | Top-5 | Top-10 |
 | ---------------- | ----- | ----- | ------ |
@@ -50,15 +59,6 @@ To strictly match the original TGCN data split, missing videos were replaced usi
 | **TRM-Micro v1** | 39.72 | 66.99 | 75.41  |
 
 
-
-
-### Model Size Comparison
-| Dataset  | TGCN    | TRM-Micro v1 |
-| -------- | ------- | ------------ |
-| **100**  | 592,029 | 460,901      |
-| **300**  | 605,029 | 486,701      |
-| **1000** | 806,156 | 577,001      |
-
 ---
 
 ## How to Evaluate
@@ -82,6 +82,7 @@ python -m eval.eval_trm --dataset asl100
 ```bash
 python -m eval.eval_trm --dataset asl300
 ```
+
 
 
 
