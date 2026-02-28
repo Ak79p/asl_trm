@@ -142,7 +142,7 @@ To reproduce evaluation on wlasl videos, refer to the: [wlas-exp](https://github
 
 ---
 
-## 🛣️ Pending work
+## Pending work
 
 - Further experimentation with TRM-ASL model for improvements.
 - Implement a sentence formation layer to convert recognized word sequences into coherent textual output.
@@ -152,7 +152,7 @@ To reproduce evaluation on wlasl videos, refer to the: [wlas-exp](https://github
 
 ---
 
-### 🫶 Acknowledgements
+## Acknowledgements
 
 This work builds upon:
 
