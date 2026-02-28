@@ -138,7 +138,7 @@ python -m eval.eval_trm --dataset asl300
 ```
 
 ### Baseline Evaluation
-To reproduce baseline (TGCN) results, refer to the: [wlas-exp](https://github.com/Ak79p/asl_trm/tree/wlasl-exp)
+To reproduce evaluation on wlasl videos, refer to the: [wlas-exp](https://github.com/Ak79p/asl_trm/tree/wlasl-exp)
 
 ---
 
