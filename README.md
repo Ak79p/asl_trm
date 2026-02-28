@@ -144,11 +144,10 @@ To reproduce evaluation on wlasl videos, refer to the: [wlas-exp](https://github
 
 ## Pending work
 
-- Further experimentation with TRM-ASL model for improvements.
-- Implement a sentence formation layer to convert recognized word sequences into coherent textual output.
+- Further experimentation with TRM-Micro model for improvements.
+- Implement a sentence formation layer to transform predicted word sequences into grammatically coherent textual output.
+- Extend the framework to full sentence-level recognition using sliding window inference and enhanced temporal reasoning mechanisms.
 - Deploy the user interface (currently internal) as a publicly accessible application.
-- Extend the dataset to include sentence-level ASL videos and improve stop-sign detection for accurate gesture segmentation.
-- Optimize system latency and robustness to support reliable real-time performance.
 
 ---
 
@@ -156,5 +155,5 @@ To reproduce evaluation on wlasl videos, refer to the: [wlas-exp](https://github
 
 This work builds upon:
 
-- Microsoft’s ASL-Citizen dataset
-- MediaPipe Holistic keypoint extraction
+- Microsoft’s ASL-Citizen dataset [Link](https://www.microsoft.com/en-us/research/project/asl-citizen/) 
+- MediaPipe Holistic keypoint extraction [Link](https://ai.google.dev/edge/mediapipe/solutions/guide) 
