@@ -147,8 +147,8 @@ python -m eval.eval_trm --dataset asl300
 ## Pending work
 
 - Further experimentation with TRM-Micro model for improvements.
-- Implement a sentence formation layer to transform predicted word sequences into grammatically coherent textual output.
 - Extend the framework to full sentence-level recognition using sliding window inference and enhanced temporal reasoning mechanisms.
+- Implement a sentence formation layer to transform predicted word sequences into grammatically coherent textual output.
 - Deploy the user interface (currently internal) as a publicly accessible application.
 
 ---
