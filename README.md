@@ -24,7 +24,7 @@ This project uses the **ASL-Citizen dataset** from Microsoft, a large collection
 
 ## Inspiration
 
-1. *Less is More: Recursive Reasoning with Tiny Networks*] [(link)](https://arxiv.org/pdf/2510.04871)
+1. *Less is More: Recursive Reasoning with Tiny Networks*] [(Link)](https://arxiv.org/pdf/2510.04871)
    
    This paper introduces a compact Transformer reasoning model designed to learn structured reasoning through latent token abstraction and recursive interaction. Although the original TRM was developed for general reasoning tasks and not for gesture recognition, its core ideas — latent reasoning slots, shared Transformer layers, and efficient recursive updates directly influenced how we built TRM-Micro for ASL. We adapted these principles to handle spatio-temporal pose and motion features, enabling lightweight yet expressive sequence reasoning in the context of sign language translation.
 
