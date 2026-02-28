@@ -9,6 +9,7 @@ At its core, ASL-TRM leverages an efficient architecture, TRM-Micro, designed fo
 ## Architecture Overview
 
 ![Arch diagram](./assets/arch.jpeg)
+![Arch diagram](./assets/trm-micro.jpeg)
 
 ---
 
