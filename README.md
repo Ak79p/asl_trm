@@ -30,6 +30,7 @@ We evaluated TRM-Micro v1 against the TGCN baseline using the same datasets orig
 ### Evaluation Matching Baseline Split (With Replacements)
 
 To strictly match the original TGCN data split, missing videos were replaced using ASL-Citizen videos, and evaluation was conducted on the identical split used in the TGCN paper.
+
 **100**
 | Model            | Top-1 | Top-5 | Top-10 |
 | ---------------- | ----- | ----- | ------ |
@@ -81,6 +82,7 @@ python -m eval.eval_trm --dataset asl100
 ```bash
 python -m eval.eval_trm --dataset asl300
 ```
+
 
 
 
