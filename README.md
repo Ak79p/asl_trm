@@ -8,19 +8,19 @@ We evaluated TRM-Micro v1 against the TGCN baseline using the same datasets orig
 **WLASL100**
 | Model            | Top-1 | Top-5 | Top-10 |
 | ---------------- | ----- | ----- | ------ |
-| **TGCN**         | 37.00 | 59.00 | 66.00  |
+| **TGCN (re-trained)**         | 37.00 | 59.00 | 66.00  |
 | **TRM-Micro v1** | 49.00 | 83.00| 87.00 |
 
 **WLASL300**
 | Model            | Top-1 | Top-5 | Top-10 |
 | ---------------- | ----- | ----- | ------ |
-| **TGCN**         | 27.40| 54.57 | 65.62  |
+| **TGCN (re-trained)**         | 27.40| 54.57 | 65.62  |
 | **TRM-Micro v1** | 38.30 | 70.35 | 79.18 |
 
 **WLASL1000**
 | Model            | Top-1 | Top-5 | Top-10 |
 | ---------------- | ----- | ----- | ------ |
-| **TGCN**         | 18.17 | 42.93 | 53.13  |
+| **TGCN (re-trained)**         | 18.17 | 42.93 | 53.13  |
 | **TRM-Micro v1** | 25.29 | 55.79| 67.48  |
 
 
@@ -34,19 +34,19 @@ To strictly match the original TGCN data split, missing videos were replaced usi
 **100**
 | Model            | Top-1 | Top-5 | Top-10 |
 | ---------------- | ----- | ----- | ------ |
-| **TGCN**         | 55.43 | 78.68 | 87.60  |
+| **TGCN (author)**         | 55.43 | 78.68 | 87.60  |
 | **TRM-Micro v1** | 69.65 | 86.77 | 89.11  |
 
 **300**
 | Model            | Top-1 | Top-5 | Top-10 |
 | ---------------- | ----- | ----- | ------ |
-| **TGCN**         | 38.32 | 67.51 | 79.64  |
+| **TGCN (author)**         | 38.32 | 67.51 | 79.64  |
 | **TRM-Micro v1** | 58.76 | 81.27 | 87.92  |
 
 **1000**
 | Model            | Top-1 | Top-5 | Top-10 |
 | ---------------- | ----- | ----- | ------ |
-| **TGCN**         | 34.86 | 61.73 | 71.91  |
+| **TGCN (author)**         | 34.86 | 61.73 | 71.91  |
 | **TRM-Micro v1** | 39.72 | 66.99 | 75.41  |
 
 
@@ -82,6 +82,7 @@ python -m eval.eval_trm --dataset asl100
 ```bash
 python -m eval.eval_trm --dataset asl300
 ```
+
 
 
 
