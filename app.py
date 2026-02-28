@@ -2,35 +2,23 @@ import streamlit as st
 import torch
 import torch.nn.functional as F
 import tempfile
+import cv2
+import numpy as np
 
 from models.trm_micro import TRMMicro
 from data.datasets import DatasetConfig
 from features.video_to_keypoints import extract_video_keypoints
 from features.build_tensor import build_feature_tensor_continuous
-from utils.llm_sentence_builder import build_sentence_from_windows
 
 
-st.set_page_config(page_title="ASL Sliding Window Analyzer", layout="wide")
+st.set_page_config(page_title="ASL Fixed Duration Inference", layout="wide")
 
-st.title("🤟 ASL Sliding Window Inference Explorer")
-st.markdown("Upload → Inspect frames → Configure window/stride → Run inference.")
-
-
-# --------------------------------------------------
-# SESSION STATE INIT
-# --------------------------------------------------
-if "full_tensor" not in st.session_state:
-    st.session_state.full_tensor = None
-
-if "results" not in st.session_state:
-    st.session_state.results = None
-
-if "structured_for_llm" not in st.session_state:
-    st.session_state.structured_for_llm = None
+st.title("🤟 ASL Fixed Duration Word Inference")
+st.markdown("Upload video → Split by seconds → Convert each chunk to 48 frames → Predict.")
 
 
 # --------------------------------------------------
-# Sidebar Controls
+# Sidebar Configuration
 # --------------------------------------------------
 st.sidebar.header("⚙ Configuration")
 
@@ -39,7 +27,15 @@ dataset_name = st.sidebar.selectbox(
     ["app", "asl100", "asl300", "asl1000", "asl2000"]
 )
 
-topk = st.sidebar.slider("Top-K", 1, 10, 5)
+chunk_duration = st.sidebar.number_input(
+    "Chunk Duration (seconds)",
+    min_value=0.5,
+    max_value=5.0,
+    value=1.0,
+    step=0.5
+)
+
+topk = st.sidebar.slider("Top-K Predictions", 1, 10, 5)
 
 checkpoint_path = st.sidebar.text_input(
     "Checkpoint Path",
@@ -61,204 +57,129 @@ if uploaded_file is not None:
     st.video(uploaded_file)
 
     # --------------------------------------------------
-    # STEP 1 — Extract Features Immediately
+    # Get Original Video Info
     # --------------------------------------------------
-    if st.session_state.full_tensor is None:
+    cap = cv2.VideoCapture(video_path)
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    total_video_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    cap.release()
 
-        with st.spinner("Extracting keypoints and building feature tensor..."):
-            kps = extract_video_keypoints(video_path)
-            full_tensor = build_feature_tensor_continuous(kps)
+    video_duration = total_video_frames / fps
 
-        st.session_state.full_tensor = full_tensor
-        st.success("Video processed successfully.")
+    st.info(f"Original FPS: {fps:.2f}")
+    st.info(f"Video Duration: {video_duration:.2f} seconds")
+    st.info(f"Total Raw Frames: {total_video_frames}")
 
     # --------------------------------------------------
-    # Frame Count Display
+    # Extract Keypoints
     # --------------------------------------------------
-    if st.session_state.full_tensor is not None:
+    with st.spinner("Extracting keypoints..."):
+        kps = extract_video_keypoints(video_path)
+        full_tensor = build_feature_tensor_continuous(kps)
 
-        full_tensor = st.session_state.full_tensor
-        T_full = full_tensor.shape[0]
+    T_full = full_tensor.shape[0]
 
-        st.markdown("## 📊 Video Statistics")
-        st.info(f"Total Frames After Processing: {T_full}")
+    st.success("Feature extraction complete.")
+    st.info(f"Processed Tensor Frames: {T_full}")
 
-        # --------------------------------------------------
-        # Window & Stride Configuration
-        # --------------------------------------------------
-        st.markdown("## ⚙ Sliding Window Configuration")
+    # Sanity check
+    if T_full != total_video_frames:
+        st.warning("Processed frames differ from raw frames. FPS alignment adjusted.")
 
-        # --- Slider Controls ---
-        window_slider = st.slider(
-            "Window Size (Slider)",
-            min_value=1,
-            max_value=T_full,
-            value=min(30, T_full)
+    # --------------------------------------------------
+    # Compute Frames Per Chunk (Real Seconds)
+    # --------------------------------------------------
+    effective_fps = T_full / video_duration
+    frames_per_chunk = max(1, round(chunk_duration * effective_fps))
+
+    st.info(f"Frames per chunk (before resampling): {frames_per_chunk}")
+
+    # --------------------------------------------------
+    # Create 48-Frame Chunks
+    # --------------------------------------------------
+    chunks = []
+
+    for start in range(0, T_full, frames_per_chunk):
+        end = min(start + frames_per_chunk, T_full)
+        chunk = full_tensor[start:end]
+
+        if len(chunk) < 5:
+            continue
+
+        # Resample to exactly 48 frames
+        indices = np.linspace(0, len(chunk) - 1, 48).astype(int)
+        chunk_48 = chunk[indices]
+
+        chunks.append((start, end, chunk_48))
+
+    st.success(f"Total chunks created: {len(chunks)}")
+
+
+    # --------------------------------------------------
+    # Run Inference
+    # --------------------------------------------------
+    if st.button("🚀 Run Inference"):
+
+        device = (
+            "cuda" if torch.cuda.is_available()
+            else "mps" if torch.backends.mps.is_available()
+            else "cpu"
         )
 
-        stride_slider = st.slider(
-            "Stride (Slider)",
-            min_value=1,
-            max_value=min(50, window_slider),
-            value=min(4, window_slider)
-        )
+        st.info(f"Using device: {device}")
 
-        st.markdown("### Manual Override")
+        cfg = DatasetConfig(dataset_name)
+        idx_to_gloss = {v: k for k, v in cfg.label_map.items()}
 
-        window_manual = st.number_input(
-            "Window Size (Manual)",
-            min_value=1,
-            max_value=T_full,
-            value=window_slider
-        )
+        model = TRMMicro(num_classes=cfg.num_classes).to(device)
+        checkpoint = torch.load(checkpoint_path, map_location=device)
+        model.load_state_dict(checkpoint["model_state"])
+        model.eval()
 
-        stride_manual = st.number_input(
-            "Stride (Manual)",
-            min_value=1,
-            max_value=window_manual,
-            value=stride_slider
-        )
+        results = []
 
-        # Final Values
-        window_size = int(window_manual)
-        stride = int(stride_manual)
+        with torch.no_grad():
 
-        if stride > window_size:
-            stride = window_size
-            st.warning("Stride adjusted to match window size.")
+            for start, end, chunk_48 in chunks:
 
-        # Estimate windows
-        num_windows = max(0, (T_full - window_size) // stride + 1)
-        st.info(f"Estimated number of windows: {num_windows}")
-
-        # --------------------------------------------------
-        # RUN INFERENCE
-        # --------------------------------------------------
-        if st.button("🚀 Run Sliding Window Inference"):
-
-            device = (
-                "cuda" if torch.cuda.is_available()
-                else "mps" if torch.backends.mps.is_available()
-                else "cpu"
-            )
-
-            st.info(f"Using device: {device}")
-
-            cfg = DatasetConfig(dataset_name)
-            idx_to_gloss = {v: k for k, v in cfg.label_map.items()}
-
-            model = TRMMicro(num_classes=cfg.num_classes).to(device)
-            checkpoint = torch.load(checkpoint_path, map_location=device)
-            model.load_state_dict(checkpoint["model_state"])
-            model.eval()
-
-            results = []
-            structured_for_llm = []
-
-            with torch.no_grad():
-                for start in range(0, T_full - window_size + 1, stride):
-
-                    end = start + window_size
-                    window = full_tensor[start:end]
-
-                    window_t = (
-                        torch.from_numpy(window)
-                        .float()
-                        .unsqueeze(0)
-                        .to(device)
-                    )
-
-                    logits = model(window_t).squeeze(0)
-                    probs = F.softmax(logits, dim=0)
-
-                    values, indices = probs.topk(topk)
-
-                    top_predictions = []
-                    word_conf_pairs = []
-
-                    for idx, score in zip(indices, values):
-                        word = idx_to_gloss.get(idx.item(), "UNKNOWN")
-                        conf = float(score.item() * 100)
-
-                        top_predictions.append({
-                            "word": word,
-                            "confidence": conf
-                        })
-
-                        word_conf_pairs.append((word, conf))
-
-                    results.append({
-                        "window": f"{start}-{end}",
-                        "topk": top_predictions
-                    })
-
-                    structured_for_llm.append({
-                        "window": f"{start}-{end}",
-                        "words": word_conf_pairs
-                    })
-
-            st.session_state.results = results
-            st.session_state.structured_for_llm = structured_for_llm
-
-            st.success("Inference complete.")
-
-
-# --------------------------------------------------
-# DISPLAY RESULTS
-# --------------------------------------------------
-if st.session_state.results is not None:
-
-    st.markdown("## 📊 Sliding Window Results")
-
-    for r in st.session_state.results:
-        with st.expander(f"Window {r['window']}"):
-            for rank, pred in enumerate(r["topk"], 1):
-                st.write(
-                    f"{rank}. {pred['word']} — {pred['confidence']:.2f}%"
+                input_tensor = (
+                    torch.from_numpy(chunk_48)
+                    .float()
+                    .unsqueeze(0)
+                    .to(device)
                 )
 
+                logits = model(input_tensor).squeeze(0)
+                probs = F.softmax(logits, dim=0)
 
-# --------------------------------------------------
-# SENTENCE RECONSTRUCTION
-# --------------------------------------------------
-if st.session_state.structured_for_llm is not None:
+                values, indices = probs.topk(topk)
 
-    st.markdown("---")
-    st.markdown("## 🧠 Sentence Reconstruction")
+                predictions = []
 
-    hf_token = st.text_input("Enter Hugging Face API Token", type="password")
+                for idx, score in zip(indices, values):
+                    word = idx_to_gloss.get(idx.item(), "UNKNOWN")
+                    conf = float(score.item() * 100)
 
-    confidence_threshold = st.slider("Confidence Threshold (%)", 0, 100, 5)
-
-    if st.button("✨ Generate Sentence"):
-
-        if not hf_token:
-            st.error("Please enter Hugging Face token.")
-        else:
-
-            filtered_structured = []
-
-            for item in st.session_state.structured_for_llm:
-                filtered_words = [
-                    (w, c)
-                    for (w, c) in item["words"]
-                    if c >= confidence_threshold
-                ]
-
-                if filtered_words:
-                    filtered_structured.append({
-                        "window": item["window"],
-                        "words": filtered_words
+                    predictions.append({
+                        "word": word,
+                        "confidence": conf
                     })
 
-            if not filtered_structured:
-                st.warning("No words passed confidence threshold.")
-            else:
-                with st.spinner("Generating sentence..."):
-                    sentence = build_sentence_from_windows(
-                        window_predictions=filtered_structured,
-                        hf_token=hf_token
-                    )
+                results.append({
+                    "segment": f"{start}-{end}",
+                    "predictions": predictions
+                })
 
-                st.markdown("### 📝 Reconstructed Sentence")
-                st.success(sentence)
+        st.success("Inference complete.")
+
+        # --------------------------------------------------
+        # Display Results
+        # --------------------------------------------------
+        st.markdown("## 📊 Chunk Predictions")
+
+        for r in results:
+            with st.expander(f"Segment {r['segment']}"):
+                for rank, pred in enumerate(r["predictions"], 1):
+                    st.write(
+                        f"{rank}. {pred['word']} — {pred['confidence']:.2f}%"
+                    )
