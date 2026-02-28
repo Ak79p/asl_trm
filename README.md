@@ -1,15 +1,3 @@
-## Feature files:
-
-Place these [feature](https://drive.google.com/drive/folders/1ux0Rw--u7az2avld-O9U0cGItzGKrGw3?usp=sharing) files in respective dataclass folders.
-
-After placing the feature files you should have:
-- data/asl100/features_cache/
-- data/asl300/features_cache/
-- data/asl1000/features_cache/
-- data/asl2000/features_cache/
-  
----
-
 ## Baseline Evaluation
 
 We evaluated TRM-Micro v1 against the TGCN baseline using the same datasets originally used for TGCN.
@@ -37,6 +25,8 @@ We evaluated TRM-Micro v1 against the TGCN baseline using the same datasets orig
 
 
 
+
+
 ### Evaluation Matching Baseline Split (With Replacements)
 
 To strictly match the original TGCN data split, missing videos were replaced using ASL-Citizen videos, and evaluation was conducted on the identical split used in the TGCN paper.
@@ -59,6 +49,8 @@ To strictly match the original TGCN data split, missing videos were replaced usi
 | **TRM-Micro v1** | 39.72 | 66.99 | 75.41  |
 
 
+
+
 ### Model Size Comparison
 | Dataset  | TGCN    | TRM-Micro v1 |
 | -------- | ------- | ------------ |
@@ -68,26 +60,26 @@ To strictly match the original TGCN data split, missing videos were replaced usi
 
 ---
 
-## Commands
+## How to Evaluate
 
-- To visualise previous training run use this command
+Follow the steps below to reproduce evaluation results.
+
+1. Place these [feature](https://drive.google.com/drive/folders/1ux0Rw--u7az2avld-O9U0cGItzGKrGw3?usp=sharing) files in respective dataclass folders.
+
+After placing the feature files you should have:
+- data/asl100/features_cache/
+- data/asl300/features_cache/
+- data/asl1000/features_cache/
+- data/asl2000/features_cache/
+
+2. Run Evaluation
 ```bash
-tensorboard --logdir=runs
+python -m eval.eval_trm --dataset asl100
 ```
 
-- To evaluate test split
+### Evaluating Other Datasets
 ```bash
 python -m eval.eval_trm --dataset asl300
-```
-
-- To run training
-```bash
-python -m train.train --dataset asl300
-```
-
-- To evaluate on custom checkpoints
-```bash
-python -m eval.eval_trm --dataset asl300 --checkpoint checkpoints/asl300/best_model.pt
 ```
 
 
