@@ -50,6 +50,10 @@ We report Top-1, Top-5, and Top-10 accuracy:
 - Top-5 → Correct label appears within top 5 predictions
 - Top-10 → Correct label appears within top 10 predictions
 
+### Baseline Evaluation
+To reproduce evaluation on wlasl videos, refer to the: [wlas-exp](https://github.com/Ak79p/asl_trm/tree/wlasl-exp)
+
+
 ### TRM-Micro v2
 | Metric     | ASL 100 | ASL 300 | ASL 1000 | ASL 2000 |
 | ---------- | ------- | ------- | -------- | -------- |
@@ -137,8 +141,6 @@ cd ..
 python -m eval.eval_trm --dataset asl300
 ```
 
-### Baseline Evaluation
-To reproduce evaluation on wlasl videos, refer to the: [wlas-exp](https://github.com/Ak79p/asl_trm/tree/wlasl-exp)
 
 ---
 
