@@ -8,7 +8,7 @@ from features.video_to_keypoints import extract_video_keypoints
 from features.build_tensor import build_feature_tensor
 
 
-CACHE_DIR = Path("data/asl2000/features_cache")
+CACHE_DIR = Path("data/asl-full/features_cache")
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 FEATURE_PREFIX = "features_cache"  
@@ -63,16 +63,16 @@ def extract_features(csv_path, out_csv_path):
 
 if __name__ == "__main__":
     extract_features(
-        "data/asl2000/train_labeled.csv",
-        "data/asl2000/train_features.csv"
+        "data/asl-full/train_labeled.csv",
+        "data/asl-full/train_features.csv"
     )
 
     extract_features(
-        "data/asl2000/val_labeled.csv",
-        "data/asl2000/val_features.csv"
+        "data/asl-full/val_labeled.csv",
+        "data/asl-full/val_features.csv"
     )
 
     extract_features(
-        "data/asl2000/test_labeled.csv",
-        "data/asl2000/test_features.csv"
+        "data/asl-full/test_labeled.csv",
+        "data/asl-full/test_features.csv"
     )
