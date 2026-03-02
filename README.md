@@ -32,8 +32,11 @@ We evaluated TRM-Micro v1 against the TGCN baseline using the same datasets orig
 | **TGCN (re-trained)**         | 18.17 | 42.93 | 53.13  |
 | **TRM-Micro v1** | 25.29 | 55.79| 67.48  |
 
-
-
+**WLASL2000**
+| Model            | Top-1 | Top-5 | Top-10 |
+| ---------------- | ----- | ----- | ------ |
+| **TGCN (re-trained)**         | 12.45 | 34.94 | 45.83  |
+| **TRM-Micro v1** | 16.41 | 37.69| 49.15  |
 
 
 ### Evaluation Matching Baseline Split (With Replacements)
@@ -57,6 +60,12 @@ To strictly match the original TGCN data split, missing videos were replaced usi
 | ---------------- | ----- | ----- | ------ |
 | **TGCN (author)**         | 34.86 | 61.73 | 71.91  |
 | **TRM-Micro v1** | 39.72 | 66.99 | 75.41  |
+
+**2000**
+| Model            | Top-1 | Top-5 | Top-10 |
+| ---------------- | ----- | ----- | ------ |
+| **TGCN (author)**         | 23.65 | 51.75 | 62.24 |
+| **TRM-Micro v1** | 33.36 | 60.23 | 69.17  |
 
 
 ---
@@ -82,6 +91,7 @@ python -m eval.eval_trm --dataset asl100
 ```bash
 python -m eval.eval_trm --dataset asl300
 ```
+
 
 
 
