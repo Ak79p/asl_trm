@@ -126,7 +126,7 @@ def eval_epoch(model, loader, criterion, device):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", required=True,
-                        choices=["asl100", "asl300", "asl1000", "asl2000", "app"])
+                        choices=["asl100", "asl300", "asl1000", "asl2000", "asl-full"])
     parser.add_argument("--epochs", type=int, default=100)
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--lr", type=float, default=3e-4)

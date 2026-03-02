@@ -97,7 +97,7 @@ def main():
     parser.add_argument(
         "--dataset",
         required=True,
-        choices=["asl100", "asl300", "asl1000", "asl2000"]
+        choices=["asl100", "asl300", "asl1000", "asl2000", "asl-full"]
     )
     parser.add_argument("--checkpoint", default=None)
     parser.add_argument("--batch_size", type=int, default=32)
