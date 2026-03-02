@@ -22,7 +22,7 @@ def main():
     # num_classes = 300
     # model = BaselineTransformer(num_classes=num_classes)
     # model = TRMLite(num_classes=num_classes)
-    model = TRMMicro(num_classes=2000)
+    model = TRMMicro(num_classes=300)
     count_parameters(model)
 
 
