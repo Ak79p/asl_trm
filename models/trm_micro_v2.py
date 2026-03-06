@@ -1,19 +1,5 @@
 import torch
 import torch.nn as nn
-import math
-
-
-def sinusoidal_pos_encoding(max_len, dim):
-    pe = torch.zeros(max_len, dim)
-    position = torch.arange(0, max_len).unsqueeze(1)
-    div_term = torch.exp(
-        torch.arange(0, dim, 2) * (-math.log(10000.0) / dim)
-    )
-
-    pe[:, 0::2] = torch.sin(position * div_term)
-    pe[:, 1::2] = torch.cos(position * div_term)
-
-    return pe.unsqueeze(0)  # (1, max_len, dim)
 
 
 class TRMMicro(nn.Module):
@@ -22,9 +8,9 @@ class TRMMicro(nn.Module):
         self,
         num_classes,
         input_dim=384,
-        dim=160,
+        dim=160,              # reduced from 192
         num_heads=4,
-        num_z_tokens=10,      # reduced
+        num_z_tokens=12,      # reduced from 16
         local_steps=4,
         global_steps=2,
         max_len=64
@@ -37,70 +23,57 @@ class TRMMicro(nn.Module):
         self.global_steps = global_steps
         self.max_len = max_len
 
-        # -------------------------
         # Input projection
-        # -------------------------
         self.input_proj = nn.Linear(input_dim, dim)
 
-        # -------------------------
-        # Sinusoidal positional encoding (no learnable params)
-        # -------------------------
-        self.register_buffer(
-            "pos_embedding",
-            sinusoidal_pos_encoding(max_len, dim)
+        # Positional embedding
+        self.pos_embedding = nn.Parameter(
+            torch.randn(1, max_len, dim)
         )
 
-        # -------------------------
-        # Frame encoder
-        # -------------------------
+        # Frame encoder (↑ dropout increased)
         self.pre_encoder = nn.TransformerEncoder(
             nn.TransformerEncoderLayer(
                 d_model=dim,
                 nhead=num_heads,
-                dim_feedforward=int(dim * 1.5),  # reduced FFN
+                dim_feedforward=dim * 2,
                 batch_first=True,
                 dropout=0.2
             ),
             num_layers=1
         )
 
-        # -------------------------
-        # Latent Z tokens
-        # -------------------------
+        # Latent tokens
         self.z_tokens = nn.Parameter(
             torch.randn(1, num_z_tokens, dim)
         )
 
-        # -------------------------
         # Shared reasoning layer
-        # -------------------------
         self.reason_layer = nn.TransformerEncoderLayer(
             d_model=dim,
             nhead=num_heads,
-            dim_feedforward=int(dim * 1.5),
+            dim_feedforward=dim * 2,
             batch_first=True,
             dropout=0.2
         )
 
         self.global_gate = nn.Parameter(torch.tensor(0.1))
 
-        # -------------------------
-        # Post fusion
-        # -------------------------
+        # Final fusion
         self.post_encoder = nn.TransformerEncoder(
             nn.TransformerEncoderLayer(
                 d_model=dim,
                 nhead=num_heads,
-                dim_feedforward=int(dim * 1.5),
+                dim_feedforward=dim * 2,
                 batch_first=True,
                 dropout=0.2
             ),
             num_layers=1
         )
 
-        # -------------------------
-        # Output
-        # -------------------------
+        # Attention pooling
+        self.attn_pool = nn.Linear(dim, 1)
+
         self.norm = nn.LayerNorm(dim)
         self.classifier = nn.Linear(dim, num_classes)
 
@@ -114,26 +87,21 @@ class TRMMicro(nn.Module):
         else:
             raise ValueError(f"Unexpected input shape: {x.shape}")
 
+        x = self.input_proj(x)
+
         if T > self.max_len:
             raise ValueError("Sequence length exceeds max_len")
 
-        # Input projection
-        x = self.input_proj(x)
-
-        # Add positional encoding
         x = x + self.pos_embedding[:, :T]
-
-        # Frame encoding
         x = self.pre_encoder(x)
 
-        # Latent tokens
         z = self.z_tokens.expand(B, -1, -1)
 
         # Local reasoning
         for _ in range(self.local_steps):
             z = self.reason_layer(z)
 
-        # Global reasoning
+        # Global reasoning (shared concat mixing)
         gate = torch.tanh(self.global_gate)
 
         for _ in range(self.global_steps):
@@ -146,8 +114,8 @@ class TRMMicro(nn.Module):
         x = torch.cat([z, x], dim=1)
         x = self.post_encoder(x)
 
-        # Mean pooling instead of attention pooling
-        x = x.mean(dim=1)
+        weights = torch.softmax(self.attn_pool(x), dim=1)
+        x = (x * weights).sum(dim=1)
 
         x = self.norm(x)
 
