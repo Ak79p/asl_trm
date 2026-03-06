@@ -8,7 +8,7 @@ import pandas as pd
 from torch.utils.data import DataLoader, Dataset
 from torch.utils.tensorboard import SummaryWriter
 
-from models.trm_micro import TRMMicro
+from models.trm_micro_v1 import TRMMicro
 from data.datasets import DatasetConfig
 
 
@@ -101,7 +101,8 @@ def main():
     parser.add_argument(
         "--dataset",
         required=True,
-        choices=["asl100", "asl300", "asl1000", "asl2000"]
+        choices=["asl100", "asl300", "asl1000", "asl2000",
+                 "wlasl100", "wlasl300", "wlasl1000", "wlasl2000", "asl-full"]
     )
     parser.add_argument("--checkpoint", default=None)
     parser.add_argument("--batch_size", type=int, default=32)

@@ -5,9 +5,9 @@ import torch
 import torch.nn as nn
 import pandas as pd
 from torch.utils.data import DataLoader, Dataset
-# from torch.utils.tensorboard import SummaryWriter
+from torch.utils.tensorboard import SummaryWriter
 
-from models.trm_micro import TRMMicro
+from models.trm_micro_v2 import TRMMicro
 from data.datasets import DatasetConfig
 
 
@@ -78,11 +78,11 @@ def accuracy(logits, targets, topk=(1, 5, 10)):
 # Utility: Find Latest Checkpoint
 # -------------------------
 def get_latest_checkpoint(dataset):
-    ckpt_dir = Path("checkpoints") / f"{dataset}"
+    ckpt_dir = Path("checkpoints") / f"trm_micro_{dataset}"
     if not ckpt_dir.exists():
         raise FileNotFoundError(f"No checkpoint directory found for {dataset}")
 
-    ckpts = sorted(ckpt_dir.glob("best_model.pt"))
+    ckpts = sorted(ckpt_dir.glob("best_model_*.pt"))
     if not ckpts:
         raise FileNotFoundError("No checkpoints found")
 
@@ -98,7 +98,7 @@ def main():
         "--dataset",
         required=True,
         choices=["asl100", "asl300", "asl1000", "asl2000", "asl-full", "wlasl100",
-                 "wlasl300", "wlasl1000", "wlasl2000", "asl-citizen"]
+                 "wlasl300", "wlasl1000", "wlasl2000"]
     )
     parser.add_argument("--checkpoint", default=None)
     parser.add_argument("--batch_size", type=int, default=32)
@@ -147,7 +147,7 @@ def main():
     log_dir = checkpoint.get("log_dir", None)
 
     if log_dir:
-        # writer = SummaryWriter(log_dir=log_dir)
+        writer = SummaryWriter(log_dir=log_dir)
         print(f"📊 Logging test metrics to: {log_dir}")
     else:
         writer = None
