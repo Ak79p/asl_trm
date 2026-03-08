@@ -69,12 +69,12 @@ st.sidebar.header("⚙ Configuration")
 
 dataset_name = st.sidebar.selectbox(
     "Vocabulary",
-    ["app", "asl-citizen", "asl100", "asl300", "asl1000", "asl2000"]
+    ["app", "asl-citizen"]
 )
 
 chunk_duration = st.sidebar.number_input(
     "Window Duration (seconds)",
-    min_value=0.5,
+    min_value=0.0,
     max_value=5.0,
     value=1.0,
     step=0.5
@@ -82,7 +82,7 @@ chunk_duration = st.sidebar.number_input(
 
 stride_seconds = st.sidebar.number_input(
     "Stride (seconds)",
-    min_value=0.25,
+    min_value=0.0,
     max_value=5.0,
     value=0.5,
     step=0.25
@@ -216,16 +216,6 @@ if uploaded_file is not None:
                 values, indices = probs.topk(topk)
 
                 predictions = []
-
-                # for idx, score in zip(indices, values):
-
-                #     word = idx_to_gloss.get(idx.item(), "UNKNOWN")
-                #     conf = float(score.item() * 100)
-
-                #     predictions.append({
-                #         "word": word,
-                #         "confidence": conf
-                #     })
                     
                 for idx, score in zip(indices, values):
                     word = idx_to_gloss.get(idx.item(), "UNKNOWN")
@@ -237,11 +227,6 @@ if uploaded_file is not None:
                             "word": word,
                             "confidence": conf
                         })
-
-                # results.append({
-                #     "segment": f"{start}-{end}",
-                #     "predictions": predictions
-                # })
                 
                 if len(predictions) > 0:
                     results.append({
