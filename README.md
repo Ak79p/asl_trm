@@ -56,7 +56,20 @@ We report Top-1, Top-5, and Top-10 accuracy:
 - Top-10 → Correct label appears within top 10 predictions
 
 ### Baseline Evaluation
-To reproduce evaluation on wlasl videos, refer to the: [wlas-exp](https://github.com/Ak79p/asl_trm/tree/wlasl-exp)
+
+### TRM-Micro v3 on WLASL Dataset
+| Metric     | WLASL 100 | WLASL 300 | WLASL 1000 | WLASL 2000 |
+| ---------- | ------- | ------- | -------- | -------- |
+| **Top-1**  | 60.47%  | 57.49%  | 45.20%   | 33.41%   |
+| **Top-5**  | 86.43%  | 84.43%  | 73.61%   | 63.81%   |
+| **Top-10** | 90.70%  | 87.28%  | 80.38%   | 73.39%   |
+
+### TRM-Micro v3 on ASL-Citizen Dataset
+| Dataset      | ST-GCN | TRM-Micro v3 |
+| ------------ | ------------ | ------------ |
+| **Top-1**   | 59.52%      | 61.46%     |
+| **Top-5**   | 82.68%     | 82.32%      |
+| **Top-10**  | 88.13%      | 86.54%     |
 
 
 ### TRM-Micro v2
@@ -77,12 +90,12 @@ To reproduce evaluation on wlasl videos, refer to the: [wlas-exp](https://github
 
 ### Model Size
 
-| Dataset      | TRM-Micro v1 | TRM-Micro v2 |
-| ------------ | ------------ | ------------ |
-| **ASL 100**  | 460,901      | 710,022      |
-| **ASL 300**  | 486,701      | 742,222      |
-| **ASL 1000** | 577,001      | 854,922      |
-| **ASL 2000** | 706,001      | 1,015,922    |
+| Vocab size     | TGCN | ST-GCN | TRM-Micro v3 |
+| ---------- | ------- | ------- | -------- |
+| 100  | 461,433  | 3,111,998  | 622,261  |
+| 300  | 512,833 | 3,163,398 | 654,461  |
+| 1000 | 692,733  | 3,343,298  | 767,161   |
+| 2000 | 949,733  | 3,600,298  | 928,161  |
 
 ---
 
