@@ -57,12 +57,20 @@ We report Top-1, Top-5, and Top-10 accuracy:
 
 ### Baseline Evaluation
 
-### TRM-Micro v3 on WLASL Dataset
+### TRM-Micro and TGCN on WLASL Dataset
+**TRM-Micro**
 | Metric     | WLASL 100 | WLASL 300 | WLASL 1000 | WLASL 2000 |
 | ---------- | ------- | ------- | -------- | -------- |
 | **Top-1**  | 60.47%  | 57.49%  | 45.20%   | 33.41%   |
 | **Top-5**  | 86.43%  | 84.43%  | 73.61%   | 63.81%   |
 | **Top-10** | 90.70%  | 87.28%  | 80.38%   | 73.39%   |
+
+**TGCN**
+| Metric     | WLASL 100 | WLASL 300 | WLASL 1000 | WLASL 2000 |
+| ---------- | ------- | ------- | -------- | -------- |
+| **Top-1**  | 55.43%  | 38.32%  | 34.86%   | 23.65%   |
+| **Top-5**  | 78.68%  | 67.51%  | 61.73%   | 51.75%   |
+| **Top-10** | 87.6%  | 79.64%  | 71.91%   | 62.24%   |
 
 ### TRM-Micro v3 on ASL-Citizen Dataset
 | Dataset      | ST-GCN | TRM-Micro v3 |
@@ -122,7 +130,7 @@ streamlit run app.py
 
 Follow the steps below to reproduce evaluation results.
 
-1. Download the [feature](https://drive.google.com/file/d/1226Akrt3-plnf3-8z-ot9YEye-S51LbZ/view?usp=drive_link) archive and extract it.
+1. Download the [feature](https://drive.google.com/file/d/1DQTHTcbqugvTPzRvrdfwFWK_J7d0BV04/view?usp=sharing) archive and extract it.
 
 Place the extracted features_cache/ folder inside:
 ```bash
@@ -142,31 +150,32 @@ asl-trm/
 
 ```bash
 cd data
-python build_features.py --dataset asl100
+python build_features.py --dataset asl-citizen
+python build_features.py --dataset wlasl100
+python build_features.py --dataset wlasl300
+python build_features.py --dataset wlasl1000
+python build_features.py --dataset wlasl2000
 ```
 
 3. Run Evaluation
+### Evaluating ASL-Citizen Datasets
 ```bash
 cd ..
+python -m eval.eval_trm --dataset asl-citizen
+```
+
+### Evaluating WLASL Datasets
+```bash
 python -m eval.eval_trm --dataset asl100
-```
-
-### Evaluating Other Datasets
-```bash
-cd data
-python build_features.py --dataset asl300
-cd ..
 python -m eval.eval_trm --dataset asl300
+python -m eval.eval_trm --dataset asl1000
+python -m eval.eval_trm --dataset asl2000
 ```
-
 
 ---
 
 ## Pending work
-
-- Further experimentation with TRM-Micro model for improvements.
 - Extend the framework to full sentence-level recognition using sliding window inference and enhanced temporal reasoning mechanisms.
-- Implement a sentence formation layer to transform predicted word sequences into grammatically coherent textual output.
 - Deploy the user interface (currently internal) as a publicly accessible application.
 
 ---
