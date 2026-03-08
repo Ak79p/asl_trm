@@ -29,7 +29,11 @@ This project uses the **ASL-Citizen dataset** from Microsoft, a large collection
    
    This paper introduces a compact Transformer reasoning model designed to learn structured reasoning through latent token abstraction and recursive interaction. Although the original TRM was developed for general reasoning tasks and not for gesture recognition, its core ideas — latent reasoning slots, shared Transformer layers, and efficient recursive updates directly influenced how we built TRM-Micro for ASL. We adapted these principles to handle spatio-temporal pose and motion features, enabling lightweight yet expressive sequence reasoning in the context of sign language translation.
 
-2. *Word-Level Deep Sign Language Recognition — TGCN Baseline* [(Link)](https://arxiv.org/pdf/1910.11006)
+2. *ASL Citizen: A Community-Sourced Dataset for Advancing Isolated Sign Language Recognition - STGCN Baseline* [(Link)](https://arxiv.org/pdf/2304.05934)
+
+   This paper introduces ASL Citizen, a large-scale dataset for isolated sign language recognition containing 83,399 videos covering 2731 ASL signs collected from diverse signers. The work frames sign recognition as a dictionary retrieval problem and provides a challenging real-world benchmark for ASL recognition models. The dataset forms the foundation of our experiments, enabling evaluation of TRM-Micro on large-vocabulary sign recognition tasks.
+
+3. *Word-Level Deep Sign Language Recognition — TGCN Baseline* [(Link)](https://arxiv.org/pdf/1910.11006)
 
    This paper presents a Temporal Graph Convolutional Network (TGCN) for sign language recognition that operates on skeleton/pose features extracted from video. The TGCN models spatial dependencies between joints and temporal dynamics across frames, making it a strong baseline for pose-based action/gesture recognition tasks. It serves as our baseline model because it demonstrates how pose representations can be leveraged for sign language classification, providing a meaningful point of comparison for the performance of TRM-Micro.
 
