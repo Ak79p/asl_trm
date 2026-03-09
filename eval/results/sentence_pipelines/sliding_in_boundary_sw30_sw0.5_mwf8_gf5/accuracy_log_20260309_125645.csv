@@ -1,0 +1,49 @@
+pipeline,video,gt_sentence,pred_sentence,gt_len,pred_len,words_correct,word_accuracy,length_match,sentence_match
+sliding_in_boundary,boy_go_school.mp4,BOY GO SCHOOL,boy boy go school,3,4,1,0.3333,0,0
+sliding_in_boundary,brother_talk_loud.mp4,BROTHER TALK LOUD,brother talk computer,3,3,2,0.6667,1,0
+sliding_in_boundary,bye_friend.mp4,BYE FRIEND,bye friend,2,2,2,1.0,1,1
+sliding_in_boundary,family_come_here.mp4,FAMILY COME HERE,family phone here,3,3,2,0.6667,1,0
+sliding_in_boundary,father_come_home.mp4,FATHER COME HOME,father come home,3,3,3,1.0,1,1
+sliding_in_boundary,friend_come_home.mp4,FRIEND COME HOME,friend come home,3,3,3,1.0,1,1
+sliding_in_boundary,girl_study_now.mp4,GIRL STUDY NOW,night study now,3,3,2,0.6667,1,0
+sliding_in_boundary,hello_friend.mp4,HELLO FRIEND,hello friend,2,2,2,1.0,1,1
+sliding_in_boundary,hello_you.mp4,HELLO YOU,hello mouth,2,2,1,0.5,1,0
+sliding_in_boundary,how_you.mp4,HOW YOU,how you,2,2,2,1.0,1,1
+sliding_in_boundary,man_work_here.mp4,MAN WORK HERE,father work here,3,3,2,0.6667,1,0
+sliding_in_boundary,me_like_you.mp4,ME LIKE YOU,sorry like you,3,3,2,0.6667,1,0
+sliding_in_boundary,me_love_family.mp4,ME LOVE FAMILY,me money,3,2,1,0.3333,0,0
+sliding_in_boundary,me_remember_you.mp4,ME REMEMBER YOU,yes remember you,3,3,2,0.6667,1,0
+sliding_in_boundary,mother_love_you.mp4,MOTHER LOVE YOU,woman,3,1,0,0.0,0,0
+sliding_in_boundary,now_you_eat.mp4,NOW YOU EAT,today you eat,3,3,2,0.6667,1,0
+sliding_in_boundary,please_help_me.mp4,PLEASE HELP ME,please,3,1,1,0.3333,0,0
+sliding_in_boundary,sister_sad_today.mp4,SISTER SAD TODAY,brother,3,1,0,0.0,0,0
+sliding_in_boundary,sorry_friend.mp4,SORRY FRIEND,sorry friend,2,2,2,1.0,1,1
+sliding_in_boundary,today_you_work.mp4,TODAY YOU WORK,today you work,3,3,3,1.0,1,1
+sliding_in_boundary,tomorrow_you_study.mp4,TOMORROW YOU STUDY,yesterday you study,3,3,2,0.6667,1,0
+sliding_in_boundary,when_you_arrive.mp4,WHEN YOU ARRIVE,when you arrive,3,3,3,1.0,1,1
+sliding_in_boundary,where_you_go.mp4,WHERE YOU GO,where you go,3,3,3,1.0,1,1
+sliding_in_boundary,who_you.mp4,WHO YOU,who you,2,2,2,1.0,1,1
+sliding_in_boundary,why_you_sad.mp4,WHY YOU SAD,why sorry sad,3,3,2,0.6667,1,0
+sliding_in_boundary,woman_work_there.mp4,WOMAN WORK THERE,woman work there,3,3,3,1.0,1,1
+sliding_in_boundary,yesterday_you_work.mp4,YESTERDAY YOU WORK,yesterday you work,3,3,3,1.0,1,1
+sliding_in_boundary,you_ask_me.mp4,YOU ASK ME,you yes,3,2,1,0.3333,0,0
+sliding_in_boundary,you_cannot_go.mp4,YOU CANNOT GO,you cannot from,3,3,2,0.6667,1,0
+sliding_in_boundary,you_drink_water.mp4,YOU DRINK WATER,you hear water,3,3,2,0.6667,1,0
+sliding_in_boundary,you_finish_work.mp4,YOU FINISH WORK,need finish work,3,3,2,0.6667,1,0
+sliding_in_boundary,you_go_restaurant_today.mp4,YOU GO RESTAURANT TODAY,you go restaurant today,4,4,4,1.0,1,1
+sliding_in_boundary,you_go_shop_now.mp4,YOU GO SHOP NOW,you from shop today,4,4,2,0.5,1,0
+sliding_in_boundary,you_know_me.mp4,YOU KNOW ME,you know,3,2,2,0.6667,0,0
+sliding_in_boundary,you_like_restaurant.mp4,YOU LIKE RESTAURANT,you like restaurant,3,3,3,1.0,1,1
+sliding_in_boundary,you_must_study.mp4,YOU MUST STUDY,you hear study,3,3,2,0.6667,1,0
+sliding_in_boundary,you_need_money.mp4,YOU NEED MONEY,you need money,3,3,3,1.0,1,1
+sliding_in_boundary,you_show_me.mp4,YOU SHOW ME,you show sorry,3,3,2,0.6667,1,0
+sliding_in_boundary,you_sleep_now.mp4,YOU SLEEP NOW,you sleep today,3,3,2,0.6667,1,0
+sliding_in_boundary,you_tell_me.mp4,YOU TELL ME,you love come sorry,3,4,1,0.3333,0,0
+sliding_in_boundary,you_understand_me.mp4,YOU UNDERSTAND ME,you understand me,3,3,3,1.0,1,1
+sliding_in_boundary,you_use_computer.mp4,YOU USE COMPUTER,need,3,1,0,0.0,0,0
+sliding_in_boundary,you_use_phone.mp4,YOU USE PHONE,sorry,3,1,0,0.0,0,0
+sliding_in_boundary,you_wait_here.mp4,YOU WAIT HERE,you wait here what,3,4,3,1.0,0,0
+sliding_in_boundary,you_want_more.mp4,YOU WANT MORE,you what more,3,3,2,0.6667,1,0
+sliding_in_boundary,you_want_more_water.mp4,YOU WANT MORE WATER,you what more water,4,4,3,0.75,1,0
+sliding_in_boundary,you_want_water.mp4,YOU WANT WATER,you what water,3,3,2,0.6667,1,0
+sliding_in_boundary,you_watch_me.mp4,YOU WATCH ME,sorry watch,3,2,1,0.3333,0,0

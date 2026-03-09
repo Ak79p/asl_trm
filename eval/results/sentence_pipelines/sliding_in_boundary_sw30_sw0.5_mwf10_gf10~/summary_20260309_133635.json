@@ -1,0 +1,15 @@
+{
+  "sliding_in_boundary": {
+    "num_videos": 48,
+    "avg_word_accuracy": 0.6892,
+    "sentence_accuracy": 0.3333,
+    "length_match_rate": 0.7917,
+    "total_words_gt": 141,
+    "total_words_correct": 96,
+    "avg_bleu1": 0.7393,
+    "avg_bleu2": 0.6312,
+    "avg_rouge1": 0.7062,
+    "avg_rouge2": 0.5125,
+    "avg_rougeL": 0.7062
+  }
+}
