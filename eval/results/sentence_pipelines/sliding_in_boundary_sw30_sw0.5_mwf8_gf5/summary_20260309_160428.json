@@ -5,6 +5,11 @@
     "sentence_accuracy": 0.3333,
     "length_match_rate": 0.75,
     "total_words_gt": 141,
-    "total_words_correct": 95
+    "total_words_correct": 95,
+    "avg_bleu1": 0.7301,
+    "avg_bleu2": 0.6219,
+    "avg_rouge1": 0.6997,
+    "avg_rouge2": 0.5021,
+    "avg_rougeL": 0.6997
   }
 }
