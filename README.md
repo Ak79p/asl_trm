@@ -109,7 +109,7 @@ We report Top-1, Top-5, and Top-10 accuracy:
 
 ## Installation
 
-Requires python 3.7 - 3.11
+Requires python 3.7 - 3.11 and create venv
 
 ```bash
 # Clone the repo
