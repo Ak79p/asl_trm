@@ -109,6 +109,8 @@ We report Top-1, Top-5, and Top-10 accuracy:
 
 ## Installation
 
+Requires python 3.7 - 3.11
+
 ```bash
 # Clone the repo
 git clone https://github.com/Ak79p/asl_trm.git
