@@ -117,7 +117,7 @@ git clone https://github.com/Ak79p/asl_trm.git
 cd asl_trm
 
 # Create and activate virtual environment
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 
 # Install dependencies
