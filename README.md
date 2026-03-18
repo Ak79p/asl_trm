@@ -182,10 +182,10 @@ python -m eval.eval_trm --dataset asl-citizen
 
 ### Evaluating WLASL Datasets
 ```bash
-python -m eval.eval_trm --dataset asl100
-python -m eval.eval_trm --dataset asl300
-python -m eval.eval_trm --dataset asl1000
-python -m eval.eval_trm --dataset asl2000
+python -m eval.eval_trm --dataset wlasl100
+python -m eval.eval_trm --dataset wlasl300
+python -m eval.eval_trm --dataset wlasl1000
+python -m eval.eval_trm --dataset wlasl2000
 ```
 
 ---
