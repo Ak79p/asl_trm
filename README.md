@@ -120,10 +120,7 @@ cd asl_trm
 # https://docs.astral.sh/uv/getting-started/installation/
 
 # Create virtual environment
-uv venv --python 3.11
-
-# Install dependencies
-uv pip install -r requirements.txt
+uv sync
 
 # Launch the Streamlit interface
 uv run streamlit run app.py
@@ -191,7 +188,24 @@ python -m eval.eval_trm --dataset wlasl2000
 
 ---
 
-## Pending work
+### Evaluating Sentence level accuracy
+We have created synthetic sentence level videos by stitching word level videos, having maximum of 5 words. We have used testset of asl-citizen for creating sentence videos.
+
+Sentence details are mentioned at **data\app_asl_sentences_1000.json**
+> Note: Stop word is defined as 5 continuous frames when no hand keypoints are detected.
+
+| Total Videos   | BlUE1 | ROUGE1 |
+| ---------- | ------- | ------- |
+| 910        | 0.4808  | 0.5663  |
+
+#### Evaluation command:
+Download video data from [here]() at data/
+
+```
+bash eval/run_pipelines.sh -p sliding_in_boundary 
+```
+
+## Future work
 - Extend to real-world continuous ASL using improved temporal modeling and boundary detection.
 - Enhance sequence learning (e.g., attention/transformers) for better context across signs.
 

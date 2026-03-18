@@ -1,0 +1,4554 @@
+{
+  "sentences": [
+    {
+      "id": 1,
+      "asl": "hello my family",
+      "english": "Hello to my family"
+    },
+    {
+      "id": 2,
+      "asl": "where your house",
+      "english": "Where is your house"
+    },
+    {
+      "id": 3,
+      "asl": "mother go shop today",
+      "english": "Mother is going to the shop today"
+    },
+    {
+      "id": 4,
+      "asl": "they want more water",
+      "english": "They want more water"
+    },
+    {
+      "id": 5,
+      "asl": "you must wait here",
+      "english": "You must wait here"
+    },
+    {
+      "id": 6,
+      "asl": "me sick cannot work",
+      "english": "I am sick and cannot work"
+    },
+    {
+      "id": 7,
+      "asl": "father buy new car",
+      "english": "Father bought a new car"
+    },
+    {
+      "id": 8,
+      "asl": "boy excited for school",
+      "english": "The boy is excited for school"
+    },
+    {
+      "id": 9,
+      "asl": "please help me understand",
+      "english": "Please help me understand"
+    },
+    {
+      "id": 10,
+      "asl": "when you finish work",
+      "english": "When will you finish work"
+    },
+    {
+      "id": 11,
+      "asl": "girl study computer now",
+      "english": "The girl is studying the computer now"
+    },
+    {
+      "id": 13,
+      "asl": "brother angry because tired",
+      "english": "Brother is angry because he is tired"
+    },
+    {
+      "id": 14,
+      "asl": "friend arrive yesterday morning",
+      "english": "My friend arrived yesterday morning"
+    },
+    {
+      "id": 15,
+      "asl": "you need sleep now",
+      "english": "You need to sleep now"
+    },
+    {
+      "id": 17,
+      "asl": "sister sad today",
+      "english": "Sister is sad today"
+    },
+    {
+      "id": 18,
+      "asl": "me remember your name",
+      "english": "I remember your name"
+    },
+    {
+      "id": 19,
+      "asl": "why you leave early",
+      "english": "Why did you leave early"
+    },
+    {
+      "id": 20,
+      "asl": "man talk very loud",
+      "english": "The man talks very loudly"
+    },
+    {
+      "id": 21,
+      "asl": "woman read book there",
+      "english": "The woman reads a book there"
+    },
+    {
+      "id": 22,
+      "asl": "who you wait for",
+      "english": "Who are you waiting for"
+    },
+    {
+      "id": 23,
+      "asl": "how you know me",
+      "english": "How do you know me"
+    },
+    {
+      "id": 24,
+      "asl": "me think you good",
+      "english": "I think you are good"
+    },
+    {
+      "id": 25,
+      "asl": "family eat together night",
+      "english": "The family eats together at night"
+    },
+    {
+      "id": 26,
+      "asl": "can you show me",
+      "english": "Can you show me"
+    },
+    {
+      "id": 27,
+      "asl": "they watch car side",
+      "english": "They watch the side of the car"
+    },
+    {
+      "id": 28,
+      "asl": "few friend come home",
+      "english": "A few friends came home"
+    },
+    {
+      "id": 29,
+      "asl": "sorry me forget again",
+      "english": "Sorry I forgot again"
+    },
+    {
+      "id": 31,
+      "asl": "you like school",
+      "english": "Do you like school"
+    },
+    {
+      "id": 32,
+      "asl": "me love my mother",
+      "english": "I love my mother"
+    },
+    {
+      "id": 33,
+      "asl": "father sleep before work",
+      "english": "Father sleeps before work"
+    },
+    {
+      "id": 34,
+      "asl": "yes me understand you",
+      "english": "Yes I understand you"
+    },
+    {
+      "id": 35,
+      "asl": "no you cannot go",
+      "english": "No you cannot go"
+    },
+    {
+      "id": 36,
+      "asl": "which book you want",
+      "english": "Which book do you want"
+    },
+    {
+      "id": 37,
+      "asl": "friend leave after month",
+      "english": "The friend leaves after a month"
+    },
+    {
+      "id": 39,
+      "asl": "you ask mother please",
+      "english": "Please ask your mother"
+    },
+    {
+      "id": 40,
+      "asl": "me hear loud talk",
+      "english": "I hear loud talking"
+    },
+    {
+      "id": 41,
+      "asl": "brother use your phone",
+      "english": "Brother used your phone"
+    },
+    {
+      "id": 42,
+      "asl": "sister need money tomorrow",
+      "english": "Sister needs money tomorrow"
+    },
+    {
+      "id": 43,
+      "asl": "man sick stay home",
+      "english": "The man is sick and stays home"
+    },
+    {
+      "id": 44,
+      "asl": "woman happy see you",
+      "english": "The woman is happy to see you"
+    },
+    {
+      "id": 45,
+      "asl": "you drink water now",
+      "english": "Drink some water now"
+    },
+    {
+      "id": 46,
+      "asl": "where they study",
+      "english": "Where do they study"
+    },
+    {
+      "id": 47,
+      "asl": "me finish work week",
+      "english": "I finished my work week"
+    },
+    {
+      "id": 48,
+      "asl": "boy watch computer screen",
+      "english": "The boy watches the computer screen"
+    },
+    {
+      "id": 49,
+      "asl": "girl tired because study",
+      "english": "The girl is tired because she studied"
+    },
+    {
+      "id": 50,
+      "asl": "you come home when",
+      "english": "When will you come home"
+    },
+    {
+      "id": 51,
+      "asl": "good morning my friend",
+      "english": "Good morning my friend"
+    },
+    {
+      "id": 52,
+      "asl": "bad weather stay home",
+      "english": "Bad weather so stay home"
+    },
+    {
+      "id": 53,
+      "asl": "me know his name",
+      "english": "I know his name"
+    },
+    {
+      "id": 54,
+      "asl": "they leave tomorrow night",
+      "english": "They will leave tomorrow night"
+    },
+    {
+      "id": 55,
+      "asl": "please tell me truth",
+      "english": "Please tell me the truth"
+    },
+    {
+      "id": 56,
+      "asl": "you remember my car",
+      "english": "Do you remember my car"
+    },
+    {
+      "id": 57,
+      "asl": "father want more money",
+      "english": "Father wants more money"
+    },
+    {
+      "id": 58,
+      "asl": "mother need new phone",
+      "english": "Mother needs a new phone"
+    },
+    {
+      "id": 60,
+      "asl": "friend sick yesterday",
+      "english": "My friend was sick yesterday"
+    },
+    {
+      "id": 61,
+      "asl": "you happy today yes",
+      "english": "Are you happy today yes"
+    },
+    {
+      "id": 62,
+      "asl": "who drive car there",
+      "english": "Who is driving the car there"
+    },
+    {
+      "id": 64,
+      "asl": "boy run side road",
+      "english": "The boy ran to the side of the road"
+    },
+    {
+      "id": 65,
+      "asl": "girl read book here",
+      "english": "The girl is reading a book here"
+    },
+    {
+      "id": 66,
+      "asl": "man wait outside shop",
+      "english": "The man waits outside the shop"
+    },
+    {
+      "id": 67,
+      "asl": "woman go restaurant alone",
+      "english": "The woman went to the restaurant alone"
+    },
+    {
+      "id": 68,
+      "asl": "you must eat morning",
+      "english": "You must eat in the morning"
+    },
+    {
+      "id": 69,
+      "asl": "me cannot sleep night",
+      "english": "I cannot sleep at night"
+    },
+    {
+      "id": 70,
+      "asl": "they want go home",
+      "english": "They want to go home"
+    },
+    {
+      "id": 71,
+      "asl": "please hear my talk",
+      "english": "Please listen to my talk"
+    },
+    {
+      "id": 72,
+      "asl": "sorry you sad because",
+      "english": "I am sorry you are sad because"
+    },
+    {
+      "id": 73,
+      "asl": "friend help me again",
+      "english": "My friend helped me again"
+    },
+    {
+      "id": 74,
+      "asl": "family excited for tomorrow",
+      "english": "The family is excited for tomorrow"
+    },
+    {
+      "id": 75,
+      "asl": "you show me house",
+      "english": "You showed me the house"
+    },
+    {
+      "id": 76,
+      "asl": "me need use computer",
+      "english": "I need to use the computer"
+    },
+    {
+      "id": 77,
+      "asl": "brother watch me play",
+      "english": "My brother watches me play"
+    },
+    {
+      "id": 78,
+      "asl": "sister ask for water",
+      "english": "My sister asked for water"
+    },
+    {
+      "id": 79,
+      "asl": "father tired after work",
+      "english": "Father is tired after work"
+    },
+    {
+      "id": 80,
+      "asl": "mother cook food now",
+      "english": "Mother is cooking food now"
+    },
+    {
+      "id": 82,
+      "asl": "friend visit next month",
+      "english": "My friend visits next month"
+    },
+    {
+      "id": 83,
+      "asl": "school finish next year",
+      "english": "School finishes next year"
+    },
+    {
+      "id": 84,
+      "asl": "you open your mouth",
+      "english": "Open your mouth"
+    },
+    {
+      "id": 85,
+      "asl": "few people know me",
+      "english": "Few people know me"
+    },
+    {
+      "id": 86,
+      "asl": "good work today friend",
+      "english": "Good work today friend"
+    },
+    {
+      "id": 87,
+      "asl": "bad boy stay home",
+      "english": "The bad boy stays home"
+    },
+    {
+      "id": 88,
+      "asl": "me think you understand",
+      "english": "I think you understand"
+    },
+    {
+      "id": 89,
+      "asl": "they remember my name",
+      "english": "They remember my name"
+    },
+    {
+      "id": 90,
+      "asl": "where your family from",
+      "english": "Where is your family from"
+    },
+    {
+      "id": 91,
+      "asl": "why you angry me",
+      "english": "Why are you angry at me"
+    },
+    {
+      "id": 92,
+      "asl": "how they go school",
+      "english": "How do they go to school"
+    },
+    {
+      "id": 93,
+      "asl": "which car his car",
+      "english": "Which car is his car"
+    },
+    {
+      "id": 94,
+      "asl": "you drink water before",
+      "english": "You drank water before"
+    },
+    {
+      "id": 95,
+      "asl": "me study after work",
+      "english": "I study after work"
+    },
+    {
+      "id": 96,
+      "asl": "friend happy see family",
+      "english": "My friend is happy to see his family"
+    },
+    {
+      "id": 97,
+      "asl": "boy play side house",
+      "english": "The boy plays on the side of the house"
+    },
+    {
+      "id": 98,
+      "asl": "girl talk mother loud",
+      "english": "The girl talks to her mother loudly"
+    },
+    {
+      "id": 99,
+      "asl": "man want buy shop",
+      "english": "The man wants to buy the shop"
+    },
+    {
+      "id": 100,
+      "asl": "woman like new restaurant",
+      "english": "The woman likes the new restaurant"
+    },
+    {
+      "id": 101,
+      "asl": "you must finish today",
+      "english": "You must finish today"
+    },
+    {
+      "id": 102,
+      "asl": "me cannot find money",
+      "english": "I cannot find the money"
+    },
+    {
+      "id": 103,
+      "asl": "they need help now",
+      "english": "They need help now"
+    },
+    {
+      "id": 104,
+      "asl": "please wait outside here",
+      "english": "Please wait outside here"
+    },
+    {
+      "id": 105,
+      "asl": "sorry me late today",
+      "english": "Sorry I am late today"
+    },
+    {
+      "id": 106,
+      "asl": "yes me like you",
+      "english": "Yes I like you"
+    },
+    {
+      "id": 107,
+      "asl": "no they leave yesterday",
+      "english": "No they left yesterday"
+    },
+    {
+      "id": 109,
+      "asl": "who your best friend",
+      "english": "Who is your best friend"
+    },
+    {
+      "id": 110,
+      "asl": "where you work now",
+      "english": "Where do you work now"
+    },
+    {
+      "id": 111,
+      "asl": "when we go home",
+      "english": "When will we go home"
+    },
+    {
+      "id": 112,
+      "asl": "why father sad today",
+      "english": "Why is father sad today"
+    },
+    {
+      "id": 113,
+      "asl": "how mother feel today",
+      "english": "How does mother feel today"
+    },
+    {
+      "id": 114,
+      "asl": "which phone you want",
+      "english": "Which phone do you want"
+    },
+    {
+      "id": 115,
+      "asl": "you come from where",
+      "english": "Where do you come from"
+    },
+    {
+      "id": 116,
+      "asl": "me stay here tonight",
+      "english": "I will stay here tonight"
+    },
+    {
+      "id": 117,
+      "asl": "they go there tomorrow",
+      "english": "They will go there tomorrow"
+    },
+    {
+      "id": 118,
+      "asl": "friend arrive morning early",
+      "english": "My friend arrived early in the morning"
+    },
+    {
+      "id": 119,
+      "asl": "family sleep night late",
+      "english": "The family sleeps late at night"
+    },
+    {
+      "id": 120,
+      "asl": "you work week long",
+      "english": "You work all week long"
+    },
+    {
+      "id": 121,
+      "asl": "me study month long",
+      "english": "I studied all month long"
+    },
+    {
+      "id": 122,
+      "asl": "brother go school year",
+      "english": "Brother goes to school all year"
+    },
+    {
+      "id": 123,
+      "asl": "sister eat restaurant now",
+      "english": "Sister is eating at the restaurant now"
+    },
+    {
+      "id": 124,
+      "asl": "father drink water much",
+      "english": "Father drinks a lot of water"
+    },
+    {
+      "id": 125,
+      "asl": "mother want new house",
+      "english": "Mother wants a new house"
+    },
+    {
+      "id": 127,
+      "asl": "friend tell me secret",
+      "english": "My friend told me a secret"
+    },
+    {
+      "id": 128,
+      "asl": "you ask question please",
+      "english": "Please ask a question"
+    },
+    {
+      "id": 129,
+      "asl": "me show you computer",
+      "english": "I will show you the computer"
+    },
+    {
+      "id": 130,
+      "asl": "they hear loud noise",
+      "english": "They heard a loud noise"
+    },
+    {
+      "id": 131,
+      "asl": "boy happy play outside",
+      "english": "The boy is happy playing outside"
+    },
+    {
+      "id": 132,
+      "asl": "girl sad because tired",
+      "english": "The girl is sad because she is tired"
+    },
+    {
+      "id": 133,
+      "asl": "man angry need money",
+      "english": "The man is angry because he needs money"
+    },
+    {
+      "id": 134,
+      "asl": "woman sick stay bed",
+      "english": "The woman is sick and stays in bed"
+    },
+    {
+      "id": 135,
+      "asl": "you excited see family",
+      "english": "Are you excited to see your family"
+    },
+    {
+      "id": 136,
+      "asl": "me tired work much",
+      "english": "I am tired from working too much"
+    },
+    {
+      "id": 137,
+      "asl": "they loud talk night",
+      "english": "They talk loudly at night"
+    },
+    {
+      "id": 138,
+      "asl": "friend love read book",
+      "english": "My friend loves to read books"
+    },
+    {
+      "id": 139,
+      "asl": "family like eat together",
+      "english": "The family likes to eat together"
+    },
+    {
+      "id": 140,
+      "asl": "you want more sleep",
+      "english": "Do you want more sleep"
+    },
+    {
+      "id": 141,
+      "asl": "me need new car",
+      "english": "I need a new car"
+    },
+    {
+      "id": 142,
+      "asl": "brother want new phone",
+      "english": "Brother wants a new phone"
+    },
+    {
+      "id": 143,
+      "asl": "sister need help study",
+      "english": "Sister needs help studying"
+    },
+    {
+      "id": 144,
+      "asl": "father finish work late",
+      "english": "Father finished work late"
+    },
+    {
+      "id": 145,
+      "asl": "mother watch me dance",
+      "english": "Mother watches me dance"
+    },
+    {
+      "id": 147,
+      "asl": "friend leave before night",
+      "english": "My friend left before night"
+    },
+    {
+      "id": 148,
+      "asl": "you arrive after morning",
+      "english": "You will arrive after the morning"
+    },
+    {
+      "id": 149,
+      "asl": "me sad because sick",
+      "english": "I am sad because I am sick"
+    },
+    {
+      "id": 150,
+      "asl": "they happy because finish",
+      "english": "They are happy because they finished"
+    },
+    {
+      "id": 151,
+      "asl": "who help you today",
+      "english": "Who is helping you today?"
+    },
+    {
+      "id": 152,
+      "asl": "where your brother go",
+      "english": "Where did your brother go?"
+    },
+    {
+      "id": 153,
+      "asl": "why you need money",
+      "english": "Why do you need money?"
+    },
+    {
+      "id": 154,
+      "asl": "how sister feel now",
+      "english": "How does your sister feel now?"
+    },
+    {
+      "id": 156,
+      "asl": "which car you like",
+      "english": "Which car do you like?"
+    },
+    {
+      "id": 157,
+      "asl": "when they arrive school",
+      "english": "When do they arrive at school?"
+    },
+    {
+      "id": 158,
+      "asl": "me want drink water",
+      "english": "I want to drink water."
+    },
+    {
+      "id": 159,
+      "asl": "you must study hard",
+      "english": "You must study hard."
+    },
+    {
+      "id": 160,
+      "asl": "they cannot leave now",
+      "english": "They cannot leave now."
+    },
+    {
+      "id": 161,
+      "asl": "friend want more food",
+      "english": "My friend wants more food."
+    },
+    {
+      "id": 162,
+      "asl": "family come home soon",
+      "english": "The family is coming home soon."
+    },
+    {
+      "id": 163,
+      "asl": "boy play computer game",
+      "english": "The boy is playing a computer game."
+    },
+    {
+      "id": 164,
+      "asl": "girl love read book",
+      "english": "The girl loves to read books."
+    },
+    {
+      "id": 165,
+      "asl": "man work shop there",
+      "english": "The man works in that shop."
+    },
+    {
+      "id": 166,
+      "asl": "woman buy phone today",
+      "english": "The woman bought a phone today."
+    },
+    {
+      "id": 167,
+      "asl": "father angry because late",
+      "english": "Father is angry because he is late."
+    },
+    {
+      "id": 168,
+      "asl": "mother happy see friend",
+      "english": "Mother is happy to see her friend."
+    },
+    {
+      "id": 169,
+      "asl": "brother tired study night",
+      "english": "Brother is tired from studying at night."
+    },
+    {
+      "id": 170,
+      "asl": "sister sick stay home",
+      "english": "Sister is sick and staying home."
+    },
+    {
+      "id": 171,
+      "asl": "you remember his name",
+      "english": "Do you remember his name?"
+    },
+    {
+      "id": 172,
+      "asl": "me think you right",
+      "english": "I think you are right."
+    },
+    {
+      "id": 173,
+      "asl": "they understand me now",
+      "english": "They understand me now."
+    },
+    {
+      "id": 174,
+      "asl": "please tell me more",
+      "english": "Please tell me more."
+    },
+    {
+      "id": 175,
+      "asl": "sorry me forget again",
+      "english": "Sorry, I forgot again."
+    },
+    {
+      "id": 177,
+      "asl": "hello how you today",
+      "english": "Hello, how are you today?"
+    },
+    {
+      "id": 178,
+      "asl": "bye see you tomorrow",
+      "english": "Goodbye, see you tomorrow."
+    },
+    {
+      "id": 180,
+      "asl": "you watch me work",
+      "english": "Watch me work."
+    },
+    {
+      "id": 181,
+      "asl": "me ask father money",
+      "english": "I asked father for money."
+    },
+    {
+      "id": 182,
+      "asl": "show me your house",
+      "english": "Show me your house."
+    },
+    {
+      "id": 183,
+      "asl": "they hear loud music",
+      "english": "They hear loud music."
+    },
+    {
+      "id": 184,
+      "asl": "boy excited for tomorrow",
+      "english": "The boy is excited for tomorrow."
+    },
+    {
+      "id": 185,
+      "asl": "girl sad leave school",
+      "english": "The girl is sad to leave school."
+    },
+    {
+      "id": 186,
+      "asl": "man talk side road",
+      "english": "The man is talking on the side of the road."
+    },
+    {
+      "id": 187,
+      "asl": "woman wait here long",
+      "english": "The woman waited here a long time."
+    },
+    {
+      "id": 188,
+      "asl": "you like my car",
+      "english": "Do you like my car?"
+    },
+    {
+      "id": 189,
+      "asl": "me love my family",
+      "english": "I love my family."
+    },
+    {
+      "id": 190,
+      "asl": "they need help now",
+      "english": "They need help now."
+    },
+    {
+      "id": 191,
+      "asl": "where you go morning",
+      "english": "Where did you go this morning?"
+    },
+    {
+      "id": 192,
+      "asl": "when school finish today",
+      "english": "When does school finish today?"
+    },
+    {
+      "id": 193,
+      "asl": "who that man there",
+      "english": "Who is that man there?"
+    },
+    {
+      "id": 194,
+      "asl": "why sister cry now",
+      "english": "Why is sister crying now?"
+    },
+    {
+      "id": 195,
+      "asl": "how you arrive here",
+      "english": "How did you arrive here?"
+    },
+    {
+      "id": 197,
+      "asl": "which book brother want",
+      "english": "Which book does brother want?"
+    },
+    {
+      "id": 198,
+      "asl": "you want eat now",
+      "english": "Do you want to eat now?"
+    },
+    {
+      "id": 199,
+      "asl": "me need more time",
+      "english": "I need more time."
+    },
+    {
+      "id": 200,
+      "asl": "they can go home",
+      "english": "They can go home."
+    },
+    {
+      "id": 201,
+      "asl": "father work house today",
+      "english": "Father is working on the house today."
+    },
+    {
+      "id": 202,
+      "asl": "mother study computer morning",
+      "english": "Mother studied the computer this morning."
+    },
+    {
+      "id": 203,
+      "asl": "brother want new phone",
+      "english": "Brother wants a new phone."
+    },
+    {
+      "id": 204,
+      "asl": "sister love her friend",
+      "english": "Sister loves her friend."
+    },
+    {
+      "id": 205,
+      "asl": "man buy water shop",
+      "english": "The man bought water at the shop."
+    },
+    {
+      "id": 206,
+      "asl": "woman tell me secret",
+      "english": "The woman told me a secret."
+    },
+    {
+      "id": 207,
+      "asl": "you must finish work",
+      "english": "You must finish your work."
+    },
+    {
+      "id": 208,
+      "asl": "me cannot find book",
+      "english": "I cannot find the book."
+    },
+    {
+      "id": 209,
+      "asl": "they watch movie night",
+      "english": "They are watching a movie tonight."
+    },
+    {
+      "id": 210,
+      "asl": "friend happy see me",
+      "english": "My friend is happy to see me."
+    },
+    {
+      "id": 211,
+      "asl": "family go restaurant week",
+      "english": "The family goes to the restaurant weekly."
+    },
+    {
+      "id": 212,
+      "asl": "boy tired play outside",
+      "english": "The boy is tired from playing outside."
+    },
+    {
+      "id": 213,
+      "asl": "girl excited for week",
+      "english": "The girl is excited for the week."
+    },
+    {
+      "id": 214,
+      "asl": "man talk loud here",
+      "english": "The man is talking loudly here."
+    },
+    {
+      "id": 215,
+      "asl": "woman sad because sick",
+      "english": "The woman is sad because she is sick."
+    },
+    {
+      "id": 216,
+      "asl": "you wait me morning",
+      "english": "Wait for me in the morning."
+    },
+    {
+      "id": 217,
+      "asl": "me arrive school early",
+      "english": "I arrived at school early."
+    },
+    {
+      "id": 218,
+      "asl": "they leave house now",
+      "english": "They are leaving the house now."
+    },
+    {
+      "id": 219,
+      "asl": "please show me car",
+      "english": "Please show me the car."
+    },
+    {
+      "id": 220,
+      "asl": "sorry me late yesterday",
+      "english": "Sorry I was late yesterday."
+    },
+    {
+      "id": 222,
+      "asl": "hello friend come in",
+      "english": "Hello friend, come in."
+    },
+    {
+      "id": 223,
+      "asl": "bye go home safe",
+      "english": "Goodbye, go home safely."
+    },
+    {
+      "id": 225,
+      "asl": "you know my mother",
+      "english": "Do you know my mother?"
+    },
+    {
+      "id": 226,
+      "asl": "me remember that day",
+      "english": "I remember that day."
+    },
+    {
+      "id": 227,
+      "asl": "they understand school work",
+      "english": "They understand the school work."
+    },
+    {
+      "id": 228,
+      "asl": "ask brother for help",
+      "english": "Ask your brother for help."
+    },
+    {
+      "id": 229,
+      "asl": "tell mother me love",
+      "english": "Tell mother I love her."
+    },
+    {
+      "id": 230,
+      "asl": "where you work week",
+      "english": "Where do you work during the week?"
+    },
+    {
+      "id": 231,
+      "asl": "when you leave house",
+      "english": "When are you leaving the house?"
+    },
+    {
+      "id": 232,
+      "asl": "who drink my water",
+      "english": "Who drank my water?"
+    },
+    {
+      "id": 233,
+      "asl": "why car stop here",
+      "english": "Why did the car stop here?"
+    },
+    {
+      "id": 234,
+      "asl": "how much money you",
+      "english": "How much money do you have?"
+    },
+    {
+      "id": 236,
+      "asl": "which restaurant you like",
+      "english": "Which restaurant do you like?"
+    },
+    {
+      "id": 237,
+      "asl": "you want more water",
+      "english": "Do you want more water?"
+    },
+    {
+      "id": 238,
+      "asl": "me need study today",
+      "english": "I need to study today."
+    },
+    {
+      "id": 239,
+      "asl": "they can arrive later",
+      "english": "They can arrive later."
+    },
+    {
+      "id": 240,
+      "asl": "father like his car",
+      "english": "Father likes his car."
+    },
+    {
+      "id": 241,
+      "asl": "mother want new book",
+      "english": "Mother wants a new book."
+    },
+    {
+      "id": 242,
+      "asl": "brother go shop morning",
+      "english": "Brother went to the shop this morning."
+    },
+    {
+      "id": 243,
+      "asl": "sister work restaurant night",
+      "english": "Sister works at the restaurant at night."
+    },
+    {
+      "id": 244,
+      "asl": "man sick stay bed",
+      "english": "The man is sick and stays in bed."
+    },
+    {
+      "id": 245,
+      "asl": "woman happy finish work",
+      "english": "The woman is happy to finish work."
+    },
+    {
+      "id": 246,
+      "asl": "you must hear me",
+      "english": "You must listen to me."
+    },
+    {
+      "id": 247,
+      "asl": "me cannot wait month",
+      "english": "I cannot wait a month."
+    },
+    {
+      "id": 248,
+      "asl": "they watch me study",
+      "english": "They are watching me study."
+    },
+    {
+      "id": 249,
+      "asl": "friend tired after school",
+      "english": "My friend is tired after school."
+    },
+    {
+      "id": 250,
+      "asl": "family love spend time",
+      "english": "The family loves to spend time together."
+    },
+    {
+      "id": 251,
+      "asl": "boy play outside today",
+      "english": "The boy is playing outside today."
+    },
+    {
+      "id": 252,
+      "asl": "girl want use computer",
+      "english": "The girl wants to use the computer."
+    },
+    {
+      "id": 253,
+      "asl": "man talk loud restaurant",
+      "english": "The man talks loudly in the restaurant."
+    },
+    {
+      "id": 254,
+      "asl": "woman work home now",
+      "english": "The woman is working from home now."
+    },
+    {
+      "id": 255,
+      "asl": "you wait there tomorrow",
+      "english": "Wait there tomorrow."
+    },
+    {
+      "id": 256,
+      "asl": "me leave school now",
+      "english": "I am leaving school now."
+    },
+    {
+      "id": 257,
+      "asl": "they arrive here night",
+      "english": "They will arrive here tonight."
+    },
+    {
+      "id": 258,
+      "asl": "please help me study",
+      "english": "Please help me study."
+    },
+    {
+      "id": 259,
+      "asl": "sorry brother angry you",
+      "english": "Sorry that brother is angry at you."
+    },
+    {
+      "id": 261,
+      "asl": "hello sister how school",
+      "english": "Hello sister, how is school?"
+    },
+    {
+      "id": 262,
+      "asl": "bye father see later",
+      "english": "Goodbye father, see you later."
+    },
+    {
+      "id": 264,
+      "asl": "you know his friend",
+      "english": "Do you know his friend?"
+    },
+    {
+      "id": 265,
+      "asl": "me remember your face",
+      "english": "I remember your face."
+    },
+    {
+      "id": 266,
+      "asl": "they understand my talk",
+      "english": "They understand my talk."
+    },
+    {
+      "id": 267,
+      "asl": "ask mother for money",
+      "english": "Ask mother for money."
+    },
+    {
+      "id": 268,
+      "asl": "tell friend come house",
+      "english": "Tell your friend to come to the house."
+    },
+    {
+      "id": 269,
+      "asl": "where they go week",
+      "english": "Where do they go during the week?"
+    },
+    {
+      "id": 270,
+      "asl": "when we eat night",
+      "english": "When will we eat tonight?"
+    },
+    {
+      "id": 271,
+      "asl": "who use my computer",
+      "english": "Who is using my computer?"
+    },
+    {
+      "id": 272,
+      "asl": "why man loud there",
+      "english": "Why is that man being loud there?"
+    },
+    {
+      "id": 273,
+      "asl": "how girl feel yesterday",
+      "english": "How did the girl feel yesterday?"
+    },
+    {
+      "id": 275,
+      "asl": "which car father want",
+      "english": "Which car does father want?"
+    },
+    {
+      "id": 276,
+      "asl": "you want drink water",
+      "english": "Do you want to drink water?"
+    },
+    {
+      "id": 277,
+      "asl": "me need finish year",
+      "english": "I need to finish the year."
+    },
+    {
+      "id": 278,
+      "asl": "they can wait tomorrow",
+      "english": "They can wait until tomorrow."
+    },
+    {
+      "id": 279,
+      "asl": "father work shop morning",
+      "english": "Father works at the shop in the morning."
+    },
+    {
+      "id": 280,
+      "asl": "mother like her house",
+      "english": "Mother likes her house."
+    },
+    {
+      "id": 281,
+      "asl": "brother study school now",
+      "english": "Brother is studying at school now."
+    },
+    {
+      "id": 282,
+      "asl": "sister want new car",
+      "english": "Sister wants a new car."
+    },
+    {
+      "id": 283,
+      "asl": "man happy with money",
+      "english": "The man is happy with the money."
+    },
+    {
+      "id": 284,
+      "asl": "woman tired after work",
+      "english": "The woman is tired after work."
+    },
+    {
+      "id": 285,
+      "asl": "you must tell me",
+      "english": "You must tell me."
+    },
+    {
+      "id": 286,
+      "asl": "me cannot go school",
+      "english": "I cannot go to school."
+    },
+    {
+      "id": 287,
+      "asl": "they watch friend play",
+      "english": "They are watching their friend play."
+    },
+    {
+      "id": 288,
+      "asl": "friend sick stay home",
+      "english": "My friend is sick and staying home."
+    },
+    {
+      "id": 289,
+      "asl": "family wait for you",
+      "english": "The family is waiting for you."
+    },
+    {
+      "id": 290,
+      "asl": "boy want more water",
+      "english": "The boy wants more water."
+    },
+    {
+      "id": 291,
+      "asl": "girl happy see mother",
+      "english": "The girl is happy to see her mother."
+    },
+    {
+      "id": 292,
+      "asl": "man work hard today",
+      "english": "The man worked hard today."
+    },
+    {
+      "id": 293,
+      "asl": "woman love her family",
+      "english": "The woman loves her family."
+    },
+    {
+      "id": 294,
+      "asl": "you arrive home late",
+      "english": "You arrived home late."
+    },
+    {
+      "id": 295,
+      "asl": "me go shop afternoon",
+      "english": "I am going to the shop this afternoon."
+    },
+    {
+      "id": 296,
+      "asl": "they leave tomorrow morning",
+      "english": "They are leaving tomorrow morning."
+    },
+    {
+      "id": 297,
+      "asl": "please wait me here",
+      "english": "Please wait for me here."
+    },
+    {
+      "id": 298,
+      "asl": "sorry me angry yesterday",
+      "english": "Sorry I was angry yesterday."
+    },
+    {
+      "id": 300,
+      "asl": "hello father how work",
+      "english": "Hello father, how was work?"
+    },
+    {
+      "id": 301,
+      "asl": "brother must study school",
+      "english": "Brother must study at school"
+    },
+    {
+      "id": 302,
+      "asl": "sister can go shop",
+      "english": "Sister can go to the shop"
+    },
+    {
+      "id": 303,
+      "asl": "father cannot find car",
+      "english": "Father cannot find the car"
+    },
+    {
+      "id": 304,
+      "asl": "mother must wait here",
+      "english": "Mother must wait here"
+    },
+    {
+      "id": 305,
+      "asl": "you can hear me",
+      "english": "Can you hear me?"
+    },
+    {
+      "id": 306,
+      "asl": "me must leave now",
+      "english": "I must leave now"
+    },
+    {
+      "id": 307,
+      "asl": "they cannot understand you",
+      "english": "They cannot understand you"
+    },
+    {
+      "id": 308,
+      "asl": "friend must arrive tomorrow",
+      "english": "My friend must arrive tomorrow"
+    },
+    {
+      "id": 309,
+      "asl": "boy can eat more",
+      "english": "The boy can eat more"
+    },
+    {
+      "id": 310,
+      "asl": "girl cannot read book",
+      "english": "The girl cannot read the book"
+    },
+    {
+      "id": 311,
+      "asl": "man must work night",
+      "english": "The man must work tonight"
+    },
+    {
+      "id": 312,
+      "asl": "woman can talk later",
+      "english": "The woman can talk later"
+    },
+    {
+      "id": 313,
+      "asl": "you must remember name",
+      "english": "You must remember the name"
+    },
+    {
+      "id": 314,
+      "asl": "me cannot sleep here",
+      "english": "I cannot sleep here"
+    },
+    {
+      "id": 315,
+      "asl": "they must finish work",
+      "english": "They must finish the work"
+    },
+    {
+      "id": 316,
+      "asl": "why you must go",
+      "english": "Why must you go?"
+    },
+    {
+      "id": 317,
+      "asl": "when we can eat",
+      "english": "When can we eat?"
+    },
+    {
+      "id": 318,
+      "asl": "who can help father",
+      "english": "Who can help father?"
+    },
+    {
+      "id": 319,
+      "asl": "where me can wait",
+      "english": "Where can I wait?"
+    },
+    {
+      "id": 320,
+      "asl": "how you can know",
+      "english": "How can you know?"
+    },
+    {
+      "id": 321,
+      "asl": "which computer me use",
+      "english": "Which computer should I use?"
+    },
+    {
+      "id": 323,
+      "asl": "you happy because good",
+      "english": "You are happy because it is good"
+    },
+    {
+      "id": 324,
+      "asl": "me sad because bad",
+      "english": "I am sad because it is bad"
+    },
+    {
+      "id": 325,
+      "asl": "they angry because late",
+      "english": "They are angry because they are late"
+    },
+    {
+      "id": 326,
+      "asl": "boy tired because play",
+      "english": "The boy is tired because of playing"
+    },
+    {
+      "id": 327,
+      "asl": "girl sick because water",
+      "english": "The girl is sick because of the water"
+    },
+    {
+      "id": 328,
+      "asl": "man excited because car",
+      "english": "The man is excited because of the car"
+    },
+    {
+      "id": 329,
+      "asl": "woman loud because angry",
+      "english": "The woman is loud because she is angry"
+    },
+    {
+      "id": 330,
+      "asl": "friend happy see family",
+      "english": "My friend is happy to see the family"
+    },
+    {
+      "id": 331,
+      "asl": "mother sad leave home",
+      "english": "Mother is sad to leave home"
+    },
+    {
+      "id": 332,
+      "asl": "father tired work much",
+      "english": "Father is tired from working so much"
+    },
+    {
+      "id": 334,
+      "asl": "you understand my talk",
+      "english": "Do you understand my talk?"
+    },
+    {
+      "id": 335,
+      "asl": "me know your brother",
+      "english": "I know your brother"
+    },
+    {
+      "id": 336,
+      "asl": "they remember that school",
+      "english": "They remember that school"
+    },
+    {
+      "id": 337,
+      "asl": "boy think school good",
+      "english": "The boy thinks school is good"
+    },
+    {
+      "id": 338,
+      "asl": "girl want study computer",
+      "english": "The girl wants to study computers"
+    },
+    {
+      "id": 339,
+      "asl": "man need more money",
+      "english": "The man needs more money"
+    },
+    {
+      "id": 340,
+      "asl": "woman love her house",
+      "english": "The woman loves her house"
+    },
+    {
+      "id": 341,
+      "asl": "you like this restaurant",
+      "english": "Do you like this restaurant?"
+    },
+    {
+      "id": 342,
+      "asl": "me want drink water",
+      "english": "I want to drink water"
+    },
+    {
+      "id": 343,
+      "asl": "they need help today",
+      "english": "They need help today"
+    },
+    {
+      "id": 344,
+      "asl": "brother watch me work",
+      "english": "Brother is watching me work"
+    },
+    {
+      "id": 345,
+      "asl": "sister tell mother secret",
+      "english": "Sister told mother a secret"
+    },
+    {
+      "id": 346,
+      "asl": "father ask for car",
+      "english": "Father asked for the car"
+    },
+    {
+      "id": 347,
+      "asl": "mother show me photo",
+      "english": "Mother showed me a photo"
+    },
+    {
+      "id": 349,
+      "asl": "you finish work month",
+      "english": "You finished a month of work"
+    },
+    {
+      "id": 350,
+      "asl": "me study year long",
+      "english": "I studied all year long"
+    },
+    {
+      "id": 351,
+      "asl": "they wait week here",
+      "english": "They waited a week here"
+    },
+    {
+      "id": 352,
+      "asl": "friend arrive morning late",
+      "english": "My friend arrived late this morning"
+    },
+    {
+      "id": 353,
+      "asl": "family eat night late",
+      "english": "The family eats late at night"
+    },
+    {
+      "id": 354,
+      "asl": "boy go school early",
+      "english": "The boy goes to school early"
+    },
+    {
+      "id": 355,
+      "asl": "girl leave shop now",
+      "english": "The girl is leaving the shop now"
+    },
+    {
+      "id": 356,
+      "asl": "man arrive home tomorrow",
+      "english": "The man arrives home tomorrow"
+    },
+    {
+      "id": 357,
+      "asl": "woman work there today",
+      "english": "The woman is working there today"
+    },
+    {
+      "id": 358,
+      "asl": "you come here afternoon",
+      "english": "Come here this afternoon"
+    },
+    {
+      "id": 359,
+      "asl": "me stay home tonight",
+      "english": "I am staying home tonight"
+    },
+    {
+      "id": 360,
+      "asl": "they leave house early",
+      "english": "They left the house early"
+    },
+    {
+      "id": 361,
+      "asl": "please help me now",
+      "english": "Please help me now"
+    },
+    {
+      "id": 362,
+      "asl": "sorry me cannot come",
+      "english": "Sorry I cannot come"
+    },
+    {
+      "id": 364,
+      "asl": "hello you want water",
+      "english": "Hello, do you want water?"
+    },
+    {
+      "id": 365,
+      "asl": "bye see you week",
+      "english": "Goodbye, see you in a week"
+    },
+    {
+      "id": 366,
+      "asl": "yes me know him",
+      "english": "Yes, I know him"
+    },
+    {
+      "id": 367,
+      "asl": "no they not here",
+      "english": "No, they are not here"
+    },
+    {
+      "id": 369,
+      "asl": "who buy that car",
+      "english": "Who bought that car?"
+    },
+    {
+      "id": 370,
+      "asl": "where sister study now",
+      "english": "Where is sister studying now?"
+    },
+    {
+      "id": 371,
+      "asl": "when father arrive home",
+      "english": "When does father arrive home?"
+    },
+    {
+      "id": 372,
+      "asl": "why boy cry yesterday",
+      "english": "Why was the boy crying yesterday?"
+    },
+    {
+      "id": 373,
+      "asl": "how woman feel today",
+      "english": "How does the woman feel today?"
+    },
+    {
+      "id": 374,
+      "asl": "which book you read",
+      "english": "Which book are you reading?"
+    },
+    {
+      "id": 375,
+      "asl": "you want go shop",
+      "english": "Do you want to go to the shop?"
+    },
+    {
+      "id": 376,
+      "asl": "me need new computer",
+      "english": "I need a new computer"
+    },
+    {
+      "id": 377,
+      "asl": "they can sleep there",
+      "english": "They can sleep there"
+    },
+    {
+      "id": 378,
+      "asl": "brother like eat restaurant",
+      "english": "Brother likes eating at restaurants"
+    },
+    {
+      "id": 379,
+      "asl": "sister want more money",
+      "english": "Sister wants more money"
+    },
+    {
+      "id": 380,
+      "asl": "father work shop week",
+      "english": "Father works at the shop this week"
+    },
+    {
+      "id": 381,
+      "asl": "mother happy her house",
+      "english": "Mother is happy in her house"
+    },
+    {
+      "id": 383,
+      "asl": "friend visit yesterday morning",
+      "english": "Friend visited yesterday morning"
+    },
+    {
+      "id": 384,
+      "asl": "family love eat morning",
+      "english": "The family loves to eat in the morning"
+    },
+    {
+      "id": 385,
+      "asl": "boy watch car go",
+      "english": "The boy watches the car go"
+    },
+    {
+      "id": 386,
+      "asl": "girl talk her sister",
+      "english": "The girl is talking to her sister"
+    },
+    {
+      "id": 387,
+      "asl": "man sick cannot work",
+      "english": "The man is sick and cannot work"
+    },
+    {
+      "id": 388,
+      "asl": "woman happy see child",
+      "english": "The woman is happy to see her child"
+    },
+    {
+      "id": 389,
+      "asl": "you must hear mother",
+      "english": "You must listen to mother"
+    },
+    {
+      "id": 390,
+      "asl": "me cannot wait today",
+      "english": "I cannot wait today"
+    },
+    {
+      "id": 391,
+      "asl": "they watch me play",
+      "english": "They are watching me play"
+    },
+    {
+      "id": 392,
+      "asl": "friend tired school work",
+      "english": "Friend is tired of school work"
+    },
+    {
+      "id": 393,
+      "asl": "family wait for car",
+      "english": "The family is waiting for the car"
+    },
+    {
+      "id": 394,
+      "asl": "boy want drink water",
+      "english": "The boy wants to drink water"
+    },
+    {
+      "id": 395,
+      "asl": "girl happy at home",
+      "english": "The girl is happy at home"
+    },
+    {
+      "id": 396,
+      "asl": "man work hard year",
+      "english": "The man worked hard this year"
+    },
+    {
+      "id": 397,
+      "asl": "woman love her family",
+      "english": "The woman loves her family"
+    },
+    {
+      "id": 398,
+      "asl": "you arrive here late",
+      "english": "You arrived here late"
+    },
+    {
+      "id": 399,
+      "asl": "me go restaurant night",
+      "english": "I am going to the restaurant tonight"
+    },
+    {
+      "id": 400,
+      "asl": "they leave tomorrow early",
+      "english": "They are leaving early tomorrow"
+    },
+    {
+      "id": 401,
+      "asl": "please wait your turn",
+      "english": "Please wait for your turn"
+    },
+    {
+      "id": 402,
+      "asl": "sorry me late work",
+      "english": "Sorry I am late for work"
+    },
+    {
+      "id": 404,
+      "asl": "hello brother how you",
+      "english": "Hello brother, how are you?"
+    },
+    {
+      "id": 405,
+      "asl": "bye sister see tomorrow",
+      "english": "Goodbye sister, see you tomorrow"
+    },
+    {
+      "id": 407,
+      "asl": "you know my house",
+      "english": "Do you know my house?"
+    },
+    {
+      "id": 408,
+      "asl": "me remember that man",
+      "english": "I remember that man"
+    },
+    {
+      "id": 409,
+      "asl": "they understand our school",
+      "english": "They understand our school"
+    },
+    {
+      "id": 410,
+      "asl": "ask father for phone",
+      "english": "Ask father for the phone"
+    },
+    {
+      "id": 411,
+      "asl": "tell friend go shop",
+      "english": "Tell your friend to go to the shop"
+    },
+    {
+      "id": 412,
+      "asl": "where they stay now",
+      "english": "Where are they staying now?"
+    },
+    {
+      "id": 413,
+      "asl": "when we eat tomorrow",
+      "english": "When will we eat tomorrow?"
+    },
+    {
+      "id": 414,
+      "asl": "who use my car",
+      "english": "Who is using my car?"
+    },
+    {
+      "id": 415,
+      "asl": "why man angry there",
+      "english": "Why is the man angry there?"
+    },
+    {
+      "id": 416,
+      "asl": "how girl feel now",
+      "english": "How does the girl feel now?"
+    },
+    {
+      "id": 418,
+      "asl": "which car mother like",
+      "english": "Which car does mother like?"
+    },
+    {
+      "id": 419,
+      "asl": "you want more food",
+      "english": "Do you want more food?"
+    },
+    {
+      "id": 420,
+      "asl": "me need finish work",
+      "english": "I need to finish the work"
+    },
+    {
+      "id": 421,
+      "asl": "they can wait week",
+      "english": "They can wait for a week"
+    },
+    {
+      "id": 422,
+      "asl": "father work home today",
+      "english": "Father is working from home today"
+    },
+    {
+      "id": 423,
+      "asl": "mother like her friend",
+      "english": "Mother likes her friend"
+    },
+    {
+      "id": 424,
+      "asl": "brother study school today",
+      "english": "Brother is studying at school today"
+    },
+    {
+      "id": 425,
+      "asl": "sister want buy car",
+      "english": "Sister wants to buy a car"
+    },
+    {
+      "id": 426,
+      "asl": "man happy his money",
+      "english": "The man is happy with his money"
+    },
+    {
+      "id": 427,
+      "asl": "woman tired work day",
+      "english": "The woman is tired from the work day"
+    },
+    {
+      "id": 428,
+      "asl": "you must tell father",
+      "english": "You must tell father"
+    },
+    {
+      "id": 429,
+      "asl": "me cannot go restaurant",
+      "english": "I cannot go to the restaurant"
+    },
+    {
+      "id": 430,
+      "asl": "they watch sister play",
+      "english": "They are watching sister play"
+    },
+    {
+      "id": 431,
+      "asl": "friend sick stay bed",
+      "english": "Friend is sick and staying in bed"
+    },
+    {
+      "id": 432,
+      "asl": "family wait for bus",
+      "english": "The family is waiting for the bus"
+    },
+    {
+      "id": 433,
+      "asl": "boy want more water",
+      "english": "The boy wants more water"
+    },
+    {
+      "id": 434,
+      "asl": "girl happy see father",
+      "english": "The girl is happy to see her father"
+    },
+    {
+      "id": 435,
+      "asl": "man work hard day",
+      "english": "The man works hard all day"
+    },
+    {
+      "id": 436,
+      "asl": "woman love her husband",
+      "english": "The woman loves her husband"
+    },
+    {
+      "id": 437,
+      "asl": "you arrive home night",
+      "english": "You arrived home at night"
+    },
+    {
+      "id": 438,
+      "asl": "me go shop afternoon",
+      "english": "I am going to the shop this afternoon"
+    },
+    {
+      "id": 439,
+      "asl": "they leave tomorrow morning",
+      "english": "They are leaving tomorrow morning"
+    },
+    {
+      "id": 440,
+      "asl": "please wait me here",
+      "english": "Please wait for me here"
+    },
+    {
+      "id": 441,
+      "asl": "sorry me angry yesterday",
+      "english": "Sorry I was angry yesterday"
+    },
+    {
+      "id": 443,
+      "asl": "hello father how work",
+      "english": "Hello father, how was work?"
+    },
+    {
+      "id": 444,
+      "asl": "bye see you later",
+      "english": "Goodbye, see you later"
+    },
+    {
+      "id": 446,
+      "asl": "you know her name",
+      "english": "Do you know her name?"
+    },
+    {
+      "id": 447,
+      "asl": "me remember my home",
+      "english": "I remember my home"
+    },
+    {
+      "id": 448,
+      "asl": "they understand the book",
+      "english": "They understand the book"
+    },
+    {
+      "id": 449,
+      "asl": "ask sister for help",
+      "english": "Ask sister for help"
+    },
+    {
+      "id": 450,
+      "asl": "tell mother me come",
+      "english": "Tell mother I am coming"
+    },
+    {
+      "id": 451,
+      "asl": "my family love you",
+      "english": "My family loves you"
+    },
+    {
+      "id": 452,
+      "asl": "his brother study computer",
+      "english": "His brother is studying on the computer"
+    },
+    {
+      "id": 453,
+      "asl": "your sister want water",
+      "english": "Your sister wants some water"
+    },
+    {
+      "id": 454,
+      "asl": "my father work here",
+      "english": "My father works here"
+    },
+    {
+      "id": 455,
+      "asl": "his mother go school",
+      "english": "His mother went to the school"
+    },
+    {
+      "id": 456,
+      "asl": "where your home located",
+      "english": "Where is your home located?"
+    },
+    {
+      "id": 457,
+      "asl": "me like your phone",
+      "english": "I like your phone"
+    },
+    {
+      "id": 458,
+      "asl": "they watch my car",
+      "english": "They are watching my car"
+    },
+    {
+      "id": 459,
+      "asl": "who your best friend",
+      "english": "Who is your best friend?"
+    },
+    {
+      "id": 460,
+      "asl": "show me your money",
+      "english": "Show me your money"
+    },
+    {
+      "id": 461,
+      "asl": "his car very good",
+      "english": "His car is very good"
+    },
+    {
+      "id": 462,
+      "asl": "my friend arrive tomorrow",
+      "english": "My friend arrives tomorrow"
+    },
+    {
+      "id": 463,
+      "asl": "your house there",
+      "english": "Your house is over there"
+    },
+    {
+      "id": 465,
+      "asl": "mother tell her secret",
+      "english": "Mother told her a secret"
+    },
+    {
+      "id": 466,
+      "asl": "brother use my computer",
+      "english": "Brother is using my computer"
+    },
+    {
+      "id": 467,
+      "asl": "you remember my face",
+      "english": "Do you remember my face?"
+    },
+    {
+      "id": 468,
+      "asl": "sister need my help",
+      "english": "Sister needs my help"
+    },
+    {
+      "id": 469,
+      "asl": "where his restaurant",
+      "english": "Where is his restaurant?"
+    },
+    {
+      "id": 470,
+      "asl": "my work finish now",
+      "english": "My work is finished now"
+    },
+    {
+      "id": 471,
+      "asl": "your school very big",
+      "english": "Your school is very big"
+    },
+    {
+      "id": 473,
+      "asl": "mother love her family",
+      "english": "Mother loves her family"
+    },
+    {
+      "id": 474,
+      "asl": "father like his job",
+      "english": "Father likes his job"
+    },
+    {
+      "id": 475,
+      "asl": "you want my book",
+      "english": "Do you want my book?"
+    },
+    {
+      "id": 476,
+      "asl": "me know your house",
+      "english": "I know where your house is"
+    },
+    {
+      "id": 477,
+      "asl": "they find his money",
+      "english": "They found his money"
+    },
+    {
+      "id": 478,
+      "asl": "please help my friend",
+      "english": "Please help my friend"
+    },
+    {
+      "id": 479,
+      "asl": "sorry forget your name",
+      "english": "Sorry, I forgot your name"
+    },
+    {
+      "id": 481,
+      "asl": "his sister happy today",
+      "english": "His sister is happy today"
+    },
+    {
+      "id": 482,
+      "asl": "my brother angry you",
+      "english": "My brother is angry at you"
+    },
+    {
+      "id": 483,
+      "asl": "your father wait there",
+      "english": "Your father is waiting there"
+    },
+    {
+      "id": 484,
+      "asl": "where my car key",
+      "english": "Where are my car keys?"
+    },
+    {
+      "id": 485,
+      "asl": "who his mother",
+      "english": "Who is his mother?"
+    },
+    {
+      "id": 486,
+      "asl": "why your friend sad",
+      "english": "Why is your friend sad?"
+    },
+    {
+      "id": 487,
+      "asl": "how your family feel",
+      "english": "How is your family feeling?"
+    },
+    {
+      "id": 488,
+      "asl": "when your work finish",
+      "english": "When does your work finish?"
+    },
+    {
+      "id": 489,
+      "asl": "which book your favorite",
+      "english": "Which book is your favorite?"
+    },
+    {
+      "id": 490,
+      "asl": "me need your phone",
+      "english": "I need your phone"
+    },
+    {
+      "id": 491,
+      "asl": "they want my house",
+      "english": "They want my house"
+    },
+    {
+      "id": 492,
+      "asl": "you see his car",
+      "english": "Did you see his car?"
+    },
+    {
+      "id": 493,
+      "asl": "mother buy my clothes",
+      "english": "Mother bought my clothes"
+    },
+    {
+      "id": 494,
+      "asl": "father use his money",
+      "english": "Father is using his money"
+    },
+    {
+      "id": 495,
+      "asl": "brother go your school",
+      "english": "Brother goes to your school"
+    },
+    {
+      "id": 496,
+      "asl": "sister watch my play",
+      "english": "Sister watched my play"
+    },
+    {
+      "id": 497,
+      "asl": "friend like my restaurant",
+      "english": "My friend likes my restaurant"
+    },
+    {
+      "id": 498,
+      "asl": "my computer work good",
+      "english": "My computer works well"
+    },
+    {
+      "id": 499,
+      "asl": "your phone ring now",
+      "english": "Your phone is ringing now"
+    },
+    {
+      "id": 500,
+      "asl": "his money arrive today",
+      "english": "His money arrived today"
+    },
+    {
+      "id": 501,
+      "asl": "my water finish already",
+      "english": "My water is already finished"
+    },
+    {
+      "id": 502,
+      "asl": "your help very good",
+      "english": "Your help is very good"
+    },
+    {
+      "id": 503,
+      "asl": "his name easy remember",
+      "english": "His name is easy to remember"
+    },
+    {
+      "id": 504,
+      "asl": "my mother sick yesterday",
+      "english": "My mother was sick yesterday"
+    },
+    {
+      "id": 505,
+      "asl": "your father work hard",
+      "english": "Your father works hard"
+    },
+    {
+      "id": 506,
+      "asl": "his brother very loud",
+      "english": "His brother is very loud"
+    },
+    {
+      "id": 507,
+      "asl": "my sister study hard",
+      "english": "My sister studies hard"
+    },
+    {
+      "id": 508,
+      "asl": "your friend come later",
+      "english": "Your friend will come later"
+    },
+    {
+      "id": 509,
+      "asl": "his family leave now",
+      "english": "His family is leaving now"
+    },
+    {
+      "id": 510,
+      "asl": "my house feel happy",
+      "english": "My house feels happy"
+    },
+    {
+      "id": 511,
+      "asl": "your school finish year",
+      "english": "Your school finishes this year"
+    },
+    {
+      "id": 512,
+      "asl": "his car need water",
+      "english": "His car needs water"
+    },
+    {
+      "id": 513,
+      "asl": "my book stay home",
+      "english": "My book stayed at home"
+    },
+    {
+      "id": 514,
+      "asl": "your phone stay here",
+      "english": "Your phone stays here"
+    },
+    {
+      "id": 515,
+      "asl": "his computer very old",
+      "english": "His computer is very old"
+    },
+    {
+      "id": 516,
+      "asl": "my restaurant open now",
+      "english": "My restaurant is open now"
+    },
+    {
+      "id": 517,
+      "asl": "your money stay bank",
+      "english": "Your money stays in the bank"
+    },
+    {
+      "id": 518,
+      "asl": "his help not enough",
+      "english": "His help is not enough"
+    },
+    {
+      "id": 519,
+      "asl": "my time finish later",
+      "english": "My time will finish later"
+    },
+    {
+      "id": 520,
+      "asl": "your day good today",
+      "english": "Was your day good today?"
+    },
+    {
+      "id": 521,
+      "asl": "his morning start early",
+      "english": "His morning starts early"
+    },
+    {
+      "id": 522,
+      "asl": "my night very long",
+      "english": "My night was very long"
+    },
+    {
+      "id": 523,
+      "asl": "your week work hard",
+      "english": "Your week of work was hard"
+    },
+    {
+      "id": 524,
+      "asl": "his month go fast",
+      "english": "His month went by fast"
+    },
+    {
+      "id": 525,
+      "asl": "my year finish school",
+      "english": "My year to finish school"
+    },
+    {
+      "id": 526,
+      "asl": "your lunch eat now",
+      "english": "Eat your lunch now"
+    },
+    {
+      "id": 527,
+      "asl": "his dinner wait table",
+      "english": "His dinner is waiting on the table"
+    },
+    {
+      "id": 528,
+      "asl": "my breakfast good morning",
+      "english": "My breakfast was good this morning"
+    },
+    {
+      "id": 529,
+      "asl": "your friend ask why",
+      "english": "Your friend asked why"
+    },
+    {
+      "id": 530,
+      "asl": "his mother tell who",
+      "english": "His mother told him who"
+    },
+    {
+      "id": 531,
+      "asl": "my father show where",
+      "english": "My father showed me where"
+    },
+    {
+      "id": 532,
+      "asl": "your brother explain how",
+      "english": "Your brother explained how"
+    },
+    {
+      "id": 533,
+      "asl": "his sister choice which",
+      "english": "Which one was his sister's choice?"
+    },
+    {
+      "id": 534,
+      "asl": "my friend know when",
+      "english": "My friend knows when"
+    },
+    {
+      "id": 535,
+      "asl": "your family think what",
+      "english": "What does your family think?"
+    },
+    {
+      "id": 536,
+      "asl": "his boy play car",
+      "english": "His boy is playing with a car"
+    },
+    {
+      "id": 537,
+      "asl": "my girl read book",
+      "english": "My girl is reading a book"
+    },
+    {
+      "id": 538,
+      "asl": "your man work shop",
+      "english": "Your man works at the shop"
+    },
+    {
+      "id": 539,
+      "asl": "his woman happy home",
+      "english": "His woman is happy at home"
+    },
+    {
+      "id": 540,
+      "asl": "my brother love restaurant",
+      "english": "My brother loves the restaurant"
+    },
+    {
+      "id": 541,
+      "asl": "your sister need computer",
+      "english": "Your sister needs a computer"
+    },
+    {
+      "id": 542,
+      "asl": "his father want money",
+      "english": "His father wants money"
+    },
+    {
+      "id": 543,
+      "asl": "my mother watch movie",
+      "english": "My mother is watching a movie"
+    },
+    {
+      "id": 544,
+      "asl": "your family arrive later",
+      "english": "Your family will arrive later"
+    },
+    {
+      "id": 545,
+      "asl": "his friend stay here",
+      "english": "His friend is staying here"
+    },
+    {
+      "id": 546,
+      "asl": "my house stay clean",
+      "english": "My house stays clean"
+    },
+    {
+      "id": 547,
+      "asl": "your school start tomorrow",
+      "english": "Your school starts tomorrow"
+    },
+    {
+      "id": 548,
+      "asl": "his shop close today",
+      "english": "His shop is closed today"
+    },
+    {
+      "id": 549,
+      "asl": "my car go fast",
+      "english": "My car goes fast"
+    },
+    {
+      "id": 550,
+      "asl": "your computer need fix",
+      "english": "Your computer needs to be fixed"
+    },
+    {
+      "id": 551,
+      "asl": "his phone break yesterday",
+      "english": "His phone broke yesterday"
+    },
+    {
+      "id": 552,
+      "asl": "my money finish week",
+      "english": "My money will be finished this week"
+    },
+    {
+      "id": 553,
+      "asl": "your water taste bad",
+      "english": "Your water tastes bad"
+    },
+    {
+      "id": 554,
+      "asl": "his book very interesting",
+      "english": "His book is very interesting"
+    },
+    {
+      "id": 555,
+      "asl": "my time very short",
+      "english": "My time is very short"
+    },
+    {
+      "id": 556,
+      "asl": "your help mean much",
+      "english": "Your help means a lot"
+    },
+    {
+      "id": 557,
+      "asl": "his name talk loud",
+      "english": "His name was spoken loudly"
+    },
+    {
+      "id": 558,
+      "asl": "my work feel good",
+      "english": "My work feels good"
+    },
+    {
+      "id": 559,
+      "asl": "your day feel long",
+      "english": "Your day feels long"
+    },
+    {
+      "id": 560,
+      "asl": "his year feel fast",
+      "english": "His year feels like it went fast"
+    },
+    {
+      "id": 561,
+      "asl": "my friend ask me",
+      "english": "My friend asked me"
+    },
+    {
+      "id": 562,
+      "asl": "your mother tell you",
+      "english": "Your mother told you"
+    },
+    {
+      "id": 563,
+      "asl": "his father show him",
+      "english": "His father showed him"
+    },
+    {
+      "id": 564,
+      "asl": "my brother watch them",
+      "english": "My brother is watching them"
+    },
+    {
+      "id": 565,
+      "asl": "your sister hear us",
+      "english": "Your sister hears us"
+    },
+    {
+      "id": 566,
+      "asl": "his family love them",
+      "english": "His family loves them"
+    },
+    {
+      "id": 567,
+      "asl": "my house welcome you",
+      "english": "My house welcomes you"
+    },
+    {
+      "id": 568,
+      "asl": "your school need them",
+      "english": "Your school needs them"
+    },
+    {
+      "id": 569,
+      "asl": "his shop want you",
+      "english": "His shop wants you"
+    },
+    {
+      "id": 570,
+      "asl": "my car carry family",
+      "english": "My car carries the family"
+    },
+    {
+      "id": 571,
+      "asl": "your computer help me",
+      "english": "Your computer helps me"
+    },
+    {
+      "id": 572,
+      "asl": "his phone call mother",
+      "english": "His phone is calling mother"
+    },
+    {
+      "id": 573,
+      "asl": "my money buy food",
+      "english": "My money buys food"
+    },
+    {
+      "id": 574,
+      "asl": "your water feel cold",
+      "english": "Your water feels cold"
+    },
+    {
+      "id": 575,
+      "asl": "his book teach me",
+      "english": "His book teaches me"
+    },
+    {
+      "id": 576,
+      "asl": "my name mean happy",
+      "english": "My name means happy"
+    },
+    {
+      "id": 577,
+      "asl": "your help save time",
+      "english": "Your help saves time"
+    },
+    {
+      "id": 578,
+      "asl": "his work finish early",
+      "english": "His work finished early"
+    },
+    {
+      "id": 579,
+      "asl": "my day start now",
+      "english": "My day starts now"
+    },
+    {
+      "id": 580,
+      "asl": "your year go well",
+      "english": "Your year is going well"
+    },
+    {
+      "id": 581,
+      "asl": "friend arrive my house",
+      "english": "Friend arrived at my house"
+    },
+    {
+      "id": 582,
+      "asl": "mother go your shop",
+      "english": "Mother went to your shop"
+    },
+    {
+      "id": 583,
+      "asl": "father stay his school",
+      "english": "Father stayed at his school"
+    },
+    {
+      "id": 584,
+      "asl": "brother work my restaurant",
+      "english": "Brother works at my restaurant"
+    },
+    {
+      "id": 585,
+      "asl": "sister study your computer",
+      "english": "Sister studied on your computer"
+    },
+    {
+      "id": 586,
+      "asl": "family eat his food",
+      "english": "The family ate his food"
+    },
+    {
+      "id": 587,
+      "asl": "boy play my car",
+      "english": "The boy played with my car"
+    },
+    {
+      "id": 588,
+      "asl": "girl read your book",
+      "english": "The girl read your book"
+    },
+    {
+      "id": 589,
+      "asl": "man use his phone",
+      "english": "The man used his phone"
+    },
+    {
+      "id": 590,
+      "asl": "woman want my money",
+      "english": "The woman wants my money"
+    },
+    {
+      "id": 591,
+      "asl": "you drink your water",
+      "english": "You drink your water"
+    },
+    {
+      "id": 592,
+      "asl": "me finish my work",
+      "english": "I finished my work"
+    },
+    {
+      "id": 593,
+      "asl": "they leave their home",
+      "english": "They are leaving their home"
+    },
+    {
+      "id": 594,
+      "asl": "please remember my help",
+      "english": "Please remember my help"
+    },
+    {
+      "id": 595,
+      "asl": "sorry break your computer",
+      "english": "Sorry I broke your computer"
+    },
+    {
+      "id": 597,
+      "asl": "hello my good friend",
+      "english": "Hello my good friend"
+    },
+    {
+      "id": 598,
+      "asl": "bye see your family",
+      "english": "Goodbye, see your family"
+    },
+    {
+      "id": 599,
+      "asl": "yes me know his",
+      "english": "Yes, I know his"
+    },
+    {
+      "id": 600,
+      "asl": "no me want your",
+      "english": "No, I want yours"
+    },
+    {
+      "id": 601,
+      "asl": "where you from",
+      "english": "Where are you from?"
+    },
+    {
+      "id": 602,
+      "asl": "me from home",
+      "english": "I am from home"
+    },
+    {
+      "id": 603,
+      "asl": "they come from school",
+      "english": "They came from school"
+    },
+    {
+      "id": 604,
+      "asl": "father arrive from work",
+      "english": "Father arrived from work"
+    },
+    {
+      "id": 605,
+      "asl": "brother go from here",
+      "english": "Brother went from here"
+    },
+    {
+      "id": 606,
+      "asl": "mother come from shop",
+      "english": "Mother came from the shop"
+    },
+    {
+      "id": 607,
+      "asl": "friend leave from restaurant",
+      "english": "Friend left from the restaurant"
+    },
+    {
+      "id": 608,
+      "asl": "money come from father",
+      "english": "The money came from father"
+    },
+    {
+      "id": 609,
+      "asl": "water from that house",
+      "english": "Water from that house"
+    },
+    {
+      "id": 610,
+      "asl": "who from your family",
+      "english": "Who is from your family?"
+    },
+    {
+      "id": 611,
+      "asl": "you stay here today",
+      "english": "You stay here today"
+    },
+    {
+      "id": 612,
+      "asl": "me wait there tomorrow",
+      "english": "I will wait there tomorrow"
+    },
+    {
+      "id": 613,
+      "asl": "they work here now",
+      "english": "They are working here now"
+    },
+    {
+      "id": 614,
+      "asl": "please sit here",
+      "english": "Please sit here"
+    },
+    {
+      "id": 617,
+      "asl": "where you stay there",
+      "english": "Where did you stay there?"
+    },
+    {
+      "id": 618,
+      "asl": "car park here morning",
+      "english": "The car was parked here this morning"
+    },
+    {
+      "id": 619,
+      "asl": "school here restaurant there",
+      "english": "The school is here and the restaurant is there"
+    },
+    {
+      "id": 620,
+      "asl": "my friend live there",
+      "english": "My friend lives there"
+    },
+    {
+      "id": 621,
+      "asl": "boy play here now",
+      "english": "The boy is playing here now"
+    },
+    {
+      "id": 622,
+      "asl": "girl study there night",
+      "english": "The girl studies there at night"
+    },
+    {
+      "id": 623,
+      "asl": "man work here year",
+      "english": "The man worked here for a year"
+    },
+    {
+      "id": 624,
+      "asl": "woman wait there hour",
+      "english": "The woman waited there for an hour"
+    },
+    {
+      "id": 625,
+      "asl": "you come here please",
+      "english": "You come here please"
+    },
+    {
+      "id": 626,
+      "asl": "me leave there soon",
+      "english": "I will leave there soon"
+    },
+    {
+      "id": 627,
+      "asl": "they arrive here night",
+      "english": "They arrived here at night"
+    },
+    {
+      "id": 628,
+      "asl": "father stay there week",
+      "english": "Father stayed there for a week"
+    },
+    {
+      "id": 629,
+      "asl": "mother go here month",
+      "english": "Mother has been here for a month"
+    },
+    {
+      "id": 630,
+      "asl": "sister come there today",
+      "english": "Sister is coming there today"
+    },
+    {
+      "id": 631,
+      "asl": "good morning how you",
+      "english": "Good morning, how are you?"
+    },
+    {
+      "id": 632,
+      "asl": "bad news from school",
+      "english": "Bad news from school"
+    },
+    {
+      "id": 633,
+      "asl": "happy family stay here",
+      "english": "A happy family stays here"
+    },
+    {
+      "id": 634,
+      "asl": "sad friend leave there",
+      "english": "The sad friend left there"
+    },
+    {
+      "id": 635,
+      "asl": "angry man talk loud",
+      "english": "The angry man is talking loudly"
+    },
+    {
+      "id": 636,
+      "asl": "tired woman sleep there",
+      "english": "The tired woman is sleeping there"
+    },
+    {
+      "id": 637,
+      "asl": "sick boy stay home",
+      "english": "The sick boy is staying home"
+    },
+    {
+      "id": 638,
+      "asl": "excited girl go shop",
+      "english": "The excited girl is going to the shop"
+    },
+    {
+      "id": 639,
+      "asl": "loud noise from computer",
+      "english": "Loud noise coming from the computer"
+    },
+    {
+      "id": 640,
+      "asl": "few people stay there",
+      "english": "Few people stayed there"
+    },
+    {
+      "id": 641,
+      "asl": "you look good today",
+      "english": "You look good today"
+    },
+    {
+      "id": 642,
+      "asl": "me feel bad yesterday",
+      "english": "I felt bad yesterday"
+    },
+    {
+      "id": 643,
+      "asl": "they look happy home",
+      "english": "They look happy at home"
+    },
+    {
+      "id": 646,
+      "asl": "mother feel tired work",
+      "english": "Mother feels tired from work"
+    },
+    {
+      "id": 647,
+      "asl": "father look sick morning",
+      "english": "Father looked sick this morning"
+    },
+    {
+      "id": 648,
+      "asl": "brother feel excited tomorrow",
+      "english": "Brother feels excited for tomorrow"
+    },
+    {
+      "id": 649,
+      "asl": "sister look loud today",
+      "english": "Sister looks loud today"
+    },
+    {
+      "id": 650,
+      "asl": "friend look few years",
+      "english": "Friend looks a few years older"
+    },
+    {
+      "id": 652,
+      "asl": "who go there now",
+      "english": "Who is going there now?"
+    },
+    {
+      "id": 653,
+      "asl": "where mother stay today",
+      "english": "Where is mother staying today?"
+    },
+    {
+      "id": 654,
+      "asl": "when father come here",
+      "english": "When will father come here?"
+    },
+    {
+      "id": 655,
+      "asl": "why you leave there",
+      "english": "Why did you leave there?"
+    },
+    {
+      "id": 656,
+      "asl": "how they arrive here",
+      "english": "How did they arrive here?"
+    },
+    {
+      "id": 657,
+      "asl": "which car stay here",
+      "english": "Which car is staying here?"
+    },
+    {
+      "id": 658,
+      "asl": "you want water here",
+      "english": "Do you want water here?"
+    },
+    {
+      "id": 659,
+      "asl": "me need money there",
+      "english": "I need money there"
+    },
+    {
+      "id": 660,
+      "asl": "they can work here",
+      "english": "They can work here"
+    },
+    {
+      "id": 661,
+      "asl": "you from which school",
+      "english": "Which school are you from?"
+    },
+    {
+      "id": 662,
+      "asl": "me from this restaurant",
+      "english": "I am from this restaurant"
+    },
+    {
+      "id": 663,
+      "asl": "they from that house",
+      "english": "They are from that house"
+    },
+    {
+      "id": 664,
+      "asl": "mother from other shop",
+      "english": "Mother is from the other shop"
+    },
+    {
+      "id": 665,
+      "asl": "father from work now",
+      "english": "Father is from work now"
+    },
+    {
+      "id": 666,
+      "asl": "where your friend from",
+      "english": "Where is your friend from?"
+    },
+    {
+      "id": 667,
+      "asl": "how you from there",
+      "english": "How are you from there?"
+    },
+    {
+      "id": 668,
+      "asl": "who from here leave",
+      "english": "Who from here is leaving?"
+    },
+    {
+      "id": 669,
+      "asl": "when we from school",
+      "english": "When are we from school?"
+    },
+    {
+      "id": 670,
+      "asl": "why you from there",
+      "english": "Why are you from there?"
+    },
+    {
+      "id": 671,
+      "asl": "brother stay here night",
+      "english": "Brother stayed here at night"
+    },
+    {
+      "id": 672,
+      "asl": "sister wait there morning",
+      "english": "Sister waited there in the morning"
+    },
+    {
+      "id": 673,
+      "asl": "boy play here week",
+      "english": "The boy played here for a week"
+    },
+    {
+      "id": 674,
+      "asl": "girl study there month",
+      "english": "The girl studied there for a month"
+    },
+    {
+      "id": 675,
+      "asl": "man work here year",
+      "english": "The man worked here for a year"
+    },
+    {
+      "id": 676,
+      "asl": "woman talk there today",
+      "english": "The woman talked there today"
+    },
+    {
+      "id": 677,
+      "asl": "friend arrive here tomorrow",
+      "english": "Friend will arrive here tomorrow"
+    },
+    {
+      "id": 678,
+      "asl": "family go there yesterday",
+      "english": "The family went there yesterday"
+    },
+    {
+      "id": 679,
+      "asl": "me stay here now",
+      "english": "I am staying here now"
+    },
+    {
+      "id": 680,
+      "asl": "you leave there later",
+      "english": "You will leave there later"
+    },
+    {
+      "id": 681,
+      "asl": "water from here good",
+      "english": "The water from here is good"
+    },
+    {
+      "id": 683,
+      "asl": "money from father happy",
+      "english": "Money from father makes me happy"
+    },
+    {
+      "id": 685,
+      "asl": "talk from mother angry",
+      "english": "The talk from mother was angry"
+    },
+    {
+      "id": 687,
+      "asl": "work from home sick",
+      "english": "Working from home while sick"
+    },
+    {
+      "id": 688,
+      "asl": "book from library excited",
+      "english": "Excited about the book from the library"
+    },
+    {
+      "id": 690,
+      "asl": "few from them stay",
+      "english": "A few of them stayed"
+    },
+    {
+      "id": 691,
+      "asl": "you go from here",
+      "english": "You go from here"
+    },
+    {
+      "id": 692,
+      "asl": "me come from there",
+      "english": "I came from there"
+    },
+    {
+      "id": 693,
+      "asl": "they arrive from school",
+      "english": "They arrived from school"
+    },
+    {
+      "id": 694,
+      "asl": "father leave from shop",
+      "english": "Father left from the shop"
+    },
+    {
+      "id": 695,
+      "asl": "mother go from house",
+      "english": "Mother went from the house"
+    },
+    {
+      "id": 696,
+      "asl": "brother come from restaurant",
+      "english": "Brother came from the restaurant"
+    },
+    {
+      "id": 697,
+      "asl": "sister leave from work",
+      "english": "Sister left from work"
+    },
+    {
+      "id": 698,
+      "asl": "friend go from here",
+      "english": "Friend went from here"
+    },
+    {
+      "id": 699,
+      "asl": "family come from there",
+      "english": "The family came from there"
+    },
+    {
+      "id": 700,
+      "asl": "boy leave from school",
+      "english": "The boy left from school"
+    },
+    {
+      "id": 702,
+      "asl": "wait there sorry late",
+      "english": "Wait there, sorry I am late"
+    },
+    {
+      "id": 703,
+      "asl": "work here thankyou help",
+      "english": "Work here, thank you for the help"
+    },
+    {
+      "id": 704,
+      "asl": "hello come here now",
+      "english": "Hello, come here now"
+    },
+    {
+      "id": 705,
+      "asl": "bye go there safe",
+      "english": "Goodbye, go there safely"
+    },
+    {
+      "id": 706,
+      "asl": "yes stay here night",
+      "english": "Yes, stay here tonight"
+    },
+    {
+      "id": 707,
+      "asl": "no leave there morning",
+      "english": "No, leave there in the morning"
+    },
+    {
+      "id": 709,
+      "asl": "who wait there yesterday",
+      "english": "Who waited there yesterday?"
+    },
+    {
+      "id": 710,
+      "asl": "where work here tomorrow",
+      "english": "Where will they work here tomorrow?"
+    },
+    {
+      "id": 713,
+      "asl": "they from home eat",
+      "english": "They are from home to eat"
+    },
+    {
+      "id": 715,
+      "asl": "you from restaurant come",
+      "english": "You are coming from the restaurant"
+    },
+    {
+      "id": 716,
+      "asl": "me from shop wait",
+      "english": "I am waiting from the shop"
+    },
+    {
+      "id": 717,
+      "asl": "father from house go",
+      "english": "Father is going from the house"
+    },
+    {
+      "id": 718,
+      "asl": "mother from work stay",
+      "english": "Mother is staying from work"
+    },
+    {
+      "id": 719,
+      "asl": "brother from school arrive",
+      "english": "Brother is arriving from school"
+    },
+    {
+      "id": 720,
+      "asl": "sister from there talk",
+      "english": "Sister is talking from there"
+    },
+    {
+      "id": 721,
+      "asl": "here good for play",
+      "english": "Here is good for playing"
+    },
+    {
+      "id": 722,
+      "asl": "there bad for work",
+      "english": "There is bad for working"
+    },
+    {
+      "id": 723,
+      "asl": "here happy for family",
+      "english": "Here is happy for the family"
+    },
+    {
+      "id": 724,
+      "asl": "there sad for friend",
+      "english": "There is sad for the friend"
+    },
+    {
+      "id": 725,
+      "asl": "here angry for man",
+      "english": "Here is angry for the man"
+    },
+    {
+      "id": 726,
+      "asl": "there tired for woman",
+      "english": "There is tired for the woman"
+    },
+    {
+      "id": 727,
+      "asl": "here sick for boy",
+      "english": "Here is sick for the boy"
+    },
+    {
+      "id": 728,
+      "asl": "there excited for girl",
+      "english": "There is excited for the girl"
+    },
+    {
+      "id": 729,
+      "asl": "here loud for computer",
+      "english": "Here it is loud for the computer"
+    },
+    {
+      "id": 730,
+      "asl": "there few for people",
+      "english": "There are few people there"
+    },
+    {
+      "id": 731,
+      "asl": "you stay here wait",
+      "english": "You stay here and wait"
+    },
+    {
+      "id": 732,
+      "asl": "me leave there go",
+      "english": "I leave there and go"
+    },
+    {
+      "id": 733,
+      "asl": "they work here finish",
+      "english": "They work here and finish"
+    },
+    {
+      "id": 737,
+      "asl": "mother tell here morning",
+      "english": "Mother told us here this morning"
+    },
+    {
+      "id": 738,
+      "asl": "father ask there night",
+      "english": "Father asked there at night"
+    },
+    {
+      "id": 739,
+      "asl": "brother show here today",
+      "english": "Brother showed it here today"
+    },
+    {
+      "id": 740,
+      "asl": "sister think there tomorrow",
+      "english": "Sister will think about it there tomorrow"
+    },
+    {
+      "id": 741,
+      "asl": "from here you go",
+      "english": "From here you go"
+    },
+    {
+      "id": 742,
+      "asl": "from there me come",
+      "english": "From there I come"
+    },
+    {
+      "id": 743,
+      "asl": "from school they arrive",
+      "english": "From school they arrive"
+    },
+    {
+      "id": 744,
+      "asl": "from work he leave",
+      "english": "From work he leaves"
+    },
+    {
+      "id": 745,
+      "asl": "from house she go",
+      "english": "From the house she goes"
+    },
+    {
+      "id": 746,
+      "asl": "from shop mother come",
+      "english": "From the shop mother comes"
+    },
+    {
+      "id": 747,
+      "asl": "from restaurant father arrive",
+      "english": "From the restaurant father arrives"
+    },
+    {
+      "id": 748,
+      "asl": "from here friend leave",
+      "english": "From here the friend leaves"
+    },
+    {
+      "id": 749,
+      "asl": "from there family come",
+      "english": "From there the family comes"
+    },
+    {
+      "id": 750,
+      "asl": "from school boy go",
+      "english": "From school the boy goes"
+    },
+    {
+      "id": 751,
+      "asl": "tomorrow morning me work",
+      "english": "I work tomorrow morning"
+    },
+    {
+      "id": 752,
+      "asl": "yesterday night they arrive",
+      "english": "They arrived yesterday night"
+    },
+    {
+      "id": 758,
+      "asl": "morning father drink water",
+      "english": "Father drinks water in the morning"
+    },
+    {
+      "id": 759,
+      "asl": "night me study computer",
+      "english": "I study the computer at night"
+    },
+    {
+      "id": 761,
+      "asl": "week long he work",
+      "english": "He works all week long"
+    },
+    {
+      "id": 762,
+      "asl": "month long she study",
+      "english": "She studies all month long"
+    },
+    {
+      "id": 763,
+      "asl": "year long they wait",
+      "english": "They waited all year long"
+    },
+    {
+      "id": 764,
+      "asl": "today morning very good",
+      "english": "This morning was very good"
+    },
+    {
+      "id": 765,
+      "asl": "tomorrow night you come",
+      "english": "You come tomorrow night"
+    },
+    {
+      "id": 766,
+      "asl": "yesterday afternoon me shop",
+      "english": "I went shopping yesterday afternoon"
+    },
+    {
+      "id": 771,
+      "asl": "who work tomorrow morning",
+      "english": "Who works tomorrow morning?"
+    },
+    {
+      "id": 773,
+      "asl": "where they go week",
+      "english": "Where do they go for the week?"
+    },
+    {
+      "id": 774,
+      "asl": "when sister arrive month",
+      "english": "When does sister arrive this month?"
+    },
+    {
+      "id": 775,
+      "asl": "why father tired year",
+      "english": "Why is father tired this year?"
+    },
+    {
+      "id": 776,
+      "asl": "how brother study morning",
+      "english": "How does brother study in the morning?"
+    },
+    {
+      "id": 777,
+      "asl": "which restaurant open night",
+      "english": "Which restaurant is open at night?"
+    },
+    {
+      "id": 778,
+      "asl": "you want water morning",
+      "english": "Do you want water in the morning?"
+    },
+    {
+      "id": 779,
+      "asl": "me need money week",
+      "english": "I need money for the week"
+    },
+    {
+      "id": 780,
+      "asl": "they must finish year",
+      "english": "They must finish this year"
+    },
+    {
+      "id": 781,
+      "asl": "mother happy this morning",
+      "english": "Mother is happy this morning"
+    },
+    {
+      "id": 782,
+      "asl": "father angry last night",
+      "english": "Father was angry last night"
+    },
+    {
+      "id": 783,
+      "asl": "brother excited next week",
+      "english": "Brother is excited for next week"
+    },
+    {
+      "id": 784,
+      "asl": "sister sad yesterday afternoon",
+      "english": "Sister was sad yesterday afternoon"
+    },
+    {
+      "id": 785,
+      "asl": "friend tired this month",
+      "english": "Friend is tired this month"
+    },
+    {
+      "id": 786,
+      "asl": "family good this year",
+      "english": "The family is good this year"
+    },
+    {
+      "id": 787,
+      "asl": "boy sick every morning",
+      "english": "The boy is sick every morning"
+    },
+    {
+      "id": 788,
+      "asl": "girl loud every night",
+      "english": "The girl is loud every night"
+    },
+    {
+      "id": 789,
+      "asl": "man work hard week",
+      "english": "The man worked hard all week"
+    },
+    {
+      "id": 790,
+      "asl": "woman stay home month",
+      "english": "The woman stayed home all month"
+    },
+    {
+      "id": 791,
+      "asl": "me see you morning",
+      "english": "I will see you in the morning"
+    },
+    {
+      "id": 792,
+      "asl": "they hear us night",
+      "english": "They hear us at night"
+    },
+    {
+      "id": 796,
+      "asl": "please wait one hour",
+      "english": "Please wait for one hour"
+    },
+    {
+      "id": 797,
+      "asl": "sorry late this morning",
+      "english": "Sorry I am late this morning"
+    },
+    {
+      "id": 799,
+      "asl": "hello good morning friend",
+      "english": "Hello, good morning friend"
+    },
+    {
+      "id": 800,
+      "asl": "bye see you night",
+      "english": "Goodbye, see you tonight"
+    },
+    {
+      "id": 801,
+      "asl": "my brother work shop",
+      "english": "My brother works at the shop"
+    },
+    {
+      "id": 802,
+      "asl": "your sister study school",
+      "english": "Your sister studies at school"
+    },
+    {
+      "id": 803,
+      "asl": "his father go home",
+      "english": "His father is going home"
+    },
+    {
+      "id": 804,
+      "asl": "my mother love restaurant",
+      "english": "My mother loves the restaurant"
+    },
+    {
+      "id": 805,
+      "asl": "your friend want money",
+      "english": "Your friend wants money"
+    },
+    {
+      "id": 806,
+      "asl": "his family stay here",
+      "english": "His family stays here"
+    },
+    {
+      "id": 807,
+      "asl": "my house very quiet",
+      "english": "My house is very quiet"
+    },
+    {
+      "id": 808,
+      "asl": "your computer work well",
+      "english": "Your computer works well"
+    },
+    {
+      "id": 809,
+      "asl": "his car go there",
+      "english": "His car goes there"
+    },
+    {
+      "id": 810,
+      "asl": "my money finish today",
+      "english": "My money finished today"
+    },
+    {
+      "id": 811,
+      "asl": "where your brother now",
+      "english": "Where is your brother now?"
+    },
+    {
+      "id": 812,
+      "asl": "when my sister come",
+      "english": "When is my sister coming?"
+    },
+    {
+      "id": 813,
+      "asl": "who his father know",
+      "english": "Who does his father know?"
+    },
+    {
+      "id": 814,
+      "asl": "why your mother angry",
+      "english": "Why is your mother angry?"
+    },
+    {
+      "id": 815,
+      "asl": "how my friend feel",
+      "english": "How does my friend feel?"
+    },
+    {
+      "id": 817,
+      "asl": "which your house there",
+      "english": "Which house there is yours?"
+    },
+    {
+      "id": 818,
+      "asl": "you like my car",
+      "english": "Do you like my car?"
+    },
+    {
+      "id": 819,
+      "asl": "they want your help",
+      "english": "They want your help"
+    },
+    {
+      "id": 820,
+      "asl": "me need his phone",
+      "english": "I need his phone"
+    },
+    {
+      "id": 821,
+      "asl": "brother ask mother help",
+      "english": "Brother asked mother for help"
+    },
+    {
+      "id": 822,
+      "asl": "sister tell father news",
+      "english": "Sister told father the news"
+    },
+    {
+      "id": 823,
+      "asl": "friend show me car",
+      "english": "A friend showed me the car"
+    },
+    {
+      "id": 824,
+      "asl": "family watch boy play",
+      "english": "The family watches the boy play"
+    },
+    {
+      "id": 825,
+      "asl": "man talk woman restaurant",
+      "english": "The man talks to the woman at the restaurant"
+    },
+    {
+      "id": 826,
+      "asl": "boy read book school",
+      "english": "The boy reads a book at school"
+    },
+    {
+      "id": 827,
+      "asl": "girl use computer home",
+      "english": "The girl uses the computer at home"
+    },
+    {
+      "id": 828,
+      "asl": "father buy water shop",
+      "english": "Father bought water at the shop"
+    },
+    {
+      "id": 829,
+      "asl": "mother wait friend there",
+      "english": "Mother waits for a friend there"
+    },
+    {
+      "id": 831,
+      "asl": "who help mother today",
+      "english": "Who is helping mother today?"
+    },
+    {
+      "id": 833,
+      "asl": "where sister go morning",
+      "english": "Where did sister go this morning?"
+    },
+    {
+      "id": 834,
+      "asl": "when father finish work",
+      "english": "When does father finish work?"
+    },
+    {
+      "id": 835,
+      "asl": "why friend sad yesterday",
+      "english": "Why was the friend sad yesterday?"
+    },
+    {
+      "id": 836,
+      "asl": "how family stay happy",
+      "english": "How does the family stay happy?"
+    },
+    {
+      "id": 837,
+      "asl": "which book boy read",
+      "english": "Which book is the boy reading?"
+    },
+    {
+      "id": 838,
+      "asl": "you want help girl",
+      "english": "Do you want to help the girl?"
+    },
+    {
+      "id": 839,
+      "asl": "me need use phone",
+      "english": "I need to use the phone"
+    },
+    {
+      "id": 840,
+      "asl": "they can come house",
+      "english": "They can come to the house"
+    },
+    {
+      "id": 841,
+      "asl": "brother tired after work",
+      "english": "Brother is tired after work"
+    },
+    {
+      "id": 842,
+      "asl": "sister happy see friend",
+      "english": "Sister is happy to see her friend"
+    },
+    {
+      "id": 843,
+      "asl": "father angry car break",
+      "english": "Father is angry the car broke"
+    },
+    {
+      "id": 844,
+      "asl": "mother sick stay bed",
+      "english": "Mother is sick and staying in bed"
+    },
+    {
+      "id": 845,
+      "asl": "friend excited for school",
+      "english": "Friend is excited for school"
+    },
+    {
+      "id": 846,
+      "asl": "family sad leave home",
+      "english": "The family is sad to leave home"
+    },
+    {
+      "id": 847,
+      "asl": "boy good at computer",
+      "english": "The boy is good at the computer"
+    },
+    {
+      "id": 848,
+      "asl": "girl bad at study",
+      "english": "The girl is bad at studying"
+    },
+    {
+      "id": 849,
+      "asl": "man loud at restaurant",
+      "english": "The man is loud at the restaurant"
+    },
+    {
+      "id": 850,
+      "asl": "woman quiet at shop",
+      "english": "The woman is quiet at the shop"
+    },
+    {
+      "id": 851,
+      "asl": "please show me name",
+      "english": "Please show me the name"
+    },
+    {
+      "id": 852,
+      "asl": "sorry me forget phone",
+      "english": "Sorry I forgot my phone"
+    },
+    {
+      "id": 854,
+      "asl": "hello how your family",
+      "english": "Hello, how is your family?"
+    },
+    {
+      "id": 855,
+      "asl": "bye see your brother",
+      "english": "Goodbye, see your brother"
+    },
+    {
+      "id": 856,
+      "asl": "yes me understand work",
+      "english": "Yes I understand the work"
+    },
+    {
+      "id": 857,
+      "asl": "no they not come",
+      "english": "No, they are not coming"
+    },
+    {
+      "id": 859,
+      "asl": "who arrive here late",
+      "english": "Who arrived here late?"
+    },
+    {
+      "id": 860,
+      "asl": "where stay night tonight",
+      "english": "Where are you staying tonight?"
+    },
+    {
+      "id": 861,
+      "asl": "father work here year",
+      "english": "Father worked here for a year"
+    },
+    {
+      "id": 862,
+      "asl": "mother stay there month",
+      "english": "Mother stayed there for a month"
+    },
+    {
+      "id": 863,
+      "asl": "brother go school week",
+      "english": "Brother goes to school for the week"
+    },
+    {
+      "id": 864,
+      "asl": "sister wait home day",
+      "english": "Sister waited at home all day"
+    },
+    {
+      "id": 865,
+      "asl": "friend arrive morning early",
+      "english": "Friend arrived early in the morning"
+    },
+    {
+      "id": 866,
+      "asl": "family eat night late",
+      "english": "The family eats late at night"
+    },
+    {
+      "id": 867,
+      "asl": "boy play outside afternoon",
+      "english": "The boy plays outside in the afternoon"
+    },
+    {
+      "id": 868,
+      "asl": "girl study hard tonight",
+      "english": "The girl is studying hard tonight"
+    },
+    {
+      "id": 869,
+      "asl": "man leave shop now",
+      "english": "The man is leaving the shop now"
+    },
+    {
+      "id": 870,
+      "asl": "woman buy phone yesterday",
+      "english": "The woman bought a phone yesterday"
+    },
+    {
+      "id": 871,
+      "asl": "how you feel morning",
+      "english": "How do you feel this morning?"
+    },
+    {
+      "id": 872,
+      "asl": "why you leave night",
+      "english": "Why are you leaving at night?"
+    },
+    {
+      "id": 873,
+      "asl": "where car park today",
+      "english": "Where is the car parked today?"
+    },
+    {
+      "id": 874,
+      "asl": "when we eat restaurant",
+      "english": "When will we eat at the restaurant?"
+    },
+    {
+      "id": 875,
+      "asl": "who watch movie tomorrow",
+      "english": "Who is watching the movie tomorrow?"
+    },
+    {
+      "id": 877,
+      "asl": "which shop you go",
+      "english": "Which shop are you going to?"
+    },
+    {
+      "id": 878,
+      "asl": "you want more help",
+      "english": "Do you want more help?"
+    },
+    {
+      "id": 879,
+      "asl": "me need more money",
+      "english": "I need more money"
+    },
+    {
+      "id": 880,
+      "asl": "they can wait there",
+      "english": "They can wait there"
+    },
+    {
+      "id": 881,
+      "asl": "my friend from school",
+      "english": "My friend is from school"
+    },
+    {
+      "id": 882,
+      "asl": "your mother from shop",
+      "english": "Your mother is from the shop"
+    },
+    {
+      "id": 883,
+      "asl": "his father from work",
+      "english": "His father is from work"
+    },
+    {
+      "id": 884,
+      "asl": "brother come from here",
+      "english": "Brother came from here"
+    },
+    {
+      "id": 885,
+      "asl": "sister go from there",
+      "english": "Sister went from there"
+    },
+    {
+      "id": 886,
+      "asl": "money from his work",
+      "english": "The money is from his work"
+    },
+    {
+      "id": 887,
+      "asl": "water from your house",
+      "english": "Water from your house"
+    },
+    {
+      "id": 890,
+      "asl": "book from her school",
+      "english": "A book from her school"
+    },
+    {
+      "id": 891,
+      "asl": "wait here for mother",
+      "english": "Wait here for mother"
+    },
+    {
+      "id": 892,
+      "asl": "go there see father",
+      "english": "Go there and see father"
+    },
+    {
+      "id": 894,
+      "asl": "arrive school with sister",
+      "english": "Arrive at school with your sister"
+    },
+    {
+      "id": 895,
+      "asl": "eat restaurant with friend",
+      "english": "Eat at a restaurant with a friend"
+    },
+    {
+      "id": 896,
+      "asl": "study computer with family",
+      "english": "Study the computer with the family"
+    },
+    {
+      "id": 899,
+      "asl": "talk loud with man",
+      "english": "Talk loudly with the man"
+    },
+    {
+      "id": 901,
+      "asl": "brother must work tomorrow morning",
+      "english": "Brother must work tomorrow morning"
+    },
+    {
+      "id": 902,
+      "asl": "sister can study next week",
+      "english": "Sister can study next week"
+    },
+    {
+      "id": 903,
+      "asl": "father cannot go shop today",
+      "english": "Father cannot go to the shop today"
+    },
+    {
+      "id": 904,
+      "asl": "mother must wait here now",
+      "english": "Mother must wait here now"
+    },
+    {
+      "id": 905,
+      "asl": "friend can arrive home late",
+      "english": "The friend can arrive home late"
+    },
+    {
+      "id": 906,
+      "asl": "boy must finish school year",
+      "english": "The boy must finish the school year"
+    },
+    {
+      "id": 907,
+      "asl": "girl can read book night",
+      "english": "The girl can read a book at night"
+    },
+    {
+      "id": 908,
+      "asl": "man cannot use his phone",
+      "english": "The man cannot use his phone"
+    },
+    {
+      "id": 909,
+      "asl": "woman must buy new computer",
+      "english": "The woman must buy a new computer"
+    },
+    {
+      "id": 910,
+      "asl": "family can eat restaurant tomorrow",
+      "english": "The family can eat at the restaurant tomorrow"
+    },
+    {
+      "id": 911,
+      "asl": "who must leave house first",
+      "english": "Who must leave the house first?"
+    },
+    {
+      "id": 913,
+      "asl": "where he can park car",
+      "english": "Where can he park the car?"
+    },
+    {
+      "id": 914,
+      "asl": "when she must arrive school",
+      "english": "When must she arrive at school?"
+    },
+    {
+      "id": 915,
+      "asl": "why you cannot understand me",
+      "english": "Why can you not understand me?"
+    },
+    {
+      "id": 916,
+      "asl": "how they can find money",
+      "english": "How can they find money?"
+    },
+    {
+      "id": 917,
+      "asl": "which book you must read",
+      "english": "Which book must you read?"
+    },
+    {
+      "id": 918,
+      "asl": "me can show you how",
+      "english": "I can show you how"
+    },
+    {
+      "id": 919,
+      "asl": "you must tell mother truth",
+      "english": "You must tell mother the truth"
+    },
+    {
+      "id": 920,
+      "asl": "they can hear loud noise",
+      "english": "They can hear the loud noise"
+    },
+    {
+      "id": 921,
+      "asl": "yesterday me finish all work",
+      "english": "Yesterday I finished all the work"
+    },
+    {
+      "id": 922,
+      "asl": "today family very happy together",
+      "english": "Today the family is very happy together"
+    },
+    {
+      "id": 923,
+      "asl": "tomorrow friend go new school",
+      "english": "Tomorrow the friend goes to a new school"
+    },
+    {
+      "id": 925,
+      "asl": "morning father drink hot water",
+      "english": "In the morning father drinks hot water"
+    },
+    {
+      "id": 926,
+      "asl": "night me stay quiet room",
+      "english": "At night I stay in a quiet room"
+    },
+    {
+      "id": 928,
+      "asl": "week long woman work shop",
+      "english": "All week long the woman works at the shop"
+    },
+    {
+      "id": 929,
+      "asl": "month long brother study computer",
+      "english": "All month long brother studied the computer"
+    },
+    {
+      "id": 930,
+      "asl": "year long they wait house",
+      "english": "All year long they waited for the house"
+    },
+    {
+      "id": 931,
+      "asl": "you remember my name yes",
+      "english": "You remember my name, yes?"
+    },
+    {
+      "id": 932,
+      "asl": "me know your father well",
+      "english": "I know your father well"
+    },
+    {
+      "id": 933,
+      "asl": "they think school very good",
+      "english": "They think school is very good"
+    },
+    {
+      "id": 936,
+      "asl": "mother want buy more food",
+      "english": "Mother wants to buy more food"
+    },
+    {
+      "id": 937,
+      "asl": "father need fix his car",
+      "english": "Father needs to fix his car"
+    },
+    {
+      "id": 938,
+      "asl": "friend like this old restaurant",
+      "english": "Friend likes this old restaurant"
+    },
+    {
+      "id": 939,
+      "asl": "brother watch me use computer",
+      "english": "Brother watches me use the computer"
+    },
+    {
+      "id": 940,
+      "asl": "sister ask for some money",
+      "english": "Sister asked for some money"
+    },
+    {
+      "id": 941,
+      "asl": "where you from originally please",
+      "english": "Where are you from originally please?"
+    },
+    {
+      "id": 942,
+      "asl": "me from very far home",
+      "english": "I am from a very far home"
+    },
+    {
+      "id": 943,
+      "asl": "they come from that shop",
+      "english": "They came from that shop"
+    },
+    {
+      "id": 944,
+      "asl": "father arrive from work late",
+      "english": "Father arrived from work late"
+    },
+    {
+      "id": 945,
+      "asl": "mother go from house early",
+      "english": "Mother went from the house early"
+    },
+    {
+      "id": 946,
+      "asl": "brother leave from school now",
+      "english": "Brother is leaving from school now"
+    },
+    {
+      "id": 947,
+      "asl": "sister wait from morning time",
+      "english": "Sister has waited since morning time"
+    },
+    {
+      "id": 948,
+      "asl": "friend stay here from yesterday",
+      "english": "Friend has stayed here since yesterday"
+    },
+    {
+      "id": 949,
+      "asl": "family arrive from other restaurant",
+      "english": "Family arrived from the other restaurant"
+    },
+    {
+      "id": 950,
+      "asl": "boy go from here there",
+      "english": "The boy goes from here to there"
+    },
+    {
+      "id": 951,
+      "asl": "you look very happy today",
+      "english": "You look very happy today"
+    },
+    {
+      "id": 952,
+      "asl": "me feel a few bad",
+      "english": "I feel a little bad"
+    },
+    {
+      "id": 953,
+      "asl": "they look tired after work",
+      "english": "They look tired after work"
+    },
+    {
+      "id": 956,
+      "asl": "mother look beautiful her house",
+      "english": "Mother looks beautiful in her house"
+    },
+    {
+      "id": 957,
+      "asl": "father feel excited about car",
+      "english": "Father feels excited about the car"
+    },
+    {
+      "id": 958,
+      "asl": "brother look loud today morning",
+      "english": "Brother acted loud this morning"
+    },
+    {
+      "id": 959,
+      "asl": "sister feel sad leave friend",
+      "english": "Sister feels sad leaving her friend"
+    },
+    {
+      "id": 960,
+      "asl": "man look strong work hard",
+      "english": "The man looks strong and works hard"
+    },
+    {
+      "id": 961,
+      "asl": "please help me finish this",
+      "english": "Please help me finish this"
+    },
+    {
+      "id": 962,
+      "asl": "sorry me late for school",
+      "english": "Sorry I am late for school"
+    },
+    {
+      "id": 964,
+      "asl": "hello friend how your day",
+      "english": "Hello friend, how is your day?"
+    },
+    {
+      "id": 965,
+      "asl": "bye see you next week",
+      "english": "Goodbye, see you next week"
+    },
+    {
+      "id": 966,
+      "asl": "yes me want drink water",
+      "english": "Yes, I want to drink water"
+    },
+    {
+      "id": 967,
+      "asl": "no they cannot stay here",
+      "english": "No, they cannot stay here"
+    },
+    {
+      "id": 969,
+      "asl": "who use my computer yesterday",
+      "english": "Who used my computer yesterday?"
+    },
+    {
+      "id": 970,
+      "asl": "where your family live now",
+      "english": "Where does your family live now?"
+    },
+    {
+      "id": 971,
+      "asl": "when we go restaurant night",
+      "english": "When are we going to the restaurant?"
+    },
+    {
+      "id": 972,
+      "asl": "why boy cry at school",
+      "english": "Why did the boy cry at school?"
+    },
+    {
+      "id": 973,
+      "asl": "how you arrive here early",
+      "english": "How did you arrive here early?"
+    },
+    {
+      "id": 974,
+      "asl": "which car you want buy",
+      "english": "Which car do you want to buy?"
+    },
+    {
+      "id": 975,
+      "asl": "you want more water now",
+      "english": "Do you want more water now?"
+    },
+    {
+      "id": 976,
+      "asl": "me need find my phone",
+      "english": "I need to find my phone"
+    },
+    {
+      "id": 977,
+      "asl": "they can wait outside shop",
+      "english": "They can wait outside the shop"
+    },
+    {
+      "id": 978,
+      "asl": "brother like play with friend",
+      "english": "Brother likes playing with his friend"
+    },
+    {
+      "id": 979,
+      "asl": "sister want study at home",
+      "english": "Sister wants to study at home"
+    },
+    {
+      "id": 980,
+      "asl": "father work at that restaurant",
+      "english": "Father works at that restaurant"
+    },
+    {
+      "id": 981,
+      "asl": "my family always stay together",
+      "english": "My family always stays together"
+    },
+    {
+      "id": 982,
+      "asl": "your school very far from",
+      "english": "Your school is very far from here"
+    },
+    {
+      "id": 983,
+      "asl": "his car need more water",
+      "english": "His car needs more water"
+    },
+    {
+      "id": 984,
+      "asl": "my mother cook best food",
+      "english": "My mother cooks the best food"
+    },
+    {
+      "id": 985,
+      "asl": "your friend arrive late night",
+      "english": "Your friend arrived late at night"
+    },
+    {
+      "id": 986,
+      "asl": "his money stay in bank",
+      "english": "His money stays in the bank"
+    },
+    {
+      "id": 987,
+      "asl": "my house feel very warm",
+      "english": "My house feels very warm"
+    },
+    {
+      "id": 988,
+      "asl": "your computer need update now",
+      "english": "Your computer needs an update now"
+    },
+    {
+      "id": 989,
+      "asl": "his name very long remember",
+      "english": "His name is very long to remember"
+    },
+    {
+      "id": 990,
+      "asl": "my work finish every day",
+      "english": "My work finishes every day"
+    },
+    {
+      "id": 991,
+      "asl": "you must go home now",
+      "english": "You must go home now"
+    },
+    {
+      "id": 992,
+      "asl": "me cannot find my book",
+      "english": "I cannot find my book"
+    },
+    {
+      "id": 993,
+      "asl": "they watch me study night",
+      "english": "They watch me study at night"
+    },
+    {
+      "id": 995,
+      "asl": "friend help me with computer",
+      "english": "Friend helped me with the computer"
+    },
+    {
+      "id": 996,
+      "asl": "family love spend time here",
+      "english": "The family loves to spend time here"
+    },
+    {
+      "id": 997,
+      "asl": "boy happy because new car",
+      "english": "The boy is happy because of the new car"
+    },
+    {
+      "id": 998,
+      "asl": "girl sad because school finish",
+      "english": "The girl is sad because school finished"
+    },
+    {
+      "id": 999,
+      "asl": "man work hard for money",
+      "english": "The man works hard for money"
+    },
+    {
+      "id": 1000,
+      "asl": "woman love her dear family",
+      "english": "The woman loves her dear family"
+    }
+  ]
+}
