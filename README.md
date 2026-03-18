@@ -118,6 +118,7 @@ cd asl_trm
 
 # Install uv (if not already installed)
 # https://docs.astral.sh/uv/getting-started/installation/
+brew install uv
 
 # Create virtual environment
 uv sync
