@@ -190,8 +190,8 @@ python -m eval.eval_trm --dataset asl2000
 ---
 
 ## Pending work
-- Extend the framework to full sentence-level recognition using sliding window inference and enhanced temporal reasoning mechanisms.
-- Deploy the user interface (currently internal) as a publicly accessible application.
+- Extend to real-world continuous ASL using improved temporal modeling and boundary detection.
+- Enhance sequence learning (e.g., attention/transformers) for better context across signs.
 
 ---
 
