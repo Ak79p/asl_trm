@@ -194,7 +194,7 @@ We have created synthetic sentence level videos by stitching word level videos, 
 Sentence details are mentioned at **data\app_asl_sentences_1000.json**
 > Note: Stop word is defined as 5 continuous frames when no hand keypoints are detected.
 
-| Total Videos   | BlUE1 | ROUGE1 |
+| Total Videos   | BLUE1 | ROUGE1 |
 | ---------- | ------- | ------- |
 | 910        | 0.4808  | 0.5663  |
 
