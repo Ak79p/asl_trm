@@ -114,7 +114,7 @@ Requires Python 3.7 – 3.11
 ```bash
 # Clone the repo
 git clone https://github.com/Ak79p/asl_trm.git
-cd asl-trm
+cd asl_trm
 
 # Create and activate virtual environment
 python -m venv venv
