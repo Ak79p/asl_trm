@@ -109,7 +109,7 @@ We report Top-1, Top-5, and Top-10 accuracy:
 
 ## Installation
 
-Requires python 3.7 - 3.11 and create venv
+Requires Python 3.7 – 3.11
 
 ```bash
 # Clone the repo
@@ -125,6 +125,19 @@ pip install -r requirements.txt
 
 # Launch the Streamlit interface
 streamlit run app.py
+```
+
+Optional: Enable AI Sentence Generation (Gemini)
+
+To use the AI sentence refinement layer, you need a Google Gemini API key.
+
+Step 1: Get API Key
+- Go to Google AI Studio: https://aistudio.google.com/
+- Create a new API key
+
+Step 2: Set Environment Variable
+```bash
+export GEMINI_API_KEY="your_api_key_here"
 ```
 ---
 
