@@ -55,24 +55,7 @@ Return output STRICTLY in JSON format:
 Confidence is your estimated certainty.
 
 Predictions:
-"""
-    # for w in words:
-    #     top5 = " | ".join(
-    #         f"{t['word']} ({t['confidence']:.1f}%)"
-    #         for t in w["top5"]
-    #     )
-    #     prompt += f"\nWord {w['word_index']}: {top5}"
-
-    # response = llm_model.generate_content(prompt)
-
-    # try:
-    #     return json.loads(response.text)
-    # except:
-    #     return {
-    #         "best": {"sentence": response.text.strip(), "confidence": 50},
-    #         "alternatives": []
-    #     }
-        
+"""        
     for w in words:
         top5 = " | ".join(
             f"{t['word']} ({t['confidence']:.1f}%)"
