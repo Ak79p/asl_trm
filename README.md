@@ -109,23 +109,24 @@ We report Top-1, Top-5, and Top-10 accuracy:
 
 ## Installation
 
-Requires Python 3.7 – 3.11
+Requires Python 3.11
 
 ```bash
 # Clone the repo
 git clone https://github.com/Ak79p/asl_trm.git
 cd asl_trm
 
-# Create and activate virtual environment
-brew install python@3.11
-python3.11 -m venv venv
-source venv/bin/activate
+# Install uv (if not already installed)
+# https://docs.astral.sh/uv/getting-started/installation/
+
+# Create virtual environment
+uv venv --python 3.11
 
 # Install dependencies
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 
 # Launch the Streamlit interface
-streamlit run app.py
+uv run streamlit run app.py
 ```
 
 Optional: Enable AI Sentence Generation (Gemini)
