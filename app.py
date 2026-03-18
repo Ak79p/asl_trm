@@ -23,12 +23,14 @@ from models.trm_micro import TRMMicro
 from data.datasets import DatasetConfig
 from features.extract_keypoints import extract_frame_keypoints
 
+def generate_sentence_from_words(words, api_key):
+    if not api_key:
+        raise ValueError("Missing Gemini API key")
 
-
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-llm_model = genai.GenerativeModel("gemini-2.5-flash")
-
-def generate_sentence_from_words(words):
+    # Configure dynamically
+    genai.configure(api_key=api_key)
+    llm_model = genai.GenerativeModel("gemini-2.5-flash")
+    
     prompt = """
 You are an expert ASL interpreter.
 
@@ -55,7 +57,7 @@ Return output STRICTLY in JSON format:
 Confidence is your estimated certainty.
 
 Predictions:
-"""        
+"""     
     for w in words:
         top5 = " | ".join(
             f"{t['word']} ({t['confidence']:.1f}%)"
@@ -640,6 +642,19 @@ def main():
 
         dataset_name = st.selectbox("Vocabulary", ["app", "asl100"], index=0)
         checkpoint_path = st.text_input("Checkpoint Path", f"checkpoints/{dataset_name}/best_model.pt")
+        
+        st.markdown("---")
+        st.markdown("#### 🔑 Gemini API Key (Optional)")
+
+        api_key = st.text_input(
+            "Enter Gemini API Key",
+            type="password",   # ✅ masked
+            placeholder="AIza...",
+        )
+
+        # Store securely in session
+        if api_key:
+            st.session_state["gemini_api_key"] = api_key
 
         st.markdown("---")
         st.markdown("#### Hand Boundary Settings")
@@ -713,10 +728,17 @@ def main():
             st.markdown("### 🧠 AI Corrected Sentence")
 
             if st.button("✨ Generate Sentence"):
+                api_key = st.session_state.get("gemini_api_key")
 
-                with st.spinner("Generating..."):
-                    filtered = [w for w in words if w["confidence"] > 10] or words
-                    st.session_state["llm"] = generate_sentence_from_words(filtered)
+                if not api_key:
+                    st.warning("Please enter Gemini API key in sidebar to enable AI sentence generation.")
+                else:
+                    with st.spinner("Generating..."):
+                        try:
+                            filtered = [w for w in words if w["confidence"] > 10] or words
+                            st.session_state["llm"] = generate_sentence_from_words(filtered, api_key)
+                        except Exception as e:
+                            st.error(f"LLM Error: {e}")
                     
             if "llm" in st.session_state:
                 result = st.session_state["llm"]
