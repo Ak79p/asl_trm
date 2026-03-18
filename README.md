@@ -205,6 +205,8 @@ Download video data from [here]() at data/
 bash eval/run_pipelines.sh -p sliding_in_boundary 
 ```
 
+Link to inference data: https://drive.google.com/drive/folders/1zPIQA9Yu3djh3VNsoqjXwpwDs2ZVp8mX?usp=sharing
+
 ## Future work
 - Extend to real-world continuous ASL using improved temporal modeling and boundary detection.
 - Enhance sequence learning (e.g., attention/transformers) for better context across signs.
