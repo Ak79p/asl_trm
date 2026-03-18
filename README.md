@@ -123,6 +123,9 @@ brew install uv
 # Create virtual environment
 uv sync
 
+# ACtivate virtual environment
+source .venv/bin/activate
+
 # Launch the Streamlit interface
 uv run streamlit run app.py
 ```
