@@ -135,10 +135,8 @@ Step 1: Get API Key
 - Go to Google AI Studio: https://aistudio.google.com/
 - Create a new API key
 
-Step 2: Set Environment Variable
-```bash
-export GEMINI_API_KEY="your_api_key_here"
-```
+Step 2: Set the API key
+- Enter the api-key in the UI if you want to generate sentence using LLM.
 ---
 
 ## How to Evaluate
